@@ -4,4 +4,16 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="myPageMemInfo">
 
+	<!-- 1. 회원 정보 가져오기 -->
+	<select id="getMember" parameterType="String" resultType="hts.model.vo.Member">
+		SELECT * FROM member WHERE mem_id = #{value}
+	</select>
+	
+	<!-- 2. 회원 별 예약 리스트 가져오기 -->
+	<select id="getReserList">
+		SELECT pen_name, pen_intro, res_indate, res_outdate, res_tot
+		FROM pension, RESERVATION, room
+		WHERE mem_id = #{value} AND pension.pen_id = room.pen_id AND room.rom_id = reservation.rom_id
+	</select>
+	
 </mapper>

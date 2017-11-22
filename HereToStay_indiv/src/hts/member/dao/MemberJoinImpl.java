@@ -1,5 +1,5 @@
 package hts.member.dao;
 
-public class MemberJoinImpl implements MemberJoin {
+public class MemberJoinImpl implements MemberJoinDao {
 
 }

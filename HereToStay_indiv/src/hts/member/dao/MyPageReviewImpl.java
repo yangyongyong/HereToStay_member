@@ -1,5 +1,5 @@
 package hts.member.dao;
 
-public class MyPageReviewImpl implements MyPageReview {
+public class MyPageReviewImpl implements MyPageReviewDao {
 
 }

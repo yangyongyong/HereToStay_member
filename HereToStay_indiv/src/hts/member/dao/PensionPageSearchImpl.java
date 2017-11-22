@@ -1,5 +1,5 @@
 package hts.member.dao;
 
-public class PensionPageSearchImpl implements PensionPageSearch {
+public class PensionPageSearchImpl implements PensionPageSearchDao {
 
 }

@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="UTF-8"%>
+<% session.setAttribute("memId", "yang"); %>
 <!DOCTYPE html>
 <html> 
 <head>
