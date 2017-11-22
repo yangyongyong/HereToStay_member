@@ -10,6 +10,6 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
  </settings>
     <typeAliases>
       <typeAlias type="hts.model.vo.Member" alias="member" />
-   </typeAliases>
- 
+      <typeAlias type="hts.model.vo.Pension" alias="pension" />
+  </typeAliases>
 </configuration>

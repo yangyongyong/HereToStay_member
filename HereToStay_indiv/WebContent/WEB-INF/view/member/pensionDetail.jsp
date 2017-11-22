@@ -36,7 +36,7 @@
   <div class="body-wrapper">
     <div class="wrapper-padding">
     <div class="page-head">
-      <div class="page-title">펜션 - <span>객실 보기</span></div>
+      <div class="page-title">펜션 -${penId} <span>객실 보기</span></div>
       <div class="breadcrumbs">
         <a href="#">홈</a> / <a href="#">펜션</a> / <span>객실 보기</span>
       </div>
@@ -1380,7 +1380,7 @@
 <!-- 					<span class="wishlist-btn-r">ADD TO wish list</span> -->
 <!-- 					<div class="clear"></div> -->
 <!-- 				</a> -->
-				<a href="#" class="book-btn">
+				<a href="/member/reservationDetail.do" class="book-btn">
 					<span class="book-btn-l"><i></i></span>
 					<span class="book-btn-r">예약 하기</span>
 					<div class="clear"></div>

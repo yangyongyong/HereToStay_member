@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Sparrow | Travel Agency</title>
+  <title>여기없뎅~</title>
   <meta name="description" content="" />
   <meta name="keywords" content="" />
   <meta charset="utf-8" /><link rel="icon" href="favicon.png" />
@@ -229,7 +229,7 @@
                             <div class="cat-list-content-l">
                               <div class="cat-list-content-lb">
                                 <div class="cat-list-content-lpadding">
-                                  <div class="offer-slider-link"><a href="#">Andrassy Thai Hotel</a></div>
+                                  <div class="offer-slider-link"><a href="#">${List[0].penName}</a></div>
                                   <div class="offer-slider-location">Thailand </div>
                                   <p>Voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui. Nemo enim ipsam voluptatem quia voluptas.</p>
                                   <div class="cat-icons">
@@ -263,7 +263,7 @@
               									<b>756$</b>
               									<span>avg/night</span>
               								</div>           
-                              <a href='/member/pensionDetail.do' class="cat-list-btn">Select</a>   
+                              <a href='/member/pensionDetail.do?id=${List[0].penId}' class="cat-list-btn">Select</a>   
                             </div>
                           </div>
                           <div class="clear"></div>

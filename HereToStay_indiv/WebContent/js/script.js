@@ -270,13 +270,14 @@ $(document).ready(function(){
 		     contentNode = document.createElement('div'), // 커스텀 오버레이의 컨텐츠 엘리먼트 입니다 
 		     markers = [], // 마커를 담을 배열입니다
 		     currCategory = ''; // 현재 선택된 카테고리를 가지고 있을 변수입니다
-		  
+//		  
 		 var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
 		     mapOption = {
 		         center: new daum.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
 		         level: 5 // 지도의 확대 레벨
 		     };  
 
+		
 		 // 지도를 생성합니다    
 		 var map = new daum.maps.Map(mapContainer, mapOption); 
 		 
@@ -496,14 +497,16 @@ $(document).ready(function(){
 		 
 
 	
+		 if($index==2)
 		 	findMap();
+		 if($index==1)
 		 	kakaoMap();
 		 	
 		 	
 			$('.tab-map').css('opacity','1');
 			$('#preloader').hide();
 			$('#preloader1').hide();	
-			alert($index);
+			
 			$('.map-contacts').each(function(index){	
 				$(this).delay(141*index).fadeIn();     
 			}); 
