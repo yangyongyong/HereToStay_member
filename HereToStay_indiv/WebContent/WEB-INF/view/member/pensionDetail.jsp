@@ -11,13 +11,17 @@
   <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.3/themes/smoothness/jquery-ui.css" />
   <link rel="stylesheet" href="/css/style.css" />
   
-  
   <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
   <link href='http://fonts.googleapis.com/css?family=Lora:400,400italic' rel='stylesheet' type='text/css'>    
   <link href='http://fonts.googleapis.com/css?family=Raleway:300,400,500,700' rel='stylesheet' type='text/css'>  
   <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700&amp;subset=latin,cyrillic' rel='stylesheet' type='text/css'>
   <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&amp;subset=latin,cyrillic' rel='stylesheet' type='text/css'>	
+	<style type="text/css">
+	#map1 {width:100%; height:546px;}
+.contacts-map #map1 {height:457px;}
+.h-tab-item-04 i {display:block;  background:url(../img/map-icon.png) left top no-repeat; float:left; width:13px; height:16px;}
 
+	</style>
 
        
 </head>  
@@ -1638,6 +1642,8 @@
   <script src="/js/findRoad.js"></script>
   <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=2e42bd35fc94828358bb938f57f5801d&libraries=services"></script>
     <script type="text/javascript" src="http://maps.google.com/maps/api/js?key=AIzaSyD1eVdQ81iyVfK9_PdFIDBVG9A3QgHe8GU&sensor=false&&libraries=places"></script>
+
+ 
   <script>
   	$(document).ready(function(){
 		'use strict';
@@ -1726,10 +1732,7 @@
 .placeinfo .tel {color:#0f7833;}
 .placeinfo .jibun {color:#999;font-size:11px;margin-top:0;}
 
-#map1 {width:100%; height:546px;}
-.contacts-map #map1 {height:457px;}
-.h-tab-item-04 i {display:block;  background:url(../img/map-icon.png) left top no-repeat; float:left; width:13px; height:16px;}
-.tab-item:nth-child(2) {display:block;}
+
 </style>
 
 <!-- \\ scripts \\ --> 

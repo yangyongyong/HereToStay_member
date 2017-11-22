@@ -263,7 +263,7 @@
               									<b>756$</b>
               									<span>avg/night</span>
               								</div>           
-                              <a href='/view/member/pensionDetail.jsp' class="cat-list-btn">Select</a>   
+                              <a href='/member/pensionDetail.do' class="cat-list-btn">Select</a>   
                             </div>
                           </div>
                           <div class="clear"></div>
