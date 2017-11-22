@@ -71,13 +71,13 @@
 					<ul>
 						<li><a class="has-child" href="#">여기없대</a>					
 						</li>
-						<li><a class="has-child" href="#">펜션찾기</a>
+						<li><a class="has-child" href="/member/pensionSearch.do">펜션찾기</a>
 						</li>						
 						<li><a class="has-child" href="/WEB-INF/view/member/QnAWrite.jsp">문의사항</a>
 						</li>
 						<li><a class="has-child" href="#">마이페이지</a>
 							<ul>
-								<li><a href="member/myPage.do">내 정보</a></li>
+								<li><a href="/member/myPage.do">내 정보</a></li>
 								<li><a href="tour_grid.html">예약 리스트</a></li>
 								<li><a href="tour_simple.html">리뷰 리스트</a></li>
 								<li><a href="tour_detail.html">문의 리스트</a></li>
@@ -107,13 +107,13 @@
 					<ul>
 						<li><a class="has-child" href="#">여기없대</a>					
 						</li>
-						<li><a class="has-child" href="#">펜션찾기</a>
+						<li><a class="has-child" href="/member/pensionSearch.do">펜션찾기</a>
 						</li>						
 						<li><a class="has-child" href="/WEB-INF/view/member/QnAWrite.jsp">문의사항</a>
 						</li>
 						<li><a class="has-child" href="#">마이페이지</a>
 							<ul>
-								<li><a href="member/myPage.do">내 정보</a></li>
+								<li><a href="/member/myPage.do">내 정보</a></li>
 								<li><a href="tour_grid.html">예약 리스트</a></li>
 								<li><a href="tour_simple.html">리뷰 리스트</a></li>
 								<li><a href="tour_detail.html">문의 리스트</a></li>
