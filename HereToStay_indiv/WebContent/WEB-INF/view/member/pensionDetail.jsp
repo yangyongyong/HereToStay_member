@@ -36,7 +36,7 @@
   <div class="body-wrapper">
     <div class="wrapper-padding">
     <div class="page-head">
-      <div class="page-title">펜션 -${penId} <span>객실 보기</span></div>
+      <div class="page-title">펜션 - <span>객실 보기</span></div>
       <div class="breadcrumbs">
         <a href="#">홈</a> / <a href="#">펜션</a> / <span>객실 보기</span>
       </div>
@@ -300,11 +300,11 @@
   					<div class="content-tabs-head last-item">
   						<nav>
   							<ul>
-  								<li><a class="active" href="#">DESCRIPTION</a></li>
-  								<li><a href="#">AVAILABILITY</a></li>
-  								<li><a href="#">Preferences</a></li>
-  								<li><a href="#">reviews</a></li>
-  								<li><a href="#">THINGS TO DO</a></li>
+  								<li><a class="active" href="#">펜션 정보</a></li>
+  								<li><a href="#">객실 보기</a></li>
+  								<li><a href="#">사용 옵션</a></li>
+  								<li><a href="#">리뷰</a></li>
+  								<li><a href="#">알파</a></li>
   							  <li><a href="#" class="tabs-lamp"></a></li>
                 </ul>
   						</nav>
@@ -314,8 +314,8 @@
   					<div class="content-tabs-body">
   						<!-- // content-tabs-i // -->
   						<div class="content-tabs-i">
-  							<h2>Hotel Description</h2>
-  							<p>Voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui. voluptatem sequi nesciunt. Neque porro quisqua. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam</p>
+  							<h2>${Pension.penName}</h2>
+  							<p>${Pension.penNoti}</p>
 							<p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.</p>
   							<div class="tab-reasons">
   								<h2>4 Reasons to Choose Andrassy Rhai Hotel</h2>
@@ -1356,8 +1356,8 @@
 		<div class="sp-page-r">
 			<div class="h-detail-r">
 				<div class="h-detail-lbl">
-					<div class="h-detail-lbl-a" >Andrassy Thai Hotel </div>
-					<div class="h-detail-lbl-b">Paris, france</div>
+					<div class="h-detail-lbl-a" >${Pension.penName} </div>
+					<div class="h-detail-lbl-b">${Pension.penAddr},${Pension.penAddr2}</div>
 				</div>
 				<div class="h-detail-stars">
 					<ul class="h-stars-list">
@@ -1372,8 +1372,8 @@
 					<div class="clear"></div>
 				</div>
 				<div class="h-details-text">
-					<p>Voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui voluptatem sequi nesciunt. </p>
-					<p>Neque porro quisqua. Sed ut perspiciatis unde omnis ste natus error sit voluptatem.<br/><br/><br/><br/><br/><br/><br/></p>
+					<p>${Pension.penIntro} </p>
+					
 				</div>
 <!-- 				<a href="#" class="wishlist-btn"> -->
 <!-- 					<span class="wishlist-btn-l"><i></i></span> -->
