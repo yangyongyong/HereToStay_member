@@ -17,6 +17,7 @@ public class MyPageMemInfoImpl implements MyPageMemInfoDao {
 
 	@Override
 	public Member getMember(String id) {
+		
 		return ss.selectOne("myPageMemInfo.getMember", id);
 	}
 
