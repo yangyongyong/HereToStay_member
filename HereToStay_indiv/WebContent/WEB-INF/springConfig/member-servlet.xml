@@ -29,18 +29,4 @@
 	<constructor-arg ref="factoryBean"></constructor-arg>
 </bean>
 
-
-<!-- Ajax의 한글깨짐 처리를 위한 소스 -->
-<mvc:annotation-driven>
-	<mvc:message-converters>
-		<bean class="org.springframework.http.converter.StringHttpMessageConverter">
-			<property name="supportedMediaTypes">
-				<list>
-					<value>text/html;charset=UTF-8</value>
-				</list>
-			</property>
-		</bean>
-	</mvc:message-converters>
-</mvc:annotation-driven>
-
 </beans>

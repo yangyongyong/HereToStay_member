@@ -15,8 +15,6 @@
          <param-value>
             /WEB-INF/springConfig/common-servlet.xml
             /WEB-INF/springConfig/member-servlet.xml
-            /WEB-INF/springConfig/manager-servlet.xml
-            /WEB-INF/springConfig/owner-servlet.xml
          </param-value>
       </init-param>
       <load-on-startup>1</load-on-startup>
