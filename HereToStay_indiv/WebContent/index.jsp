@@ -1,9 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html>
+<html> 
 <head>
-  <title>Sparrow | Travel Agency</title>
+  <title>Sparrow | Travel Agency PIG 꺄</title>
   <meta name="description" content="" />
   <meta name="keywords" content="" />
   <meta charset="utf-8" /><link rel="icon" href="favicon.png" />
