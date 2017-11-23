@@ -1,25 +1,25 @@
 package hts.model.vo;
 
 public class Reservation {
-	private String pensionName;
-	private String aboutPension;
+	private String penName;
+	private String penIntro;
 	private String resIndate;
 	private String resOutdate;
 	private String restot;
-	private String photo;
+	private String resPhoto;
 	
 	
-	public String getPensionName() {
-		return pensionName;
+	public String getpenName() {
+		return penName;
 	}
-	public void setPensionName(String pensionName) {
-		this.pensionName = pensionName;
+	public void setpenName(String penName) {
+		this.penName = penName;
 	}
-	public String getAboutPension() {
-		return aboutPension;
+	public String getpenIntro() {
+		return penIntro;
 	}
-	public void setAboutPension(String aboutPension) {
-		this.aboutPension = aboutPension;
+	public void setpenIntro(String penIntro) {
+		this.penIntro = penIntro;
 	}
 	public String getResIndate() {
 		return resIndate;
@@ -39,10 +39,10 @@ public class Reservation {
 	public void setRestot(String restot) {
 		this.restot = restot;
 	}
-	public String getPhoto() {
-		return photo;
+	public String getresPhoto() {
+		return resPhoto;
 	}
-	public void setPhoto(String photo) {
-		this.photo = photo;
+	public void setresPhoto(String resPhoto) {
+		this.resPhoto = resPhoto;
 	}
 }

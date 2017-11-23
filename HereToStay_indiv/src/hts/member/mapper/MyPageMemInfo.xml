@@ -19,9 +19,16 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	
 	<!-- 3. 회원 별 예약 리스트 가져오기 -->
 	<select id="getReserList" parameterType="String" resultType="reservation">
-		SELECT pen_name, pen_intro, res_indate, res_outdate, res_tot
+		SELECT pen_name, pen_intro, TO_CHAR(res_indate, 'YYYY-MM-DD') as res_indate,
+			   TO_CHAR(res_outdate, 'YYYY-MM-DD') as res_outdate, TO_CHAR(res_tot,'999,999,999') as res_tot
 		FROM pension, RESERVATION, room
 		WHERE mem_id = #{value} AND pension.pen_id = room.pen_id AND room.rom_id = reservation.rom_id
+	</select>
+	
+	<select id="getReviewList" parameterType="String" resultType="review">
+		SELECT rev_title, pen_name, rev_star, rev_status
+		FROM review rv, reservation rs, room rm, pension pen
+		WHERE pen.pen_id = rm.pen_id AND rs.rom_id = rm.rom_id AND rv.res_id = rs.res_id AND rs.mem_id = #{value}
 	</select>
 	
 </mapper>

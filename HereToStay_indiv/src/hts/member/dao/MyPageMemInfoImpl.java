@@ -8,6 +8,7 @@ import org.springframework.stereotype.Repository;
 
 import hts.model.vo.Member;
 import hts.model.vo.Reservation;
+import hts.model.vo.Review;
 
 @Repository
 public class MyPageMemInfoImpl implements MyPageMemInfoDao {
@@ -24,6 +25,7 @@ public class MyPageMemInfoImpl implements MyPageMemInfoDao {
 	// 회원 정보수정 메소드
 	@Override
 	public void infoUpdate(Member member) {
+		System.out.println(member.getMemRpwd());
 		ss.update("myPageMemInfo.infoUpdate", member);
 	}
 
@@ -33,4 +35,11 @@ public class MyPageMemInfoImpl implements MyPageMemInfoDao {
 		return ss.selectList("myPageMemInfo.getReserList", id);
 	}
 
+	// 회원 별 리뷰 리스트 가져오는 메소드
+	@Override
+	public List<Review> getReviewList(String id) {
+		return ss.selectList("myPageMemInfo.getReviewList", id);
+	}
+
+	
 }

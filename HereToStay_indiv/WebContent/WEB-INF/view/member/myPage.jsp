@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@page import="java.util.*"%>
+<%@page import="hts.model.vo.*"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -84,8 +87,7 @@
 									<div class="toggle-ia-r">
   										<div class="toggle-ia-rb">
 											<div class="toggle-lbl">객실 비밀번호</div>
-											<div class="toggle-txt">${member.memRpwd}</div>
-											<input type="hidden" name="memRpwd" id="memRpwd" value="${member.memRpwd}" />
+											<div class="toggle-txt"><input type="text" id="memRpwd" name="memRpwd" class="input-a" value="${member.memRpwd}" placeholder="객실 비밀번호 설정" /></div>
   										</div>
   										<div class="clear"></div>
 										</div>
@@ -196,7 +198,7 @@
 											                      </div>
 											                      <div class="faq-item-b">
 											                        <div class="faq-item-p">
-											                           <input type="text" id="memBirth" name="nameBirth" class="input-a" value="${member.memBirth}" placeholder="생년월일을 입력하세요" /> 
+											                           <input type="text" id="memBirth" name="memBirth" class="input-a" value="${member.memBirth}" placeholder="생년월일을 입력하세요" /> 
 											                        </div>
 											                      </div>
 											                    </div>
@@ -223,34 +225,30 @@
 																<div class="padding">
 														            <div class="catalog-head large fly-in">
 														              <label>Sorting results by:</label>
-														              <div class="search-select">
+														              <div class="search-select" id="nameSort">
 														    							<select>
-														    								<option>Name</option>
-														    								<option>Name</option>
+														    								<option>ㄱ ~ ㅎ</option>
+														    								<option>ㅎ ~ ㄱ</option>
 														    							</select>
 														    					</div>
-														              <div class="search-select">
+														              <div class="search-select" id="priceSort">
 														    							<select>
-														    								<option>Price</option>
-														    								<option>Price</option>
+														    								<option>가격 높은 순</option>
+														    								<option>가격 낮은 순</option>
 														    							</select>
 														    					</div>
-														              <div class="search-select">
+														              <div class="search-select" id="dateSort">
 														    							<select>
-														    								<option>Rating</option>
-														    								<option>Rating</option>
+														    								<option>최신 순 </option>
+														    								<option>오래된 순</option>
 														    							</select>
 														    					</div>
-														              <div class="search-select">
-														    							<select>
-														    								<option>Popularity</option>
-														    								<option>Popularity</option>
-														    							</select>
-														    					</div>
-														              <div class="clear"></div>
 														            </div>
 														            
 														            <div class="catalog-row list-rows">
+														            <br/>
+														            
+														            <c:forEach var="item" items="${reserList}" varStatus="status"> 
 														            
 														              <!-- // -->
 														                <div class="cat-list-item fly-in">
@@ -265,10 +263,9 @@
 														                            <div class="cat-list-content-l">
 														                              <div class="cat-list-content-lb">
 														                                <div class="cat-list-content-lpadding">
-														                                  <div class="offer-slider-link"><a href="#">은지네 펜션</a></div>
+														                                  <div class="offer-slider-link"><a href="#">${item.penName}</a></div>
 														                                  <div class="offer-slider-location">pension</div>
-														                                  <p>아름답고 편리하고 기분좋고 편안하고 졸립고 깔끔하고 집가고싶고 그런 펜션 설명이 들어와야함
-														                                  	 나도 내가 무슨소리 하는지 모르겠지만 무튼 이거슨 펜션 설명글</p>
+														                                  <p>${item.penIntro}</p>
 														                                </div>
 														                              </div>
 														                              <br class="clear" />
@@ -278,13 +275,13 @@
 														                            <div class="cat-list-content-p">
 														                              <div class="offer-slider-r">
 											              									<span>start</span>
-											              									<span>2017/11/04</span>
+											              									<span>${item.resIndate}</span>
 											              									<span>end</span>
-											              									<span>2017/11/08</span>
+											              									<span>${item.resOutdate}</span>
 														              				  </div>
 														                              <div class="offer-slider-r">
 											              									<span>총 금액</span>
-											              									<b>&#8361;100,000</b>
+											              									<b>&#8361;${item.restot}</b>
 														              				  </div>           
 														                              <a href="#" class="cat-list-btn">자세히보기</a>   
 														                            </div>
@@ -298,6 +295,9 @@
 														                  <div class="clear"></div>
 														                </div>
 														              <!-- \\ -->
+														              
+														              </c:forEach> 
+														              
 														            </div>
 														            
 														            <div class="clear"></div>
@@ -319,7 +319,10 @@
 											                <p class="small"> 나의 리뷰를 확인해보세여! </p> <br/>
 													          <div class="padding">
 													            
-													            <div class="catalog-row">            
+													            <div class="catalog-row"> 
+													            
+													            
+													            <c:forEach var="item" items="${reviewList}" varStatus="status"> 
 													            <!-- // catalog-i // -->
 													            <div class="offer-slider-i catalog-i fly-in">
 																				<a href="#" class="offer-slider-img">
@@ -329,9 +332,9 @@
 																					<span>
 																				</span></span></a>
 																				<div class="offer-slider-txt">
-																					<div class="offer-slider-link"><a href="#">리뷰 제목</a></div>
+																					<div class="offer-slider-link"><a href="#">${item.resTitle}</a></div>
 																					<div class="offer-slider-l">
-																						<div class="offer-slider-location">펜션 명</div>
+																						<div class="offer-slider-location">${item.penName}</div>
 																						<nav class="stars">
 																							<ul>
 																								<li><a href="#"><img alt="" src="/img/star-b.png" /></a></li>
@@ -347,141 +350,9 @@
 																				</div>
 																			</div>
 													            <!-- \\ catalog-i \\ -->
-													            <!-- // catalog-i // -->
-													            <div class="offer-slider-i catalog-i fly-in">
-																				<a href="#" class="offer-slider-img">
-																					<img alt="" src="/img/catalog-01.jpg">
-																					<span class="offer-slider-overlay">
-																						<span class="offer-slider-btn">view details</span>
-																					<span>
-																				</span></span></a>
-																				<div class="offer-slider-txt">
-																					<div class="offer-slider-link"><a href="#">리뷰 제목</a></div>
-																					<div class="offer-slider-l">
-																						<div class="offer-slider-location">펜션 명</div>
-																						<nav class="stars">
-																							<ul>
-																								<li><a href="#"><img alt="" src="/img/star-b.png" /></a></li>
-																								<li><a href="#"><img alt="" src="/img/star-b.png" /></a></li>
-																								<li><a href="#"><img alt="" src="/img/star-b.png" /></a></li>
-																								<li><a href="#"><img alt="" src="/img/star-b.png" /></a></li>
-																								<li><a href="#"><img alt="" src="/img/star-a.png" /></a></li>
-																							</ul>
-																							<div class="clear"></div>
-																						</nav>
-																					</div>							
-																					<div class="clear"></div>
-																				</div>
-																			</div>
-													            <!-- \\ catalog-i \\ -->
-													            <!-- // catalog-i // -->
-													            <div class="offer-slider-i catalog-i fly-in">
-																				<a href="#" class="offer-slider-img">
-																					<img alt="" src="/img/catalog-01.jpg">
-																					<span class="offer-slider-overlay">
-																						<span class="offer-slider-btn">view details</span>
-																					<span>
-																				</span></span></a>
-																				<div class="offer-slider-txt">
-																					<div class="offer-slider-link"><a href="#">리뷰 제목</a></div>
-																					<div class="offer-slider-l">
-																						<div class="offer-slider-location">펜션 명</div>
-																						<nav class="stars">
-																							<ul>
-																								<li><a href="#"><img alt="" src="/img/star-b.png" /></a></li>
-																								<li><a href="#"><img alt="" src="/img/star-b.png" /></a></li>
-																								<li><a href="#"><img alt="" src="/img/star-b.png" /></a></li>
-																								<li><a href="#"><img alt="" src="/img/star-b.png" /></a></li>
-																								<li><a href="#"><img alt="" src="/img/star-a.png" /></a></li>
-																							</ul>
-																							<div class="clear"></div>
-																						</nav>
-																					</div>							
-																					<div class="clear"></div>
-																				</div>
-																			</div>
-													            <!-- \\ catalog-i \\ -->
-													            <!-- // catalog-i // -->
-													            <div class="offer-slider-i catalog-i fly-in">
-																				<a href="#" class="offer-slider-img">
-																					<img alt="" src="/img/catalog-01.jpg">
-																					<span class="offer-slider-overlay">
-																						<span class="offer-slider-btn">view details</span>
-																					<span>
-																				</span></span></a>
-																				<div class="offer-slider-txt">
-																					<div class="offer-slider-link"><a href="#">리뷰 제목</a></div>
-																					<div class="offer-slider-l">
-																						<div class="offer-slider-location">펜션 명</div>
-																						<nav class="stars">
-																							<ul>
-																								<li><a href="#"><img alt="" src="/img/star-b.png" /></a></li>
-																								<li><a href="#"><img alt="" src="/img/star-b.png" /></a></li>
-																								<li><a href="#"><img alt="" src="/img/star-b.png" /></a></li>
-																								<li><a href="#"><img alt="" src="/img/star-b.png" /></a></li>
-																								<li><a href="#"><img alt="" src="/img/star-a.png" /></a></li>
-																							</ul>
-																							<div class="clear"></div>
-																						</nav>
-																					</div>							
-																					<div class="clear"></div>
-																				</div>
-																			</div>
-													            <!-- \\ catalog-i \\ -->
-													            <!-- // catalog-i // -->
-													            <div class="offer-slider-i catalog-i fly-in">
-																				<a href="#" class="offer-slider-img">
-																					<img alt="" src="/img/catalog-01.jpg">
-																					<span class="offer-slider-overlay">
-																						<span class="offer-slider-btn">view details</span>
-																					<span>
-																				</span></span></a>
-																				<div class="offer-slider-txt">
-																					<div class="offer-slider-link"><a href="#">리뷰 제목</a></div>
-																					<div class="offer-slider-l">
-																						<div class="offer-slider-location">펜션 명</div>
-																						<nav class="stars">
-																							<ul>
-																								<li><a href="#"><img alt="" src="/img/star-b.png" /></a></li>
-																								<li><a href="#"><img alt="" src="/img/star-b.png" /></a></li>
-																								<li><a href="#"><img alt="" src="/img/star-b.png" /></a></li>
-																								<li><a href="#"><img alt="" src="/img/star-b.png" /></a></li>
-																								<li><a href="#"><img alt="" src="/img/star-a.png" /></a></li>
-																							</ul>
-																							<div class="clear"></div>
-																						</nav>
-																					</div>							
-																					<div class="clear"></div>
-																				</div>
-																			</div>
-													            <!-- \\ catalog-i \\ -->
-													            <!-- // catalog-i // -->
-													            <div class="offer-slider-i catalog-i fly-in">
-																				<a href="#" class="offer-slider-img">
-																					<img alt="" src="/img/catalog-01.jpg">
-																					<span class="offer-slider-overlay">
-																						<span class="offer-slider-btn">view details</span>
-																					<span>
-																				</span></span></a>
-																				<div class="offer-slider-txt">
-																					<div class="offer-slider-link"><a href="#">리뷰 제목</a></div>
-																					<div class="offer-slider-l">
-																						<div class="offer-slider-location">펜션 명</div>
-																						<nav class="stars">
-																							<ul>
-																								<li><a href="#"><img alt="" src="/img/star-b.png" /></a></li>
-																								<li><a href="#"><img alt="" src="/img/star-b.png" /></a></li>
-																								<li><a href="#"><img alt="" src="/img/star-b.png" /></a></li>
-																								<li><a href="#"><img alt="" src="/img/star-b.png" /></a></li>
-																								<li><a href="#"><img alt="" src="/img/star-a.png" /></a></li>
-																							</ul>
-																							<div class="clear"></div>
-																						</nav>
-																					</div>							
-																					<div class="clear"></div>
-																				</div>
-																			</div>
-													            <!-- \\ catalog-i \\ -->
+													             </c:forEach> 
+													            
+													            
 													            </div>
 													            
 													            <div class="clear"></div>

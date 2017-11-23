@@ -13,4 +13,7 @@ public interface MyPageMemInfoDao {
 	
 //	회원 별 예약 리스트 가져오는 메소드
 	List<Reservation> getReserList(String id);
+	
+//	화원 별 리뷰 리스트 가져오는 메소드
+	List<Review> getReviewList(String id);
 }
