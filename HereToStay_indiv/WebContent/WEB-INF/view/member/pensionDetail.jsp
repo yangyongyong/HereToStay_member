@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %> 
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,7 +12,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"> 
   <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.3/themes/smoothness/jquery-ui.css" />
   <link rel="stylesheet" href="/css/style.css" />
-  
+  <link rel="stylesheet" href="/css/DetailCss/product.css"/>
+  <link rel="stylesheet" href="/css/DetailCss/swiper.css"/>
   <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
   <link href='http://fonts.googleapis.com/css?family=Lora:400,400italic' rel='stylesheet' type='text/css'>    
   <link href='http://fonts.googleapis.com/css?family=Raleway:300,400,500,700' rel='stylesheet' type='text/css'>  
@@ -84,7 +87,7 @@
   						<div class="h-tabs-right">
   							<a href="#">
   								<i></i>
-  								<span id='conf'>more hotels</span>
+<!--   								<span id='conf'>more hotels</span> -->
   								<div class="clear"></div>
   							</a>
   						</div>
@@ -315,59 +318,56 @@
   						<!-- // content-tabs-i // -->
   						<div class="content-tabs-i">
   							<h2>${Pension.penName}</h2>
-  							<p>${Pension.penNoti}</p>
-							<p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.</p>
-  							<div class="tab-reasons">
-  								<h2>4 Reasons to Choose Andrassy Rhai Hotel</h2>
-  								<div class="tab-reasons-h">
-  									<!-- // -->
-  									<div class="tab-reasons-i reasons-01">
-  										<b>fully responsive</b>
-  										<p>Voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia.</p>
-  									</div>
-  									<!-- \\ -->
-  									<!-- // -->
-  									<div class="tab-reasons-i reasons-02">
-  										<b>757 verified reviews</b>
-  										<p>Voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia.</p>
-  									</div>
-  									<!-- \\ -->
-  									<!-- // -->
-  									<div class="tab-reasons-i reasons-03">
-  										<b>Manage your bookings online</b>
-  										<p>Voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia.</p>
-  									</div>
-  									<!-- \\ -->
-  									<!-- // -->
-  									<div class="tab-reasons-i reasons-04">
-  										<b>Booking is safe</b>
-  										<p>Voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia.</p>
-  									</div>
-  									<!-- \\ -->
-  									<div class="clear"></div>
-  								</div>
-  								<div class="facilities">
-  									<h2>Facilities of Hotel</h2>
-  									<table>
-  										<tr>
-  											<td class="facilities-a">Food & Drink</td>
-  											<td class="facilities-b">Breakfast in the Room</td>
-  										</tr>
-  										<tr>
-  											<td class="facilities-a">Internet</td>
-  											<td class="facilities-b"><span class="facility-label">Free! WiFi is available in all areas and is free of charge.</span></td>
-  										</tr>
-  										<tr>
-  											<td class="facilities-a">Parking</td>
-  											<td class="facilities-b">Vending Machine (drinks), 24-Hour Front Desk, Express Check-in/Check-out</td>
-  										</tr>
-  										<tr>
-  											<td class="facilities-a">Languages</td>
-  											<td class="facilities-b">Italian, French, Spanish, English, Arabic</td>
-  										</tr>
-  									</table>	
-  								</div>
-  							</div>
+  							<p>${Pension.penNoti} </p>
+							
+<!--   							<div class="tab-reasons"> -->
+<!--   								<h2>4 Reasons to Choose Andrassy Rhai Hotel</h2> -->
+<!--   								<div class="tab-reasons-h"> -->
+  								
+<!--   									<div class="tab-reasons-i reasons-01"> -->
+<!--   										<b>fully responsive</b> -->
+<!--   										<p>Voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia.</p> -->
+<!--   									</div> -->
+  								
+<!--   									<div class="tab-reasons-i reasons-02"> -->
+<!--   										<b>757 verified reviews</b> -->
+<!--   										<p>Voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia.</p> -->
+<!--   									</div> -->
+  								
+<!--   									<div class="tab-reasons-i reasons-03"> -->
+<!--   										<b>Manage your bookings online</b> -->
+<!--   										<p>Voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia.</p> -->
+<!--   									</div> -->
+  									
+<!--   									<div class="tab-reasons-i reasons-04"> -->
+<!--   										<b>Booking is safe</b> -->
+<!--   										<p>Voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia.</p> -->
+<!--   									</div> -->
+  									
+<!--   									<div class="clear"></div> -->
+<!--   								</div> -->
+<!--   								<div class="facilities"> -->
+<!--   									<h2>Facilities of Hotel</h2> -->
+<!--   									<table> -->
+<!--   										<tr> -->
+<!--   											<td class="facilities-a">Food & Drink</td> -->
+<!--   											<td class="facilities-b">Breakfast in the Room</td> -->
+<!--   										</tr> -->
+<!--   										<tr> -->
+<!--   											<td class="facilities-a">Internet</td> -->
+<!--   											<td class="facilities-b"><span class="facility-label">Free! WiFi is available in all areas and is free of charge.</span></td> -->
+<!--   										</tr> -->
+<!--   										<tr> -->
+<!--   											<td class="facilities-a">Parking</td> -->
+<!--   											<td class="facilities-b">Vending Machine (drinks), 24-Hour Front Desk, Express Check-in/Check-out</td> -->
+<!--   										</tr> -->
+<!--   										<tr> -->
+<!--   											<td class="facilities-a">Languages</td> -->
+<!--   											<td class="facilities-b">Italian, French, Spanish, English, Arabic</td> -->
+<!--   										</tr> -->
+<!--   									</table>	 -->
+<!--   								</div> -->
+<!--   							</div> -->
   						</div>
   						<!-- \\ content-tabs-i \\ -->
   						<!-- // content-tabs-i // -->
@@ -445,243 +445,268 @@
 							<h2>Room Type</h2>
 							
 							<div class="available-row">
-							
+							<c:if test="${not empty Rooms}">
 							<!-- // -->			
+											
+							<c:forEach var="i" begin="1" end="${fn:length(Rooms)}" step="1"  >
 							<div class="cat-list-item">
-                  			<div class="cat-list-item-l">
-                      			<a href="#"><img alt="" src="/img/available-01.jpg"></a>
-                 			</div>
-                  			<div class="cat-list-item-r">
-                    			<div class="cat-list-item-rb">
-                      			<div class="cat-list-item-p">
-                        			<div class="cat-list-content">
-                          			<div class="cat-list-content-a">
-                            			<div class="cat-list-content-l">
-                              			<div class="cat-list-content-lb">
-                                			<div class="cat-list-content-lpadding">
-                                  			<div class="offer-slider-link"><a href="#">Single Room</a></div>
-                                  			<div class="offer-slider-location">Max Occupancy: 2 persons</div>
-                                  			<p>Voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos.</p>
-                                  			<div class="cat-icons">
-                                    			<span class="cat-icon-01 active"></span>
-                                    			<span class="cat-icon-02"></span>
-                                    			<span class="cat-icon-03"></span>
-                                    			<span class="cat-icon-04"></span>
-                                    			<span class="cat-icon-05"></span>
-                                    			<span class="cat-icon-06"></span>
-                                    			<div class="clear"></div>
-                                  			</div>
-                                			</div>
-                              			</div>
-                              			<br class="clear">
-                            			</div>
-                          			</div>
-                          			<div class="cat-list-content-r">
-                            			<div class="cat-list-content-p">
-                              			<div class="available-price">634$</div>
-                              			<div class="available-price-a">avg/night</div> 
-                              			<div class="available-price-c">9 available</div> 
-                              			<a href="#" class="available-btn">select</a>
-                            			</div>
-                          			</div>
-                          			<div class="clear"></div>
-                        			</div>
-                      			</div>
-                    			</div>
-                    			<br class="clear">
-                  			</div>
-                  			<div class="clear"></div>
-                			</div>
+			                     			<div class="cat-list-item-l">
+			                      			<a href="#"><img alt="" src="/img/available-01.jpg"></a>
+			                 			</div>
+			                  			<div class="cat-list-item-r">
+			                    			<div class="cat-list-item-rb">
+			                      			<div class="cat-list-item-p">
+			                        			<div class="cat-list-content">
+			                          			<div class="cat-list-content-a">
+			                            			<div class="cat-list-content-l">
+			                              			<div class="cat-list-content-lb">
+			                                			<div class="cat-list-content-lpadding">
+			                                  			<div class="offer-slider-link"><a href="#">${Rooms[i-1].romName} / ${Rooms[i-1].romType} </a></div>
+			                                  			<div class="offer-slider-location">최대 인원: ${Rooms[i-1].romPeople}  persons</div>
+			                                  			<p>${Rooms[i-1].romIntro}</p>
+			                                  			<p>${Rooms[i-1].romOpt}</p>
+			                                  			<div class="cat-icons">
+			                                    			<span class="cat-icon-01 active"></span>
+			                                    			<span class="cat-icon-02"></span>
+			                                    			<span class="cat-icon-03"></span>
+			                                    			<span class="cat-icon-04"></span>
+			                                    			<span class="cat-icon-05"></span>
+			                                    			<span class="cat-icon-06"></span>
+			                                    			<div class="clear"></div>
+			                                  			</div>
+			                                			</div>
+			                              			</div>
+			                              			<br class="clear">
+			                            			</div>
+			                          			</div>
+			                          			<div class="cat-list-content-r">
+			                            			<div class="cat-list-content-p">
+			                              			<div class="available-price">${Rooms[i-1].romCost} 원</div>
+			                              			<div class="available-price-a">avg/night</div> 
+			                              			<div class="available-price-c">9 available</div> 
+			                              			<a href="#" class="available-btn">select</a>
+			                            			</div>
+			                          			</div>
+			                          			<div class="clear"></div>
+			                        			</div>
+			                      			</div>
+		                    			</div>
+		                    			<br class="clear">
+		                  			</div>
+		                  			<div class="clear"></div>
+		            				
+		            				</div>
+		            				</c:forEach>
+		            				
+                			<!-- // -->			
+<!-- 							<div class="cat-list-item"> -->
+<!--                   			<div class="cat-list-item-l"> -->
+<!--                       			<a href="#"><img alt="" src="/img/available-02.jpg"></a> -->
+<!--                  			</div> -->
+<!--                   			<div class="cat-list-item-r"> -->
+<!--                     			<div class="cat-list-item-rb"> -->
+<!-- 	                      			<div class="cat-list-item-p"> -->
+<!-- 	                        			<div class="cat-list-content"> -->
+<!-- 	                          			<div class="cat-list-content-a"> -->
+<!-- 	                            			<div class="cat-list-content-l"> -->
+<!-- 	                              			<div class="cat-list-content-lb"> -->
+<!-- 	                                			<div class="cat-list-content-lpadding"> -->
+<!-- 	                                  			<div class="offer-slider-link"><a href="#">Double Room</a></div> -->
+<!-- 	                                  			<div class="offer-slider-location">Max Occupancy: 2 persons</div> -->
+<!-- 	                                  			<p>Voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos.</p> -->
+<!-- 	                                  			<div class="cat-icons"> -->
+<!-- 	                                    			<span class="cat-icon-01 active"></span> -->
+<!-- 	                                    			<span class="cat-icon-02"></span> -->
+<!-- 	                                    			<span class="cat-icon-03"></span> -->
+<!-- 	                                    			<span class="cat-icon-04"></span> -->
+<!-- 	                                    			<span class="cat-icon-05"></span> -->
+<!-- 	                                    			<span class="cat-icon-06"></span> -->
+<!-- 	                                    			<div class="clear"></div> -->
+<!-- 	                                  			</div> -->
+<!-- 	                                			</div> -->
+<!-- 	                              			</div> -->
+<!-- 	                              			<br class="clear"> -->
+<!-- 	                            			</div> -->
+<!-- 	                          			</div> -->
+<!-- 	                          			<div class="cat-list-content-r"> -->
+<!-- 	                            			<div class="cat-list-content-p"> -->
+<!-- 	                              			<div class="available-price">450$</div> -->
+<!-- 	                              			<div class="available-price-a">avg/night</div>  -->
+<!-- 	                              			<div class="available-price-c">9 available</div>  -->
+<!-- 	                              			<a href="#" class="available-btn">select</a> -->
+<!-- 	                            			</div> -->
+<!-- 	                          			</div> -->
+<!-- 	                          			<div class="clear"></div> -->
+<!-- 	                        			</div> -->
+<!-- 	                      			</div> -->
+<!-- 	                    			</div> -->
+<!-- 	                    			<br class="clear"> -->
+<!-- 	                  			</div> -->
+<!--                   			<div class="clear"></div> -->
+<!--                 			</div> -->
+<!--                 			\\ -->
+<!--                 			//			 -->
+<!-- 							<div class="cat-list-item"> -->
+<!--                   			<div class="cat-list-item-l"> -->
+<!--                       			<a href="#"><img alt="" src="/img/available-03.jpg"></a> -->
+<!--                  			</div> -->
+<!--                   			<div class="cat-list-item-r"> -->
+<!--                     			<div class="cat-list-item-rb"> -->
+<!--                       			<div class="cat-list-item-p"> -->
+<!--                         			<div class="cat-list-content"> -->
+<!--                           			<div class="cat-list-content-a"> -->
+<!--                             			<div class="cat-list-content-l"> -->
+<!--                               			<div class="cat-list-content-lb"> -->
+<!--                                 			<div class="cat-list-content-lpadding"> -->
+<!--                                   			<div class="offer-slider-link"><a href="#">Twin Room</a></div> -->
+<!--                                   			<div class="offer-slider-location">Max Occupancy: 2 persons</div> -->
+<!--                                   			<p>Voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos.</p> -->
+<!--                                   			<div class="cat-icons"> -->
+<!--                                     			<span class="cat-icon-01 active"></span> -->
+<!--                                     			<span class="cat-icon-02"></span> -->
+<!--                                     			<span class="cat-icon-03"></span> -->
+<!--                                     			<span class="cat-icon-04"></span> -->
+<!--                                     			<span class="cat-icon-05"></span> -->
+<!--                                     			<span class="cat-icon-06"></span> -->
+<!--                                     			<div class="clear"></div> -->
+<!--                                   			</div> -->
+<!--                                 			</div> -->
+<!--                               			</div> -->
+<!--                               			<br class="clear"> -->
+<!--                             			</div> -->
+<!--                           			</div> -->
+<!--                           			<div class="cat-list-content-r"> -->
+<!--                             			<div class="cat-list-content-p"> -->
+<!--                               			<div class="available-price">380$</div> -->
+<!--                               			<div class="available-price-a">avg/night</div>  -->
+<!--                               			<div class="available-price-c">9 available</div>  -->
+<!--                               			<a href="#" class="available-btn">select</a> -->
+<!--                             			</div> -->
+<!--                           			</div> -->
+<!--                           			<div class="clear"></div> -->
+<!--                         			</div> -->
+<!--                       			</div> -->
+<!--                     			</div> -->
+<!--                     			<br class="clear"> -->
+<!--                   			</div> -->
+<!--                   			<div class="clear"></div> -->
+<!--                 			</div> -->
                 			<!-- \\ -->
                 			<!-- // -->			
-							<div class="cat-list-item">
-                  			<div class="cat-list-item-l">
-                      			<a href="#"><img alt="" src="/img/available-02.jpg"></a>
-                 			</div>
-                  			<div class="cat-list-item-r">
-                    			<div class="cat-list-item-rb">
-                      			<div class="cat-list-item-p">
-                        			<div class="cat-list-content">
-                          			<div class="cat-list-content-a">
-                            			<div class="cat-list-content-l">
-                              			<div class="cat-list-content-lb">
-                                			<div class="cat-list-content-lpadding">
-                                  			<div class="offer-slider-link"><a href="#">Double Room</a></div>
-                                  			<div class="offer-slider-location">Max Occupancy: 2 persons</div>
-                                  			<p>Voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos.</p>
-                                  			<div class="cat-icons">
-                                    			<span class="cat-icon-01 active"></span>
-                                    			<span class="cat-icon-02"></span>
-                                    			<span class="cat-icon-03"></span>
-                                    			<span class="cat-icon-04"></span>
-                                    			<span class="cat-icon-05"></span>
-                                    			<span class="cat-icon-06"></span>
-                                    			<div class="clear"></div>
-                                  			</div>
-                                			</div>
-                              			</div>
-                              			<br class="clear">
-                            			</div>
-                          			</div>
-                          			<div class="cat-list-content-r">
-                            			<div class="cat-list-content-p">
-                              			<div class="available-price">450$</div>
-                              			<div class="available-price-a">avg/night</div> 
-                              			<div class="available-price-c">9 available</div> 
-                              			<a href="#" class="available-btn">select</a>
-                            			</div>
-                          			</div>
-                          			<div class="clear"></div>
-                        			</div>
-                      			</div>
-                    			</div>
-                    			<br class="clear">
-                  			</div>
-                  			<div class="clear"></div>
-                			</div>
-                			<!-- \\ -->
-                			<!-- // -->			
-							<div class="cat-list-item">
-                  			<div class="cat-list-item-l">
-                      			<a href="#"><img alt="" src="/img/available-03.jpg"></a>
-                 			</div>
-                  			<div class="cat-list-item-r">
-                    			<div class="cat-list-item-rb">
-                      			<div class="cat-list-item-p">
-                        			<div class="cat-list-content">
-                          			<div class="cat-list-content-a">
-                            			<div class="cat-list-content-l">
-                              			<div class="cat-list-content-lb">
-                                			<div class="cat-list-content-lpadding">
-                                  			<div class="offer-slider-link"><a href="#">Twin Room</a></div>
-                                  			<div class="offer-slider-location">Max Occupancy: 2 persons</div>
-                                  			<p>Voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos.</p>
-                                  			<div class="cat-icons">
-                                    			<span class="cat-icon-01 active"></span>
-                                    			<span class="cat-icon-02"></span>
-                                    			<span class="cat-icon-03"></span>
-                                    			<span class="cat-icon-04"></span>
-                                    			<span class="cat-icon-05"></span>
-                                    			<span class="cat-icon-06"></span>
-                                    			<div class="clear"></div>
-                                  			</div>
-                                			</div>
-                              			</div>
-                              			<br class="clear">
-                            			</div>
-                          			</div>
-                          			<div class="cat-list-content-r">
-                            			<div class="cat-list-content-p">
-                              			<div class="available-price">380$</div>
-                              			<div class="available-price-a">avg/night</div> 
-                              			<div class="available-price-c">9 available</div> 
-                              			<a href="#" class="available-btn">select</a>
-                            			</div>
-                          			</div>
-                          			<div class="clear"></div>
-                        			</div>
-                      			</div>
-                    			</div>
-                    			<br class="clear">
-                  			</div>
-                  			<div class="clear"></div>
-                			</div>
-                			<!-- \\ -->
-                			<!-- // -->			
-							<div class="cat-list-item">
-                  			<div class="cat-list-item-l">
-                      			<a href="#"><img alt="" src="/img/available-04.jpg"></a>
-                 			</div>
-                  			<div class="cat-list-item-r">
-                    			<div class="cat-list-item-rb">
-                      			<div class="cat-list-item-p">
-                        			<div class="cat-list-content">
-                          			<div class="cat-list-content-a">
-                            			<div class="cat-list-content-l">
-                              			<div class="cat-list-content-lb">
-                                			<div class="cat-list-content-lpadding">
-                                  			<div class="offer-slider-link"><a href="#">Family Suite</a></div>
-                                  			<div class="offer-slider-location">Max Occupancy: 2 persons</div>
-                                  			<p>Voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos.</p>
-                                  			<div class="cat-icons">
-                                    			<span class="cat-icon-01 active"></span>
-                                    			<span class="cat-icon-02"></span>
-                                    			<span class="cat-icon-03"></span>
-                                    			<span class="cat-icon-04"></span>
-                                    			<span class="cat-icon-05"></span>
-                                    			<span class="cat-icon-06"></span>
-                                    			<div class="clear"></div>
-                                  			</div>
-                                			</div>
-                              			</div>
-                              			<br class="clear">
-                            			</div>
-                          			</div>
-                          			<div class="cat-list-content-r">
-                            			<div class="cat-list-content-p">
-                              			<div class="available-price">540$</div>
-                              			<div class="available-price-a">avg/night</div> 
-                              			<div class="available-price-c">9 available</div> 
-                              			<a href="#" class="available-btn">select</a>
-                            			</div>
-                          			</div>
-                          			<div class="clear"></div>
-                        			</div>
-                      			</div>
-                    			</div>
-                    			<br class="clear">
-                  			</div>
-                  			<div class="clear"></div>
-                			</div>
+<!-- 							<div class="cat-list-item"> -->
+<!--                   			<div class="cat-list-item-l"> -->
+<!--                       			<a href="#"><img alt="" src="/img/available-04.jpg"></a> -->
+<!--                  			</div> -->
+<!--                   			<div class="cat-list-item-r"> -->
+<!--                     			<div class="cat-list-item-rb"> -->
+<!--                       			<div class="cat-list-item-p"> -->
+<!--                         			<div class="cat-list-content"> -->
+<!--                           			<div class="cat-list-content-a"> -->
+<!--                             			<div class="cat-list-content-l"> -->
+<!--                               			<div class="cat-list-content-lb"> -->
+<!--                                 			<div class="cat-list-content-lpadding"> -->
+<!--                                   			<div class="offer-slider-link"><a href="#">Family Suite</a></div> -->
+<!--                                   			<div class="offer-slider-location">Max Occupancy: 2 persons</div> -->
+<!--                                   			<p>Voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos.</p> -->
+<!--                                   			<div class="cat-icons"> -->
+<!--                                     			<span class="cat-icon-01 active"></span> -->
+<!--                                     			<span class="cat-icon-02"></span> -->
+<!--                                     			<span class="cat-icon-03"></span> -->
+<!--                                     			<span class="cat-icon-04"></span> -->
+<!--                                     			<span class="cat-icon-05"></span> -->
+<!--                                     			<span class="cat-icon-06"></span> -->
+<!--                                     			<div class="clear"></div> -->
+<!--                                   			</div> -->
+<!--                                 			</div> -->
+<!--                               			</div> -->
+<!--                               			<br class="clear"> -->
+<!--                             			</div> -->
+<!--                           			</div> -->
+<!--                           			<div class="cat-list-content-r"> -->
+<!--                             			<div class="cat-list-content-p"> -->
+<!--                               			<div class="available-price">540$</div> -->
+<!--                               			<div class="available-price-a">avg/night</div>  -->
+<!--                               			<div class="available-price-c">9 available</div>  -->
+<!--                               			<a href="#" class="available-btn">select</a> -->
+<!--                             			</div> -->
+<!--                           			</div> -->
+<!--                           			<div class="clear"></div> -->
+<!--                         			</div> -->
+<!--                       			</div> -->
+<!--                     			</div> -->
+<!--                     			<br class="clear"> -->
+<!--                   			</div> -->
+<!--                   			<div class="clear"></div> -->
+<!--                 			</div> -->
                 			<!-- \\ -->
                 			<a href="#" class="availabe-more">load more results</a>				
+							   </c:if>
 							   </div>
+							  
 							
   							</div>
   						</div>
   						<!-- \\ content-tabs-i \\ -->
   						<!-- // content-tabs-i // -->
   						<div class="content-tabs-i">
-  							<h2>Hotel Facilities</h2>
-  							<p>Voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui voluptatem sequi nesciunt. </p>
+  							<h2>펜션 옵션</h2>
+  							<c:set var="penOpt" value="${Pension.penOpt}"/>    
+  							<p>* 예약시 추가 요금이 붙는 옵션이 있습니다.</p>
   							<ul class="preferences-list">
-  								<li class="internet">High-speed Internet</li>
-  								<li class="conf-room">Conference room</li>
-  								<li class="play-place">Play Place</li>
-  								<li class="restourant">Restourant</li>
-  								<li class="bar">Bar</li>
-  								<li class="doorman">Doorman</li>
-  								<li class="kitchen">Kitchen</li>
-  								<li class="spa">Spa services</li>
-  								<li class="bike">Bike Rental</li>
-  								<li class="entertaiment">Entertaiment</li>
-  								<li class="hot-tub">Hot Tub</li>
-  								<li class="pool">Swimming Pool</li>
-  								<li class="parking">Free parking</li>
-  								<li class="gym">Gym</li>
-  								<li class="tv">TV</li>
-  								<li class="pets">Pets allowed</li>
-  								<li class="handicap">Handicap</li>
-  								<li class="secure">Secure </li>
+  								<li class="internet">와이파이</li>
+<!--   								<li class="conf-room">Conference room</li> -->
+								<c:if test="${fn:contains(penOpt,'족구장')}">
+  								<li class="play-place">족구장</li>
+  								</c:if>
+  								<c:if test="${fn:contains(penOpt,'레스토랑')}">
+  								<li class="restourant">식당</li>
+  								</c:if>
+  								<c:if test="${fn:contains(penOpt,'카페')}">
+  								<li class="bar">카페</li>
+  								</c:if>
+  								<c:if test="${fn:contains(penOpt,'갯벌체험')}">						
+  								<li class="doorman">갯벌 체험</li>
+  								</c:if>						
+ 
+  							<c:if test="${fn:contains(penOpt,'BBQ')}">
+  								<li class="kitchen">BBQ</li>
+  								</c:if>
+<!--   								<li class="spa">Spa services</li> -->
+<!--   								<li class="bike">Bike Rental</li> -->
+							<c:if test="${fn:contains(penOpt,'바다낚시')}">
+  								<li class="entertaiment">바다낚시</li>
+  								</c:if>
+<!--   								<li class="hot-tub">Hot Tub</li> -->
+							<c:if test="${fn:contains(penOpt,'수영장')}">
+  								<li class="pool">수영장</li>
+  								</c:if>
+  								<li class="parking">무료주차</li>
+<!--   								<li class="gym">Gym</li> -->
+<!--   								<li class="tv">TV</li> -->
+							<c:if test="${fn:contains(penOpt,'반려견동반')}">
+  								<li class="pets">반려견 동반</li>
+  								</c:if>
+<!--   								<li class="handicap">Handicap</li> -->
+  								<li class="secure">CCTV </li>
   							</ul>
   							<div class="clear"></div>
   							<div class="preferences-devider"></div>
-  							<h2>Alternative Style</h2>
-  							<p>Quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui voluptatem sequi nesciunt eque porro quisqua.</p>
-  							<ul class="preferences-list-alt">
-  								<li class="internet">High-speed Internet</li>
-  								<li class="parking">Free parking</li>
-  								<li class="gym">Gym</li>
-  								<li class="restourant">Restourant</li>
-  								<li class="pets">Pets allowed</li>
-  								<li class="pool">Swimming Pool</li>
-  								<li class="kitchen">Kitchen</li>
-  								<li class="conf-room">Conference room</li>
-  								<li class="bike">Bike Rental</li>
-  								<li class="entertaiment">Entertaiment</li>
-  								<li class="bar">Bar</li>
-  								<li class="secure">Secure</li>
-  							</ul>
+<!--   							<h2>Alternative Style</h2> -->
+<!--   							<p>Quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui voluptatem sequi nesciunt eque porro quisqua.</p> -->
+<!--   							<ul class="preferences-list-alt"> -->
+<!--   								<li class="internet">High-speed Internet</li> -->
+<!--   								<li class="parking">Free parking</li> -->
+<!--   								<li class="gym">Gym</li> -->
+<!--   								<li class="restourant">Restourant</li> -->
+<!--   								<li class="pets">Pets allowed</li> -->
+<!--   								<li class="pool">Swimming Pool</li> -->
+<!--   								<li class="kitchen">Kitchen</li> -->
+<!--   								<li class="conf-room">Conference room</li> -->
+<!--   								<li class="bike">Bike Rental</li> -->
+<!--   								<li class="entertaiment">Entertaiment</li> -->
+<!--   								<li class="bar">Bar</li> -->
+<!--   								<li class="secure">Secure</li> -->
+<!--   							</ul> -->
   							<div class="clear"></div>
   						</div>
   						<!-- \\ content-tabs-i \\ -->
@@ -1567,8 +1592,8 @@
 						<div class="reasons-r">
   						<div class="reasons-rb">
 							<div class="reasons-p">
-								<div class="reasons-i-lbl">Awesome design</div>
-								<p>Voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequunt.</p>
+								<div class="reasons-i-lbl">무인 숙박</div>
+								<p>저희 펜션은 무인으로 운영이 되기때문에 주인과 마주칠일이없습니다.</p>
 							</div>
   						</div>
   						<br class="clear" />
@@ -1731,6 +1756,10 @@
 .placeinfo .title {font-weight: bold; font-size:14px;border-radius: 6px 6px 0 0;margin: -1px -1px 0 -1px;padding:10px; color: #fff;background: #d95050;background: #d95050 url(http://t1.daumcdn.net/localimg/localimages/07/mapapidoc/arrow_white.png) no-repeat right 14px center;}
 .placeinfo .tel {color:#0f7833;}
 .placeinfo .jibun {color:#999;font-size:11px;margin-top:0;}
+
+.room{
+
+}
 
 
 </style>
