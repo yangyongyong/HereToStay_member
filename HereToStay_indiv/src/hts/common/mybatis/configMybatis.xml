@@ -11,5 +11,6 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
     <typeAliases>
       <typeAlias type="hts.model.vo.Member" alias="member" />
       <typeAlias type="hts.model.vo.Pension" alias="pension" />
+      <typeAlias type="hts.model.vo.Reservation" alias="reservation" />
   </typeAliases>
 </configuration>

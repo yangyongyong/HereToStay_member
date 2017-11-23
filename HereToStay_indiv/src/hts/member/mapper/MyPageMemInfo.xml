@@ -6,12 +6,19 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 <mapper namespace="myPageMemInfo">
 
 	<!-- 1. 회원 정보 가져오기 -->
-	<select id="getMember" parameterType="String" resultType="hts.model.vo.Member">
+	<select id="getMember" parameterType="String" resultType="member">
 		SELECT * FROM member WHERE mem_id = #{value}
 	</select>
 	
-	<!-- 2. 회원 별 예약 리스트 가져오기 -->
-	<select id="getReserList">
+	<!-- 2. 회원 정보 수정하기 -->
+	<update id="infoUpdate" parameterType="member">
+		UPDATE member
+		SET mem_id = #{memId}, mem_name = #{memName}, mem_pwd = #{memPwd}, mem_tel = #{memTel}, mem_mail = #{memMail}, mem_birth = #{memBirth}, mem_rpwd = #{memRpwd}, mem_mig = #{memMig}
+		WHERE mem_id = #{memId}
+	</update>
+	
+	<!-- 3. 회원 별 예약 리스트 가져오기 -->
+	<select id="getReserList" parameterType="String" resultType="reservation">
 		SELECT pen_name, pen_intro, res_indate, res_outdate, res_tot
 		FROM pension, RESERVATION, room
 		WHERE mem_id = #{value} AND pension.pen_id = room.pen_id AND room.rom_id = reservation.rom_id

@@ -15,15 +15,22 @@ public class MyPageMemInfoImpl implements MyPageMemInfoDao {
 	@Autowired
 	private SqlSessionTemplate ss;
 
+	// 회원 정보 가져오는 메소드
 	@Override
 	public Member getMember(String id) {
-		
 		return ss.selectOne("myPageMemInfo.getMember", id);
 	}
 
+	// 회원 정보수정 메소드
+	@Override
+	public void infoUpdate(Member member) {
+		ss.update("myPageMemInfo.infoUpdate", member);
+	}
+
+	// 회원 별 예약 리스트 가져오는 메소드
 	@Override
 	public List<Reservation> getReserList(String id) {
 		return ss.selectList("myPageMemInfo.getReserList", id);
 	}
-	
+
 }

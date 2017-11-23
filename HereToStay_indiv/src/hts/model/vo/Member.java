@@ -6,11 +6,17 @@ public class Member {
 	private String memPwd;
 	private String memTel;
 	private String memMail;
-	private String memBirth;
+	private int memBirth;
 	private String memRpwd;
 	private String memMig;
 	
 	
+	public int getMemBirth() {
+		return memBirth;
+	}
+	public void setMemBirth(int memBirth) {
+		this.memBirth = memBirth;
+	}
 	public String getMemId() {
 		return memId;
 	}
@@ -40,12 +46,6 @@ public class Member {
 	}
 	public void setMemMail(String memMail) {
 		this.memMail = memMail;
-	}
-	public String getMemBirth() {
-		return memBirth;
-	}
-	public void setMemBirth(String memBirth) {
-		this.memBirth = memBirth;
 	}
 	public String getMemRpwd() {
 		return memRpwd;

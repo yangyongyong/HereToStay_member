@@ -20,6 +20,8 @@
 <body class="inner-body">  
 <jsp:include page="/WEB-INF/view/include/header.jsp"/>
 
+<form id="memberInfo">
+
 <!-- main-cont -->
 <div class="main-cont"> 
 	
@@ -57,7 +59,8 @@
 									<div class="toggle-ia-r">
   										<div class="toggle-ia-rb">
 											<div class="toggle-lbl">나의 마일리지</div>
-											<div class="toggle-txt">650 P</div>
+											<div class="toggle-txt">${member.memMig}</div>
+											<input type="hidden" name="memMig" id="memMig" value="${member.memMig}" />
   										</div>
   										<div class="clear"></div>
 										</div>
@@ -81,7 +84,8 @@
 									<div class="toggle-ia-r">
   										<div class="toggle-ia-rb">
 											<div class="toggle-lbl">객실 비밀번호</div>
-											<div class="toggle-txt">2658</div>
+											<div class="toggle-txt">${member.memRpwd}</div>
+											<input type="hidden" name="memRpwd" id="memRpwd" value="${member.memRpwd}" />
   										</div>
   										<div class="clear"></div>
 										</div>
@@ -136,7 +140,7 @@
 											                      </div>
 											                      <div class="faq-item-b">
 											                        <div class="faq-item-p">
-											                        	<input type="text" class="input-a" value="Yang Yang " placeholder="ID 입력하세요" readonly="readonly" />
+											                        	<input type="text" id="memId" name="memId" class="input-a" value="${member.memId}" placeholder="ID를 입력하세요" readonly="readonly" />
 											                        </div>
 											                      </div>
 											                    </div>
@@ -150,7 +154,7 @@
 											                      </div>
 											                      <div class="faq-item-b">
 											                        <div class="faq-item-p">
-											                          	<input type="text" class="input-a" value="양은지" placeholder="ID 입력하세요" /> 
+											                          	<input type="text" id="memName" name="memName" class="input-a" value="${member.memName}" placeholder="이름을 입력하세요" /> 
 											                        </div>
 											                      </div>
 											                    </div>
@@ -164,7 +168,7 @@
 											                      </div>
 											                      <div class="faq-item-b">
 											                        <div class="faq-item-p">
-											                          <input type="text" class="input-a" value="010 - 5685 - 1541" placeholder="ID 입력하세요" />
+											                          <input type="text" id="memTel" name="memTel" class="input-a" value="${member.memTel}" placeholder="전화번호를 입력하세요" />
 											                        </div>
 											                      </div>
 											                    </div>
@@ -178,7 +182,7 @@
 											                      </div>
 											                      <div class="faq-item-b">
 											                        <div class="faq-item-p">
-											                          <input type="text" class="input-a" value="imsi@nate.com" placeholder="ID 입력하세요" />
+											                          <input type="text" id="memMail" name="memMail" class="input-a" value="${member.memMail}" placeholder="이메일을 입력하세요" />
 											                        </div>
 											                      </div>
 											                    </div>
@@ -192,7 +196,7 @@
 											                      </div>
 											                      <div class="faq-item-b">
 											                        <div class="faq-item-p">
-											                           <input type="text" class="input-a" value="1995.11.20" placeholder="ID 입력하세요" /> 
+											                           <input type="text" id="memBirth" name="nameBirth" class="input-a" value="${member.memBirth}" placeholder="생년월일을 입력하세요" /> 
 											                        </div>
 											                      </div>
 											                    </div>
@@ -200,8 +204,9 @@
 											                  
 											                  	<br/>
 																<div style="text-align: right;">
-																	<input class="input-a" type="text" placeholder="비밀번호" /> &nbsp;&nbsp;
-																	<input class="contacts-send" type="button" value="수정하기"/>
+																	<input type="hidden" value="${member.memPwd}" name="memPwd" id="memPwd" />
+																	<input class="input-a" type="password" id="pwdInput" value="" placeholder="비밀번호" /> &nbsp;&nbsp;
+																	<input class="contacts-send" id="infoUpdate" type="button" value="수정하기"/>
 																</div>
 											                  
 											                </div>
@@ -246,146 +251,8 @@
 														            </div>
 														            
 														            <div class="catalog-row list-rows">
+														            
 														              <!-- // -->
-														                <div class="cat-list-item fly-in">
-														                  <div class="cat-list-item-l">
-														                      <a href="#"><img alt="" src="/img/lit-i-01.jpg"></a>
-														                  </div>
-														                  <div class="cat-list-item-r">
-														                    <div class="cat-list-item-rb">
-														                      <div class="cat-list-item-p">
-														                        <div class="cat-list-content">
-														                          <div class="cat-list-content-a">
-														                            <div class="cat-list-content-l">
-														                              <div class="cat-list-content-lb">
-														                                <div class="cat-list-content-lpadding">
-														                                  <div class="offer-slider-link"><a href="#">은지네 펜션</a></div>
-														                                  <div class="offer-slider-location">pension</div>
-														                                  <p>아름답고 편리하고 기분좋고 편안하고 졸립고 깔끔하고 집가고싶고 그런 펜션 설명이 들어와야함
-														                                  	 나도 내가 무슨소리 하는지 모르겠지만 무튼 이거슨 펜션 설명글</p>
-														                                </div>
-														                              </div>
-														                              <br class="clear" />
-														                            </div>
-														                          </div>
-														                          <div class="cat-list-content-r">
-														                            <div class="cat-list-content-p">
-														                              <div class="offer-slider-r">
-											              									<span>start</span>
-											              									<span>2017/11/04</span>
-											              									<span>end</span>
-											              									<span>2017/11/08</span>
-														              				  </div>
-														                              <div class="offer-slider-r">
-											              									<span>총 금액</span>
-											              									<b>&#8361;100,000</b>
-														              				  </div>           
-														                              <a href="#" class="cat-list-btn">자세히보기</a>   
-														                            </div>
-														                          </div>
-														                          <div class="clear"></div>
-														                        </div>
-														                      </div>
-														                    </div>
-														                    <br class="clear" />
-														                  </div>
-														                  <div class="clear"></div>
-														                </div>
-														              <!-- \\ -->
-														              <!-- // -->
-														                <div class="cat-list-item fly-in">
-														                  <div class="cat-list-item-l">
-														                      <a href="#"><img alt="" src="/img/lit-i-01.jpg"></a>
-														                  </div>
-														                  <div class="cat-list-item-r">
-														                    <div class="cat-list-item-rb">
-														                      <div class="cat-list-item-p">
-														                        <div class="cat-list-content">
-														                          <div class="cat-list-content-a">
-														                            <div class="cat-list-content-l">
-														                              <div class="cat-list-content-lb">
-														                                <div class="cat-list-content-lpadding">
-														                                  <div class="offer-slider-link"><a href="#">은지네 펜션</a></div>
-														                                  <div class="offer-slider-location">pension</div>
-														                                  <p>아름답고 편리하고 기분좋고 편안하고 졸립고 깔끔하고 집가고싶고 그런 펜션 설명이 들어와야함
-														                                  	 나도 내가 무슨소리 하는지 모르겠지만 무튼 이거슨 펜션 설명글</p>
-														                                </div>
-														                              </div>
-														                              <br class="clear" />
-														                            </div>
-														                          </div>
-														                          <div class="cat-list-content-r">
-														                            <div class="cat-list-content-p">
-														                              <div class="offer-slider-r">
-											              									<span>start</span>
-											              									<span>2017/11/04</span>
-											              									<span>end</span>
-											              									<span>2017/11/08</span>
-														              				  </div>
-														                              <div class="offer-slider-r">
-											              									<span>총 금액</span>
-											              									<b>&#8361;100,000</b>
-														              				  </div>           
-														                              <a href="#" class="cat-list-btn">자세히보기</a>   
-														                            </div>
-														                          </div>
-														                          <div class="clear"></div>
-														                        </div>
-														                      </div>
-														                    </div>
-														                    <br class="clear" />
-														                  </div>
-														                  <div class="clear"></div>
-														                </div>
-														              <!-- // -->
-														                <!-- // -->
-														                <div class="cat-list-item fly-in">
-														                  <div class="cat-list-item-l">
-														                      <a href="#"><img alt="" src="/img/lit-i-01.jpg"></a>
-														                  </div>
-														                  <div class="cat-list-item-r">
-														                    <div class="cat-list-item-rb">
-														                      <div class="cat-list-item-p">
-														                        <div class="cat-list-content">
-														                          <div class="cat-list-content-a">
-														                            <div class="cat-list-content-l">
-														                              <div class="cat-list-content-lb">
-														                                <div class="cat-list-content-lpadding">
-														                                  <div class="offer-slider-link"><a href="#">은지네 펜션</a></div>
-														                                  <div class="offer-slider-location">pension</div>
-														                                  <p>아름답고 편리하고 기분좋고 편안하고 졸립고 깔끔하고 집가고싶고 그런 펜션 설명이 들어와야함
-														                                  	 나도 내가 무슨소리 하는지 모르겠지만 무튼 이거슨 펜션 설명글</p>
-														                                </div>
-														                              </div>
-														                              <br class="clear" />
-														                            </div>
-														                          </div>
-														                          <div class="cat-list-content-r">
-														                            <div class="cat-list-content-p">
-														                              <div class="offer-slider-r">
-											              									<span>start</span>
-											              									<span>2017/11/04</span>
-											              									<span>end</span>
-											              									<span>2017/11/08</span>
-														              				  </div>
-														                              <div class="offer-slider-r">
-											              									<span>총 금액</span>
-											              									<b>&#8361;100,000</b>
-														              				  </div>           
-														                              <a href="#" class="cat-list-btn">자세히보기</a>   
-														                            </div>
-														                          </div>
-														                          <div class="clear"></div>
-														                        </div>
-														                      </div>
-														                    </div>
-														                    <br class="clear" />
-														                  </div>
-														                  <div class="clear"></div>
-														                </div>
-														              <!-- \\ -->
-														              <!-- // -->
-														               <!-- // -->
 														                <div class="cat-list-item fly-in">
 														                  <div class="cat-list-item-l">
 														                      <a href="#"><img alt="" src="/img/lit-i-01.jpg"></a>
@@ -732,8 +599,7 @@
 			</div>
 		</div>
 	</div>
-	
-</div>
+</form>
 <!-- /main-cont -->
 
 <jsp:include page="/WEB-INF/view/include/footer.jsp"/>
@@ -749,6 +615,7 @@
   <script src="/build/mediaelement-and-player.min.js"></script> 
   <script type="text/javascript" src="/js/twitterfeed.js"></script>
   <script src="/js/script.js"></script>
+  <script type="text/javascript" src="/js/member/myPageJS.js"></script>
   <script>
   	$(document).ready(function(){
 		'use strict';
