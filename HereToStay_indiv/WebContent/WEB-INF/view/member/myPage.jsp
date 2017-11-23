@@ -335,16 +335,22 @@
 																					<div class="offer-slider-link"><a href="#">${item.resTitle}</a></div>
 																					<div class="offer-slider-l">
 																						<div class="offer-slider-location">${item.penName}</div>
+																						
 																						<nav class="stars">
 																							<ul>
-																								<li><a href="#"><img alt="" src="/img/star-b.png" /></a></li>
-																								<li><a href="#"><img alt="" src="/img/star-b.png" /></a></li>
-																								<li><a href="#"><img alt="" src="/img/star-b.png" /></a></li>
-																								<li><a href="#"><img alt="" src="/img/star-b.png" /></a></li>
-																								<li><a href="#"><img alt="" src="/img/star-a.png" /></a></li>
+																								<c:forEach var="star" begin="1" end="5" step="1" varStatus="status">
+																									<c:choose>
+																										<c:when test="${item.revStar gt (status.current-1)}">
+																											<li><a href="#"><img alt="" src="/img/star-b.png" /></a></li>
+																										</c:when>
+																										<c:otherwise>
+																											<li><a href="#"><img alt="" src="/img/star-a.png" /></a></li>
+																										</c:otherwise>
+																									</c:choose>
+																								</c:forEach>
 																							</ul>
-																							<div class="clear"></div>
 																						</nav>
+																						
 																					</div>							
 																					<div class="clear"></div>
 																				</div>
