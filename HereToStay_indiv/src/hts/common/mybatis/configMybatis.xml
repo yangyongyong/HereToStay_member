@@ -14,5 +14,6 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
       <typeAlias type="hts.model.vo.Room" alias="Room" />
       <typeAlias type="hts.model.vo.Reservation" alias="reservation" />
       <typeAlias type="hts.model.vo.Review" alias="review" />
+      <typeAlias type="hts.model.vo.QnA" alias="QnA" />
   </typeAliases>
 </configuration>

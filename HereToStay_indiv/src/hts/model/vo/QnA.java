@@ -1,15 +1,40 @@
 package hts.model.vo;
 
 public class QnA {
-
-	private String qnaId;
+	private String qnaPhoto;
 	private String qnaTitle;
-	private String qnaType;
 	private String qnaContext;
-	private String qnaStatus;
-	private String qnaReply;
 	private String qnaDate;
-	private String mgrId;
-	private String memId;
+	private String qnaStatus;
 	
+	public String getQnaPhoto() {
+		return qnaPhoto;
+	}
+	public void setQnaPhoto(String qnaPhoto) {
+		this.qnaPhoto = qnaPhoto;
+	}
+	public String getQnaTitle() {
+		return qnaTitle;
+	}
+	public void setQnaTitle(String qnaTitle) {
+		this.qnaTitle = qnaTitle;
+	}
+	public String getQnaContext() {
+		return qnaContext;
+	}
+	public void setQnaContext(String qnaContext) {
+		this.qnaContext = qnaContext;
+	}
+	public String getQnaDate() {
+		return qnaDate;
+	}
+	public void setQnaDate(String qnaDate) {
+		this.qnaDate = qnaDate;
+	}
+	public String getQnaStatus() {
+		return qnaStatus;
+	}
+	public void setQnaStatus(String qnaStatus) {
+		this.qnaStatus = qnaStatus;
+	}
 }

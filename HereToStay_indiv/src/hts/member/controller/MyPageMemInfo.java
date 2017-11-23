@@ -13,6 +13,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import hts.member.dao.MyPageMemInfoDao;
 import hts.model.vo.Member;
+import hts.model.vo.QnA;
 import hts.model.vo.Reservation;
 import hts.model.vo.Review;
 
@@ -30,12 +31,14 @@ public class MyPageMemInfo {
 		Member member = myPage.getMember(id);
 		List<Reservation> reserList = myPage.getReserList(id);
 		List<Review> reviewList = myPage.getReviewList(id);
+		List<QnA> QnAList = myPage.getQnAList(id);
 		
 		ModelAndView model = new ModelAndView();
 		model.setViewName("member/myPage");
 		model.addObject("member", member);
 		model.addObject("reserList", reserList);
 		model.addObject("reviewList", reviewList);
+		model.addObject("QnAList", QnAList);
 		
 		return model;
 	}

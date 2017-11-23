@@ -19,6 +19,28 @@
   <link href='http://fonts.googleapis.com/css?family=Raleway:300,400,500,700' rel='stylesheet' type='text/css'>  
   <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700&amp;subset=latin,cyrillic' rel='stylesheet' type='text/css'>
   <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&amp;subset=latin,cyrillic' rel='stylesheet' type='text/css'>	
+  
+  <style type="text/css">
+  	.solutions-over-c b {
+	    font-family: 'Montserrat';
+	    font-weight: normal;
+	    letter-spacing: -0.03em;
+	    display: block;
+	    font-size: 20px;
+	    margin-bottom: 6px;
+	    color: #ff7200;
+	    line-height: 15px;
+	}
+	
+	.solutions-over-c span {
+	    font-family: 'Raleway';
+	    font-size: 9px;
+	    font-weight: 600;
+	    text-transform: uppercase;
+	    color: #FFFFFF;
+	}
+  </style>
+  
 </head>  
 <body class="inner-body">  
 <jsp:include page="/WEB-INF/view/include/header.jsp"/>
@@ -335,7 +357,6 @@
 																					<div class="offer-slider-link"><a href="#">${item.resTitle}</a></div>
 																					<div class="offer-slider-l">
 																						<div class="offer-slider-location">${item.penName}</div>
-																						
 																						<nav class="stars">
 																							<ul>
 																								<c:forEach var="star" begin="1" end="5" step="1" varStatus="status">
@@ -349,9 +370,21 @@
 																									</c:choose>
 																								</c:forEach>
 																							</ul>
+																							<div class="clear"></div>
 																						</nav>
-																						
-																					</div>							
+																					</div>
+																					<div class="offer-slider-r">
+																						<c:choose>
+																							<c:when test="${item.revStatus eq 'N'}">
+																								<b>답변대기</b>
+																							</c:when>
+																							<c:otherwise>
+																								<b>답변완료</b>
+																							</c:otherwise>
+																						</c:choose>
+																						<span>답변/미답변</span>
+																					</div>
+																					<div class="offer-slider-devider"></div>
 																					<div class="clear"></div>
 																				</div>
 																			</div>
@@ -377,82 +410,101 @@
 													
 													<div class="tabs-content-i" style="margin-left: 70px;">
 														<p>
-															<h2>나의 문의사항</h2>					
-											                <p class="small">나의 문의사항 리스트를 보여줍니다.</p> <br/>
-											                
-															<div class="solutions">
-																<div class="content-wrapper">	
-																<div class="solutions-row fly-in">
-																	<!-- // -->
-																		<div class="solutions-i">
-																			<div class="solution-icon-a"></div>
-																			<div class="solutions-over">
-																				<div class="solutions-over-a">
-																					<div class="solutions-over-b">
-																						<div class="solutions-over-c">
-																							<i class="solution-icon"></i>
-																							<div class="solution-lbl">Plan your trip</div>
-																						</div>
-																						<div class="solutions-over-d">
-																							<i class="solution-icon"></i>
-																							<div class="solution-txt">Voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos quioluptatem sequ.</div>										
-																						</div>
-																					</div>
-																				</div>
-																			</div>					
-																			<div class="solutions-img">
-																				<img alt="" src="/img/solution-01.jpg">
-																			</div>
-																		</div>
-																	<!-- \\ -->
-																	<!-- // -->
-																		<div class="solutions-i">
-																			<div class="solution-icon-a"></div>
-																			<div class="solutions-over">
-																				<div class="solutions-over-a">
-																					<div class="solutions-over-b">
-																						<div class="solutions-over-c">
-																							<i class="solution-icon"></i>
-																							<div class="solution-lbl">Online booking</div>
-																						</div>
-																						<div class="solutions-over-d">
-																							<i class="solution-icon"></i>
-																							<div class="solution-txt">Voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos quioluptatem sequ.</div>										
+															<h2> 나의 문의사항 </h2>					
+											                <p class="small"> 내가 문의한 내용을 확인해보세여! </p> <br/>
+													          <div class="padding">
+
+										 <c:forEach var="QnA" items="${QnAList}" varStatus="status">
+													            <c:choose>
+																	<c:when test="${(status.count)%3 eq 1}">
+																		<div class="services fly-in">
+																			<div class="solutions-row fly-in">
+																				<!-- // -->
+																					<div class="solutions-i">
+																						<div class="solution-icon-a"></div>
+																						<div class="solutions-over">
+																							<div class="solutions-over-a">
+																								<div class="solutions-over-b">
+																									<div class="solutions-over-c">
+																										<i class="solution-icon"></i>
+																										<div class="solution-lbl">${QnA.qnaTitle}</div>
+																										<br/><br/>
+																										<c:choose>
+																											<c:when test="${QnA.qnaStatus eq 'N'}">
+																												<b>답변대기</b>
+																											</c:when>
+																											<c:otherwise>
+																												<b>답변완료</b>
+																											</c:otherwise>
+																										</c:choose>
+																										<span>${QnA.qnaDate}</span>
+																									</div>
+																									<div class="solutions-over-d">
+																										<i class="solution-icon"></i>
+																										<div class="solution-txt">${QnA.qnaContext}</div>
+																									</div>
+																								</div>
+																							</div>
+																						</div>					
+																						<div class="solutions-img">
+																							<img alt="" src="/img/solution-01.jpg">
 																						</div>
 																					</div>
-																				</div>
-																			</div>					
-																			<div class="solutions-img">
-																				<img alt="" src="/img/solution-02.jpg">
-																			</div>
-																		</div>
-																	<!-- \\ -->
-																	<!-- // -->
-																		<div class="solutions-i">
-																			<div class="solution-icon-a"></div>
-																			<div class="solutions-over">
-																				<div class="solutions-over-a">
-																					<div class="solutions-over-b">
-																						<div class="solutions-over-c">
-																							<i class="solution-icon"></i>
-																							<div class="solution-lbl">visit the best countries</div>
-																						</div>
-																						<div class="solutions-over-d">
-																							<i class="solution-icon"></i>
-																							<div class="solution-txt">Voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos quioluptatem sequ.</div>										
+																				<!-- \\ -->
+																	</c:when>
+																	<c:otherwise>
+																		<!-- // -->
+																			<div class="solutions-i">
+																				<div class="solution-icon-a"></div>
+																				<div class="solutions-over">
+																					<div class="solutions-over-a">
+																						<div class="solutions-over-b">
+																							<div class="solutions-over-c">
+																								<i class="solution-icon"></i>
+																								<div class="solution-lbl">${QnA.qnaTitle}</div>
+																								<br/><br/>
+																								<c:choose>
+																									<c:when test="${QnA.qnaStatus eq 'N'}">
+																										<b>답변대기</b>
+																									</c:when>
+																									<c:otherwise>
+																										<b>답변완료</b>
+																									</c:otherwise>
+																								</c:choose>
+																								<span>${QnA.qnaDate}</span>
+																							</div>
+																							<div class="solutions-over-d">
+																								<i class="solution-icon"></i>
+																								<div class="solution-txt">${QnA.qnaContext}</div>
+																							</div>
 																						</div>
 																					</div>
+																				</div>					
+																				<div class="solutions-img">
+																					<img alt="" src="/img/solution-01.jpg">
 																				</div>
-																			</div>					
-																			<div class="solutions-img">
-																				<img alt="" src="/img/solution-03.jpg">
 																			</div>
-																		</div>
-																	<!-- \\ -->
-																</div>
-																<div class="clear"></div>
-																</div>
-															</div>	
+																		<!-- \\ -->
+																	</c:otherwise>
+																</c:choose>
+													            
+													            <c:if test="${(status.count)%3 eq 0}">
+														            	</div>
+																		<div class="clear"></div>
+																	</div>
+													            </c:if>
+												</c:forEach>
+													            
+													            <div class="clear"></div>
+													            
+													            <div class="pagination">
+													              <a class="active" href="#">1</a>
+													              <a href="#">2</a>
+													              <a href="#">3</a>
+													              <div class="clear"></div>
+													            </div>            
+													          </div>
+													        <br class="clear" />
 															
 														</p>
 													</div>

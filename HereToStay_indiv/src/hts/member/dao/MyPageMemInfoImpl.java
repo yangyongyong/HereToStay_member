@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import hts.model.vo.Member;
+import hts.model.vo.QnA;
 import hts.model.vo.Reservation;
 import hts.model.vo.Review;
 
@@ -41,5 +42,10 @@ public class MyPageMemInfoImpl implements MyPageMemInfoDao {
 		return ss.selectList("myPageMemInfo.getReviewList", id);
 	}
 
+	// 회원 별 리뷰 리스트 가져오는 메소드
+	@Override
+	public List<QnA> getQnAList(String id) {
+		return ss.selectList("myPageMemInfo.getQnAList", id);
+	}
 	
 }
