@@ -6,6 +6,7 @@ public class QnA {
 	private String qnaContext;
 	private String qnaDate;
 	private String qnaStatus;
+	private String qnaId;
 	
 	public String getQnaPhoto() {
 		return qnaPhoto;
@@ -36,5 +37,11 @@ public class QnA {
 	}
 	public void setQnaStatus(String qnaStatus) {
 		this.qnaStatus = qnaStatus;
+	}
+	public String getQnaId() {
+		return qnaId;
+	}
+	public void setQnaId(String qnaId) {
+		this.qnaId = qnaId;
 	}
 }

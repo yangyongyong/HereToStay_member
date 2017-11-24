@@ -15,14 +15,32 @@
   <link href='http://fonts.googleapis.com/css?family=Raleway:300,400,500,700' rel='stylesheet' type='text/css'>  
   <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700&amp;subset=latin,cyrillic' rel='stylesheet' type='text/css'>
   <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&amp;subset=latin,cyrillic' rel='stylesheet' type='text/css'>
-	<script src="/js/jquery-1.11.3.min.js"></script>
-	<script src="/js/jquery.form.js"></script>
+  
+  <style type="text/css">
+  	.inner-page {
+  		margin-top: -93px;
+  	}
+  </style>
+  
+  <script src="/js/jquery-1.11.3.min.js"></script>
+  <script src="/js/jquery.form.js"></script>
 </head>  
 <body>  
 <jsp:include page="/WEB-INF/view/include/header.jsp"/>
 
 <!-- main-cont -->
 <div class="main-cont">
+	<div class="inner-page">
+		<div class="inner-breadcrumbs">
+			<div class="content-wrapper">
+				<div class="page-title">QnA</div>
+				<div class="breadcrumbs">
+        			<a href="#">Home</a> / <span>QnA</span>
+      			</div>
+      			<div class="clear"></div>
+      		</div>		
+		</div>
+	</div>
  	
  	<div class="contacts-page-holder">
  	<div class="contacts-page">
@@ -32,44 +50,36 @@
 		
 		<div class="contacts-colls">
 			<div class="contacts-colls-l">
-				<div class="contact-colls-lbl">OUR OFFICE</div>
+				<div class="contact-colls-lbl">직접 문의하시길 원하나요?</div>
 				<div class="contacts-colls-txt">
-					<p>Address: 58911 Lepzig Hore, 85000 Vienna, Austria </p>
-					<p>Telephones: +1 777 55-32-21</p>
-					<p>E-mail: contacts@miracle.com</p>
-					<p>Skype: sparrow</p>
+					<p>Address : 가산디지털 1로 149, 가산동 371-59 </p>
+					<p>Telephones : +82 2-156-1577</p>
+					<p>E-mail : HereToStay@gmail.com</p>
+					<p>Kakao : HTS</p>
 					<div class="side-social">
-        				<a class="side-social-twitter" href="#"></a>
-        				<a class="side-social-facebook" href="#"></a>
-        				<a class="side-social-vimeo" href="#"></a>
-        				<a class="side-social-pinterest" href="#"></a>
-        				<a class="side-social-instagram" href="#"></a> 
+        				<a class="side-social-twitter"></a>
+        				<a class="side-social-facebook"></a>
+        				<a class="side-social-vimeo"></a>
+        				<a class="side-social-pinterest"></a>
+        				<a class="side-social-instagram"></a> 
       				</div>
 				</div>
 			</div>
 			<div class="contacts-colls-r">
   				<div class="contacts-colls-rb">
-					<div class="contact-colls-lbl">Contact Us</div>
+					<div class="contact-colls-lbl">Q & A</div>
 					<div class="booking-form">
 						<form id="contact_form" action="php/contact_form.php">
 							<div class="booking-form-i">
-								<label>First Name:</label>
+								<label>QnA Title:</label>
 								<div class="input"><input type="text" name="FirstName" value="" /></div>
 							</div>
 							<div class="booking-form-i">
-								<label>Last Name:</label>
+								<label>QnA Type:</label>
 								<div class="input"><input type="text" name="lastName" value="" /></div>
 							</div>
-							<div class="booking-form-i">
-								<label>Email Adress:</label>
-								<div class="input"><input type="text" name="Email" value="" /></div>
-							</div>
-							<div class="booking-form-i">
-								<label>Website:</label>
-								<div class="input"><input type="text" name="Website" value="" /></div>
-							</div>
 							<div class="booking-form-i textarea">
-								<label>Message:</label>
+								<label>QnA Context:</label>
 								<div class="textarea-wrapper">
 									<textarea name="Message"></textarea>
 								</div>

@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@page import="java.util.*"%>
+<%@page import="hts.model.vo.*"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -27,7 +30,7 @@
 	<div class="inner-page">
 		<div class="inner-breadcrumbs">
 			<div class="content-wrapper">
-				<div class="page-title">문의사항 상세보기</div>
+				<div class="page-title">문의사항</div>
 				<div class="breadcrumbs">
         			<a href="#">Home</a> /  <span>문의사항</span>
       			</div>
@@ -53,18 +56,24 @@
 								<div class="blog-post-i">
 									<div class="blog-post-l">
 										<div class="blog-post-date">
-											<span>2017년, 5월</span>
-											<b>05일</b>
+											<span>${qnaDetail.qnaDate}</span>
+											<b>${qnaDetail.memId} 님</b>
 										</div>
 										<div class="blog-post-info">
-											<div>질문 카테고리1</div>
-											<div>질문 카테고리2</div>
+											<c:choose>
+												<c:when test="${qnaDetail.qnaStatus eq 'N'}">
+													<div>답변대기</div>
+												</c:when>
+												<c:otherwise>
+													<div>답변완료</div>
+												</c:otherwise>
+											</c:choose>
 										</div>
 									</div>
 									<div class="blog-post-c">
   										<div class="blog-post-cb">
     										<div class="blog-post-p">
-												<div class="blog-post-title"><a>환불에 관하여</a></div>
+												<div class="blog-post-title"><a>${qnaDetail.qnaTitle}</a></div>
     											<div class="blog-post-preview">
     												<div class="blog-post-img">
     													<a><img alt="" src="/img/blogpost-01.jpg"></a>
@@ -72,48 +81,34 @@
     											</div>
     											<div class="blog-post-txt">
     												<div class="text-quote">
-    													<div class="text-quote-a">문의 유형(환불요청)</div>
+    													<div class="text-quote-a">${qnaDetail.qnaType}</div>
     												</div>
-    												<p>Doloremque laudantium, totam rem. Aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta. sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur.</p>
+    												<p>${qnaDetail.qnaContext}</p>
     												<br/><br/><br/><br/>
     											</div>
-    											<div class="blog-comments-lbl">2 개의 답변</div>
-    											<div class="blog-comments">
-    												<!-- // -->
-    												<div class="blog-comment-i">
-														<div class="guest-reviews-a">
-															<div class="guest-reviews-l">
-																<img alt="" src="/img/comment-01.png">
+    											
+    											<c:if test="${qnaDetail.qnaStatus eq 'Y'}">
+    												<div class="blog-comments-lbl">${qnaDetail.mgrName}의 답변</div>
+	    											<div class="blog-comments">
+	    												<!-- // -->
+	    												<div class="blog-comment-i">
+															<div class="guest-reviews-a">
+																<div class="guest-reviews-l">
+																	<img alt="" src="/img/comment-01.png">
+																</div>
+																<div class="guest-reviews-r">
+	  															<div class="guest-reviews-rb">
+	  																<div class="blog-comment-lbl">${qnaDetail.mgrId}</div>
+	  																<div class="blog-comment-txt">${qnaDetail.qnaReply}</div>
+	  															</div>
+	  															<br class="clear">
+																</div>
 															</div>
-															<div class="guest-reviews-r">
-  															<div class="guest-reviews-rb">
-  																<div class="blog-comment-lbl">신승용</div>
-  																<div class="blog-comment-txt">떡볶이를 먹고싶다면 환불을 해드리져</div>
-  															</div>
-  															<br class="clear">
-															</div>
-														</div>
-														<div class="clear"></div>
-    												</div>
-    												<!-- \\ -->
-    												<!-- // -->
-    												<div class="blog-comment-i">
-														<div class="guest-reviews-a">
-															<div class="guest-reviews-l">
-																<img alt="" src="/img/comment-02.png">
-															</div>
-															<div class="guest-reviews-r">
-  															<div class="guest-reviews-rb">
-  																<div class="blog-comment-lbl">김소원</div>
-  																<div class="blog-comment-txt">환불은 안돼요</div>
-  															</div>
-  															<br class="clear">
-															</div>
-														</div>
-														<div class="clear"></div>
-    												</div>
-    												<!-- \\ -->
-    											</div>
+															<div class="clear"></div>
+	    												</div>
+	    												<!-- \\ -->
+	    											</div>
+    											</c:if>
     											
     										</div>
   										</div>
@@ -141,7 +136,7 @@
 				<div class="h-help-email">HereToStay@gmail.com</div>
 			</div>
 			<div class="h-reasons">
-				<div class="h-liked-lbl">Reasons to Book with us</div>
+				<div class="h-liked-lbl">많은 서비스를 제공받으세요!</div>
 				<div class="h-reasons-row">
 				<!-- // -->
 					<div class="reasons-i">
@@ -152,8 +147,8 @@
 						<div class="reasons-r">
   						<div class="reasons-rb">
 							<div class="reasons-p">
-								<div class="reasons-i-lbl">Awesome design</div>
-								<p>Voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequunt.</p>
+								<div class="reasons-i-lbl">마일리지 제공</div>
+								<p>마일리지를 제공받으세요</p>
 							</div>
   						</div>
   						<br class="clear">
@@ -171,8 +166,8 @@
 						<div class="reasons-r">
   						<div class="reasons-rb">
 							<div class="reasons-p">
-								<div class="reasons-i-lbl">carefylly handcrafted</div>
-								<p>Voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequunt.</p>
+								<div class="reasons-i-lbl">편리한 펜션 검색기능 제공</div>
+								<p>손쉬운 펜션 검색을 해보세요</p>
 							</div>
   						</div>
   						<br class="clear">
@@ -190,8 +185,8 @@
 						<div class="reasons-r">
   						<div class="reasons-rb">
 							<div class="reasons-p">
-								<div class="reasons-i-lbl">sustomer support</div>
-								<p>Voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequunt.</p>
+								<div class="reasons-i-lbl">전국적인 펜션 제공</div>
+								<p>여러장소의 펜션을 제공합니다</p>
 							</div>
   						</div>
   						<br class="clear">

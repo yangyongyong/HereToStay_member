@@ -16,5 +16,6 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
       <typeAlias type="hts.model.vo.Review" alias="review" />
       <typeAlias type="hts.model.vo.QnA" alias="QnA" />
       <typeAlias type="hts.model.vo.ReservationDetail" alias="reservationDetail" />
+      <typeAlias type="hts.model.vo.MyQnADetail" alias="myQnADetail" />
   </typeAliases>
 </configuration>

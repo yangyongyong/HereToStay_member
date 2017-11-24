@@ -31,7 +31,6 @@
 	    color: #ff7200;
 	    line-height: 15px;
 	}
-	
 	.solutions-over-c span {
 	    font-family: 'Raleway';
 	    font-size: 9px;
@@ -39,6 +38,11 @@
 	    text-transform: uppercase;
 	    color: #FFFFFF;
 	}
+	.solution-txt a {
+		color: #FFFFFF;
+		text-decoration: none;
+	}
+	
   </style>
   
 </head>  
@@ -434,13 +438,13 @@
 																									</div>
 																									<div class="solutions-over-d">
 																										<i class="solution-icon"></i>
-																										<div class="solution-txt">${QnA.qnaContext}</div>
+																										<div class="solution-txt"><a href="/member/getQnA.do?qnaId=${QnA.qnaId}">${QnA.qnaContext}</a></div>
 																									</div>
 																								</div>
 																							</div>
 																						</div>					
 																						<div class="solutions-img">
-																							<img alt="" src="/img/solution-01.jpg">
+																							<img src="/img/solution-01.jpg">
 																						</div>
 																					</div>
 																				<!-- \\ -->
@@ -468,13 +472,13 @@
 																							</div>
 																							<div class="solutions-over-d">
 																								<i class="solution-icon"></i>
-																								<div class="solution-txt">${QnA.qnaContext}</div>
+																								<div class="solution-txt"><a href="/member/getQnA.do?qnaId=${QnA.qnaId}">${QnA.qnaContext}</a></div>
 																							</div>
 																						</div>
 																					</div>
 																				</div>					
 																				<div class="solutions-img">
-																					<img alt="" src="/img/solution-01.jpg">
+																					<img src="/img/solution-01.jpg">
 																				</div>
 																			</div>
 																		<!-- \\ -->
