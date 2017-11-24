@@ -46,11 +46,7 @@ public class PensionPageSearch {
 		List<Pension> pl=new ArrayList<Pension>();		
 		SearchOpt searchOpt =saveSession(request);
 		
-//		if(searchOpt.getPenOpt()==null)
-//		{
-//			String op[]= {"all"};
-//			searchOpt.setPenOpt(op);
-//		}// 선택된 값이 없을시 모두검색
+
 		
 		if(searchOpt.getSearchName()==null)
 		{
