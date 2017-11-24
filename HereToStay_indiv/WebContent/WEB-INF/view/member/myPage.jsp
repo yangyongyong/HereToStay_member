@@ -55,7 +55,7 @@
 			<div class="content-wrapper">
 				<div class="page-title">마이페이지</div>
 				<div class="breadcrumbs">
-        			<a href="#">Home</a> / <span>나의 정보</span>
+        			<a href="#">Home</a> / <span>마이페이지</span>
       			</div>
       			<div class="clear"></div>
       		</div>		
@@ -152,7 +152,7 @@
 													<div class="tabs-content-i" style="margin-left: 70px;">
 														<p>
 															<h2> 나의 정보보기 </h2>					
-											                <p class="small"> 나의 정보를 확인해보세여! </p> <br/>
+											                <p class="small"> 내 정보를 확인하고 수정할 수 있습니다. </p> <br/>
 											                <div class="todo-devider"></div>
 											                <div class="faq-row">
 											                  <!-- // -->
@@ -242,8 +242,8 @@
 													
 													<div class="tabs-content-i"  style="margin-left: 70px;">
 														<p>
-															<h2>나의 예약리스트</h2>					
-											                <p class="small">나의 예약 현황을 보여줍니다.</p> <br/>
+															<h2>예약 리스트</h2>					
+											                <p class="small">내 예약 현황을 보여줍니다.</p> <br/>
 																<div class="padding">
 														            <div class="catalog-head large fly-in">
 														              <label>Sorting results by:</label>
@@ -275,7 +275,7 @@
 														              <!-- // -->
 														                <div class="cat-list-item fly-in">
 														                  <div class="cat-list-item-l">
-														                      <a href="#"><img alt="" src="/img/lit-i-01.jpg"></a>
+														                      <a href="/member/getReserve.do?resId=${item.resId}"><img src="/img/lit-i-01.jpg"></a>
 														                  </div>
 														                  <div class="cat-list-item-r">
 														                    <div class="cat-list-item-rb">
@@ -285,7 +285,7 @@
 														                            <div class="cat-list-content-l">
 														                              <div class="cat-list-content-lb">
 														                                <div class="cat-list-content-lpadding">
-														                                  <div class="offer-slider-link"><a href="#">${item.penName}</a></div>
+														                                  <div class="offer-slider-link"><a href="/member/getReserve.do?resId=${item.resId}">${item.penName}</a></div>
 														                                  <div class="offer-slider-location">pension</div>
 														                                  <p>${item.penIntro}</p>
 														                                </div>
@@ -305,7 +305,7 @@
 											              									<span>총 금액</span>
 											              									<b>&#8361;${item.restot}</b>
 														              				  </div>           
-														                              <a href="#" class="cat-list-btn">자세히보기</a>   
+														                              <a href="/member/getReserve.do?resId=${item.resId}" class="cat-list-btn">자세히보기</a>   
 														                            </div>
 														                          </div>
 														                          <div class="clear"></div>
@@ -338,7 +338,7 @@
 													<div class="tabs-content-i"  style="margin-left: 70px;">
 														<p>
 															<h2> 리뷰 리스트 </h2>					
-											                <p class="small"> 나의 리뷰를 확인해보세여! </p> <br/>
+											                <p class="small"> 내가 작성한 리뷰를 보여줍니다. </p> <br/>
 													          <div class="padding">
 													            
 													            <div class="catalog-row"> 
@@ -347,14 +347,14 @@
 													            <c:forEach var="item" items="${reviewList}" varStatus="status"> 
 													            <!-- // catalog-i // -->
 													            <div class="offer-slider-i catalog-i fly-in">
-																				<a href="#" class="offer-slider-img">
-																					<img alt="" src="/img/catalog-01.jpg">
+																				<a href="/member/pensionDetail.do?id=${item.penId}" class="offer-slider-img">
+																					<img src="/img/catalog-01.jpg">
 																					<span class="offer-slider-overlay">
 																						<span class="offer-slider-btn">view details</span>
 																					<span>
 																				</span></span></a>
 																				<div class="offer-slider-txt">
-																					<div class="offer-slider-link"><a href="#">${item.resTitle}</a></div>
+																					<div class="offer-slider-link"><a href="/member/pensionDetail.do?id=${item.penId}">${item.revTitle}</a></div>
 																					<div class="offer-slider-l">
 																						<div class="offer-slider-location">${item.penName}</div>
 																						<nav class="stars">
@@ -362,10 +362,10 @@
 																								<c:forEach var="star" begin="1" end="5" step="1" varStatus="status">
 																									<c:choose>
 																										<c:when test="${item.revStar gt (status.current-1)}">
-																											<li><a href="#"><img alt="" src="/img/star-b.png" /></a></li>
+																											<li><img alt="" src="/img/star-b.png" /></li>
 																										</c:when>
 																										<c:otherwise>
-																											<li><a href="#"><img alt="" src="/img/star-a.png" /></a></li>
+																											<li><img alt="" src="/img/star-a.png" /></li>
 																										</c:otherwise>
 																									</c:choose>
 																								</c:forEach>
@@ -374,15 +374,8 @@
 																						</nav>
 																					</div>
 																					<div class="offer-slider-r">
-																						<c:choose>
-																							<c:when test="${item.revStatus eq 'N'}">
-																								<b>답변대기</b>
-																							</c:when>
-																							<c:otherwise>
-																								<b>답변완료</b>
-																							</c:otherwise>
-																						</c:choose>
-																						<span>답변/미답변</span>
+																						<b>${item.romName}</b>
+																						<span>객실 이름</span>
 																					</div>
 																					<div class="offer-slider-devider"></div>
 																					<div class="clear"></div>
@@ -410,8 +403,8 @@
 													
 													<div class="tabs-content-i" style="margin-left: 70px;">
 														<p>
-															<h2> 나의 문의사항 </h2>					
-											                <p class="small"> 내가 문의한 내용을 확인해보세여! </p> <br/>
+															<h2> 내 문의사항 </h2>					
+											                <p class="small"> 내가 한 문의들을 보여줍니다. </p> <br/>
 													          <div class="padding">
 
 										 <c:forEach var="QnA" items="${QnAList}" varStatus="status">

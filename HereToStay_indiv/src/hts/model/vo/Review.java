@@ -5,7 +5,8 @@ public class Review {
 	private String revTitle;
 	private String penName;
 	private int revStar;
-	private String revStatus;
+	private String romName;
+	private String penId;
 	
 	
 	public String getRevPhoto() {
@@ -14,10 +15,10 @@ public class Review {
 	public void setRevPhoto(String revPhoto) {
 		this.revPhoto = revPhoto;
 	}
-	public String getResTitle() {
+	public String getRevTitle() {
 		return revTitle;
 	}
-	public void setResTitle(String revTitle) {
+	public void setRevTitle(String revTitle) {
 		this.revTitle = revTitle;
 	}
 	public String getPenName() {
@@ -32,10 +33,16 @@ public class Review {
 	public void setRevStar(int revStar) {
 		this.revStar = revStar;
 	}
-	public String getRevStatus() {
-		return revStatus;
+	public String getRomName() {
+		return romName;
 	}
-	public void setRevStatus(String revStatus) {
-		this.revStatus = revStatus;
+	public void setRomName(String romName) {
+		this.romName = romName;
+	}
+	public String getPenId() {
+		return penId;
+	}
+	public void setPenId(String penId) {
+		this.penId = penId;
 	}
 }

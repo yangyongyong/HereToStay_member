@@ -7,18 +7,19 @@ public class Reservation {
 	private String resOutdate;
 	private String restot;
 	private String resPhoto;
+	private String resId;
 	
 	
-	public String getpenName() {
+	public String getPenName() {
 		return penName;
 	}
-	public void setpenName(String penName) {
+	public void setPenName(String penName) {
 		this.penName = penName;
 	}
-	public String getpenIntro() {
+	public String getPenIntro() {
 		return penIntro;
 	}
-	public void setpenIntro(String penIntro) {
+	public void setPenIntro(String penIntro) {
 		this.penIntro = penIntro;
 	}
 	public String getResIndate() {
@@ -39,10 +40,16 @@ public class Reservation {
 	public void setRestot(String restot) {
 		this.restot = restot;
 	}
-	public String getresPhoto() {
+	public String getResPhoto() {
 		return resPhoto;
 	}
-	public void setresPhoto(String resPhoto) {
+	public void setResPhoto(String resPhoto) {
 		this.resPhoto = resPhoto;
+	}
+	public String getResId() {
+		return resId;
+	}
+	public void setResId(String resId) {
+		this.resId = resId;
 	}
 }

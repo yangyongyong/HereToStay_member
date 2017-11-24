@@ -19,16 +19,16 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	
 	<!-- 3. 회원 별 예약 리스트 가져오기 -->
 	<select id="getReserList" parameterType="String" resultType="reservation">
-		SELECT pen_name, pen_intro, TO_CHAR(res_indate, 'YYYY-MM-DD') as res_indate,
-			   TO_CHAR(res_outdate, 'YYYY-MM-DD') as res_outdate, TO_CHAR(res_tot,'999,999,999') as res_tot
-		FROM pension, RESERVATION, room
-		WHERE mem_id = #{value} AND pension.pen_id = room.pen_id AND room.rom_id = reservation.rom_id
+		SELECT pen.pen_name as pen_name, pen.pen_intro as pen_intro, TO_CHAR(rs.res_indate, 'YYYY-MM-DD') as res_indate,
+               rs.res_id as res_id, TO_CHAR(rs.res_outdate, 'YYYY-MM-DD') as res_outdate, TO_CHAR(rs.res_tot,'999,999,999') as res_tot
+		FROM pension pen, reservation rs, room rm
+		WHERE mem_id = #{value} AND pen.pen_id = rm.pen_id AND rm.rom_id = rs.rom_id
 	</select>
 	
 	<!-- 4. 회원 별 리뷰 리스트 가져오기 -->
 	<select id="getReviewList" parameterType="String" resultType="review">
-		SELECT rev_title, pen_name, rev_star, rev_status
-		FROM review rv, reservation rs, room rm, pension pen
+		SELECT rev_title, pen_name, rev_star, rom_name, pen.pen_id as pen_id
+		FROM review rv, pension pen, room rm, reservation rs
 		WHERE pen.pen_id = rm.pen_id AND rs.rom_id = rm.rom_id AND rv.res_id = rs.res_id AND rs.mem_id = #{value}
 	</select>
 	

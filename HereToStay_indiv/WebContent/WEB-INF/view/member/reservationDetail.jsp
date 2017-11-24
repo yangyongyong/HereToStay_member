@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@page import="java.util.*"%>
+<%@page import="hts.model.vo.*"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -42,8 +45,8 @@
 							
 							<div class="comlete-alert">
 								<div class="comlete-alert-a">
-									<b>은지네 펜션</b>
-									<span>펜션의 간단한 설명글이 들어갈 자리입니다.</span>
+									<b>${reservationDetail.penName}</b>
+									<span>${reservationDetail.penAddr2}</span>
 								</div>
 							</div>
 							
@@ -52,32 +55,32 @@
 								<div class="complete-info-table">
 									<div class="complete-info-i">
 										<div class="complete-info-l">객실 정보</div>
-										<div class="complete-info-r">해바라기 룸</div>
+										<div class="complete-info-r">${reservationDetail.romName}</div>
 										<div class="clear"></div>
 									</div>
 									<div class="complete-info-i">
 										<div class="complete-info-l">체크 인</div>
-										<div class="complete-info-r">2017/11/04</div>
+										<div class="complete-info-r">${reservationDetail.resIndate}</div>
 										<div class="clear"></div>
 									</div>
 									<div class="complete-info-i">
 										<div class="complete-info-l">체크 아웃</div>
-										<div class="complete-info-r">2017/11/07</div>
+										<div class="complete-info-r">${reservationDetail.resOutdate}</div>
 										<div class="clear"></div>
 									</div>
 									<div class="complete-info-i">
 										<div class="complete-info-l">결제 금액</div>
-										<div class="complete-info-r">&#8361; 100,000</div>
+										<div class="complete-info-r">&#8361;${reservationDetail.resTot}</div>
 										<div class="clear"></div>
 									</div>
 									<div class="complete-info-i">
 										<div class="complete-info-l">이용 인원</div>
-										<div class="complete-info-r">2명</div>
+										<div class="complete-info-r">${reservationDetail.romPeople}</div>
 										<div class="clear"></div>
 									</div>
 									<div class="complete-info-i">
 										<div class="complete-info-l">예약 상태</div>
-										<div class="complete-info-r">사용 완료</div>
+										<div class="complete-info-r">${reservationDetail.resStatus}</div>
 										<div class="clear"></div>
 									</div>
 								</div>
@@ -86,25 +89,26 @@
 								
 								<div class="complete-txt">
 									<h2>펜션 상세설명</h2>
-									<p>Voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui voluptatem sequi nesciunt. Que porro quisqua. Sed ut perspiciatis unde omnis ste natus error sit voluptatem.</p>
-									<div class="complete-txt-link"><a href="#">펜션 보러가기</a></div>
+									<p>${reservationDetail.penIntro}</p>
+									<div class="complete-txt-link"><a href="/member/pensionDetail.do?id=${reservationDetail.penId}">펜션 보러가기</a></div>
 								</div>
 								
 								<div class="complete-devider"></div>
 								
 								<div class="complete-txt final">
 									<h2>주의사항</h2>
-									<p>Qoluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui voluptatem sequi nesciunt. Que porro quisqua. Sed ut perspiciatis unde omnis ste natus error.</p>
-									<div class="complete-txt-link"><a href="#">자세히 보기</a></div>
+									<p>${reservationDetail.penNoti}</p>
 								</div>
 								
 							</div>
 							
-							
-							<div class="complete-txt final" style="text-align: right;">
-								<br/><br/><br/>
-								<input class="contacts-send" type="button" value="예약취소"/>
-							</div>
+							<c:if test="${reservationDetail.resStatus eq '예약완료'}">
+								<div class="complete-txt final" style="text-align: right;">
+									<br/><br/><br/>
+									<input class="contacts-send" type="button" value="예약취소"/>
+								</div>
+							</c:if>
+
 						</div>
   					</div>
   				</div>
@@ -121,7 +125,7 @@
 				<div class="h-help-email">HereToStay@gmail.com</div>
 			</div>
 			<div class="h-reasons">
-				<div class="h-liked-lbl">Reasons to Book with us</div>
+				<div class="h-liked-lbl">좀더 많은 서비스를 받아볼 수 있습니다.</div>
 				<div class="h-reasons-row">
 				<!-- // -->
 					<div class="reasons-i">
@@ -132,8 +136,8 @@
 						<div class="reasons-r">
   						<div class="reasons-rb">
 							<div class="reasons-p">
-								<div class="reasons-i-lbl">Awesome design</div>
-								<p>Voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequunt.</p>
+								<div class="reasons-i-lbl">마일리지 제공</div>
+								<p>'여기없대'로 예약하고 펜션을 이용하셨다면 리뷰를 작성해보세요! 리뷰를 작성한 고객 100%에게 마일리지를 제공해드립니다.</p>
 							</div>
   						</div>
   						<br class="clear">
@@ -151,8 +155,8 @@
 						<div class="reasons-r">
   						<div class="reasons-rb">
 							<div class="reasons-p">
-								<div class="reasons-i-lbl">carefylly handcrafted</div>
-								<p>Voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequunt.</p>
+								<div class="reasons-i-lbl">편리한 펜션 검색기능 제공</div>
+								<p>각 펜션별로 옵션을 나눠났기 때문에 고객이 원하는 타입 별로 펜션을 검색할 수 있습니다. 지금 빠르고 손쉽게 펜션검색을 해보세요!</p>
 							</div>
   						</div>
   						<br class="clear">
@@ -170,8 +174,8 @@
 						<div class="reasons-r">
   						<div class="reasons-rb">
 							<div class="reasons-p">
-								<div class="reasons-i-lbl">sustomer support</div>
-								<p>Voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequunt.</p>
+								<div class="reasons-i-lbl">전국적인 펜션 제공</div>
+								<p>대한민국 어떤 곳이든 많은 펜션이 '여기없대'에 등록되어 있습니다. '여기없대'를 통해서 국내 여행에 한걸음 더 다가가세요!</p>
 							</div>
   						</div>
   						<br class="clear">
