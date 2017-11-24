@@ -3,8 +3,24 @@
 PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="pensionPageSearch">
-<select id="getList" resultType="Pension">
-select * from pension
+<select id="getList" parameterType="hashMap" resultType="pension">
+<![CDATA[
+SELECT
+    pen_id,pen_name
+FROM
+    (SELECT
+        rownum as Rnum,pen_id,pen_name
+    FROM
+        (SELECT
+            *
+        FROM
+            pension
+        ORDER BY pen_id DESC)
+    WHERE rownum <= #{last})
+ WHERE Rnum >= #{first}
+ ]]>
 </select>
-
+<select id="getTotal" resultType="integer">
+select count(*) as cnt from pension
+</select>
 </mapper>

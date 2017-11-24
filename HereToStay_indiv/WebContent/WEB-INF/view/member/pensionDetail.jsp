@@ -1611,8 +1611,8 @@
 						<div class="reasons-r">
   						<div class="reasons-rb">
 							<div class="reasons-p">
-								<div class="reasons-i-lbl">carefylly handcrafted</div>
-								<p>Voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequunt.</p>
+								<div class="reasons-i-lbl">사용 시설</div>
+								<p>저희는 재고를 자동으로 관리하기 때문에 물품이 없어 어려운 일은 없을 것 입니다.</p>
 							</div>
   						</div>
   						<br class="clear" />

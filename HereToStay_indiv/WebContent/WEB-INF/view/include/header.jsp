@@ -71,7 +71,7 @@
 					<ul>
 						<li><a class="has-child" href="#">여기없대</a>					
 						</li>
-						<li><a class="has-child" href="/member/pensionSearch.do">펜션찾기</a>
+						<li><a class="has-child" href="/member/pensionSearch.do?page=1&opt=what">펜션찾기</a>
 						</li>						
 						<li><a class="has-child" href="/WEB-INF/view/member/QnAWrite.jsp">문의사항</a>
 						</li>
@@ -101,7 +101,7 @@
 					<ul>
 						<li><a class="has-child" href="#">여기없대</a>					
 						</li>
-						<li><a class="has-child" href="/member/pensionSearch.do">펜션찾기</a>
+						<li><a class="has-child" href="/member/pensionSearch.do?page=1&opt=what">펜션찾기</a>
 						</li>						
 						<li><a class="has-child" href="/WEB-INF/view/member/QnAWrite.jsp">문의사항</a>
 						</li>
