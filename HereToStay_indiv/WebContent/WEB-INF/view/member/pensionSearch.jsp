@@ -59,13 +59,13 @@
             <div class="page-search-p">
 						<!-- // -->
 						<div class="srch-tab-line">
-							<label>장소 / 펜션 이름</label>
+							<label>장소 / 펜션 이름111111111111111111</label>
 							<c:choose>
 							<c:when test='${sessionScope.search.searchName ne null }'>
 							<div class="input-a"><input name='place' type="text" value="${sessionScope.search.searchName }" placeholder="ex)강원도"></div>
 							</c:when>
 							<c:otherwise>
-							<div class="input-a"><input name='place' type="text" value="" placeholder="ex)강원도"></div>
+							<div class="input-a"><input name='place' type="text" placeholder="ex)강원도"></div>
 							</c:otherwise>							
 							</c:choose>
 						</div>
@@ -189,7 +189,7 @@
                 <label>                
                   <input name='penOpt' type="checkbox" value="BBQ" id='bbq'/>
                    BBQ 
-                </label>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+                </label>&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;&nbsp;
           	   <label>
                   <input name='penOpt' type="checkbox" value="카페" id='cafe'/>
                    	카페
@@ -199,7 +199,7 @@
                 <label>
                   <input name='penOpt' type="checkbox" value="레스토랑" id='res' />
                   레스토랑 
-                </label>&emsp;&emsp;&emsp;&emsp;
+                </label>&emsp;&emsp;&emsp;&emsp;&nbsp;
                    <label>
                   <input name='penOpt' type="checkbox" value="수영장" id='swim' />
                   수영장
@@ -219,7 +219,7 @@
                 <label>
                   <input name='penOpt' type="checkbox" value="바다낚시" id='nak' />
                   바다낚시
-                </label> &emsp;&emsp;&emsp;&ensp;&ensp;
+                </label> &emsp;&emsp;&emsp;&ensp;&ensp;&nbsp;
                   <label>
                   <input name='penOpt' type="checkbox" value="무료주차" id='free'/>
                무료주차
@@ -232,10 +232,8 @@
                 </label>
               </div>
             
-           <script type="text/javascript">     
-           
+           <script type="text/javascript">               
               var penOpt= document.getElementsByName('penOpt');
-     
               <c:if test='${sessionScope.search.penOpt ne null}'>
               <c:forEach var ="j" begin="1" end="9" step="1">
               <c:forEach var ="i" begin ="1" end="${fn:length(sessionScope.search.penOpt)}" step="1">
@@ -247,8 +245,7 @@
                	  }               	  				
               </c:forEach>
               </c:forEach>
-              </c:if>             
-              
+              </c:if>            
               </script>           
             </div>
           </div>  
@@ -261,46 +258,64 @@
               <div class="side-lbl">룸 옵션</div>  
               <div class="checkbox">
                 <label>
-                  <input type="checkbox" value="침대" />
-                  침대
-                </label>
-              </div> 
+                  <input type="checkbox" name="romOpt" value="침대" id='bed'/>침대</label>
+                   <label>
+                  <input type="checkbox" name="romOpt" value="TV"  id='TV'/>TV</label>
+                  <label>
+                  <input type="checkbox" name="romOpt" value="냉장고" id='ref' />냉장고</label>
+              </div>      
+               <div class="checkbox">
+                <label>
+                  <input type="checkbox" name="romOpt" value="쇼파" id='sofa'/>쇼파</label>
+                   <label>
+                  <input type="checkbox" name="romOpt" value="옷장" id='clo' />옷장</label>
+                  <label>
+                  <input type="checkbox" name="romOpt"  value="화장대" id='makeup' />화장대</label>
+              </div>   
+             <div class="checkbox">
+                <label>
+                  <input type="checkbox" name="romOpt" value="전기밥솥"  id='cook'/>전기밥솥</label>
+                   <label>
+                  <input type="checkbox" name="romOpt" value="전자레인지" id='rain' />전자레인지</label>
+                  <label>
+                  <input type="checkbox" name="romOpt" value="인덕션" id='induk' />인덕션</label>
+              </div>                                       
               <div class="checkbox">
                 <label>
-                  <input type="checkbox" value="TV" />
-                  TV
-                </label>
-              </div> 
-              <div class="checkbox">
+                  <input type="checkbox" name="romOpt" value="가스레인지" id='gas' />가스레인지</label>
                 <label>
-                  <input type="checkbox" value="냉장고" />
-                  냉장고
-                </label>
+                  <input type="checkbox" name="romOpt" value="취사도구" id='fire' />취사도구</label>
+                <label>
+                  <input type="checkbox" name="romOpt" value="커피포트" id='coffe' />커피포트</label>
               </div>
-              <div class="checkbox">
+                  <div class="checkbox">
                 <label>
-                  <input type="checkbox" value="에어컨" />
-                  에어컨
-                </label>
+                  <input type="checkbox" name="romOpt" value="헤어드라이기" id='hair' />헤어드라이기</label>
+                <label>
+                  <input type="checkbox" name="romOpt" value="정수기" id='water'/>정수기</label>
+                <label>
+                  <input type="checkbox" name="romOpt" value="욕실용품" id='bath' />욕실용품</label>
               </div>
-              <div class="checkbox">
+   			<div class="checkbox">
                 <label>
-                  <input type="checkbox" value="화장대" />
-                  화장대
-                </label>
-              </div>
-              <div class="checkbox">
-                <label>
-                  <input type="checkbox" value="전기밥솥" />
-                 전기 밥솥
-                </label>
-              </div>
-              <div class="checkbox">
-                <label>
-                  <input type="checkbox" value="전자레인지" />
-                  전자레인지
-                </label>
-              </div>           
+                  <input type="checkbox" name="romOpt" value="스파" id='spa' />스파</label>           
+              </div>    
+                <script type="text/javascript">            
+              var romOpt= document.getElementsByName('romOpt');   
+          
+              <c:if test='${sessionScope.search.roomOpt ne null}'>
+              <c:forEach var ="j" begin="1" end="16" step="1">
+              <c:forEach var ="i" begin ="1" end="${fn:length(sessionScope.search.roomOpt)}" step="1">
+            	 var imsi=Number(${j})-1 ;            
+             	  sessOpt ='${sessionScope.search.roomOpt[i-1]}';
+              	  if(sessOpt== romOpt[imsi].value)
+              	  {
+              		$("#"+romOpt[imsi].id).attr("checked","checked");
+              	  }                	  				
+              </c:forEach>
+              </c:forEach>
+              </c:if>                      
+              </script>                
             </div>
           </div>  
         </div>
@@ -416,7 +431,7 @@
             
             <div class="pagination">
             
-            <input id="currentPage" type="hidden" value ="1"/>  
+            <input id="currentPage" name="page" type="hidden" value ="1"/>  
             
             <c:forEach var="i" begin="1" end="${totalPage}" step="1">            
                <a id = 'paging'  class="paging">${i}</a>              
@@ -432,7 +447,6 @@
     </div>	
   </div>  
 </div>
-<input type ="hidden" name='page' value="1"/>
 <input type ="hidden" name='opt' value='what'/>
 </form>
 <!-- /main-cont -->
@@ -484,19 +498,22 @@
   	
 //   		$("#fr").attr("action", "/member/pensionSearch.do?page=1&opt=what");
 //   		$("#fr").action='/member/pensionSearch.do?page=1&opt=what';
+  	
+  			$("#currentPage").val("1");
   		$("#fr").submit();  		
   	});
   	
   	
-//   	$(".paging").each(function(){
-//   		$(this).click(function(){
+  	$(".paging").each(function(){
+  		$(this).click(function(){
   			
-//   			var begin=(Number($(this).text())-1)*6+1;
-//   			var end=Number(begin)+6;
-//   			$(this).addClass('active');
+  			var begin=(Number($(this).text())-1)*6+1;
+  			var end=Number(begin)+6;
+  			$(this).addClass('active');
   			  	
-//   			$("#currentPage").val($(this).text());
-  			
+  			$("#currentPage").val($(this).text());
+  			alert($("#currentPage").val()+"page");
+  			$("#fr").submit();
 // 	  		  $.ajax({
 // 	  			  type:'GET',
 // 	  			   data : {
@@ -511,14 +528,11 @@
 // 	            	  alert(data.id);
 	            	  
 // 	              }
-// 	          })
+// 	          }); 			
   			
-  			
-  			
-  			
-//   		});
+  		});
   		
-//   	});  
+  	});  
  
   	
   </script>

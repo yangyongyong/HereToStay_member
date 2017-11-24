@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import hts.model.vo.Pension;
+import hts.model.vo.SearchOpt;
 @Repository
 public class PensionPageSearchImpl implements PensionPageSearchDao {
 
@@ -16,15 +17,20 @@ public class PensionPageSearchImpl implements PensionPageSearchDao {
 	private SqlSessionTemplate ss;
 	
 	@Override
-	public List<Pension> getList(int first,int last, String opt) {
+	public List<Pension> getList(int first,int last, SearchOpt opt) {
 		// TODO Auto-generated method stub
+
 		HashMap map=new HashMap<>();
-		System.out.println("first :"+first+"last:"+last);
+	
 		map.put("first", first);
 		map.put("last", last);
-		map.put("opt",opt);
-		System.out.println("size pension23" + ss.selectList("pensionPageSearch.getList",map).size());
-		return ss.selectList("pensionPageSearch.getList",map);
+		if(opt.getSearchName()!=null)
+			map.put("opt",opt.getSearchName());
+		else {
+			map.put("opt","");
+		}
+		System.out.println(ss.selectList("pensionPageSearch.getListOpt",map).size());
+		return ss.selectList("pensionPageSearch.getListOpt",map);		
 	}
 	@Override
 	public int getTotal() {

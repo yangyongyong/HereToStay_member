@@ -36,7 +36,7 @@ public class PensionPageSearch {
 	@RequestMapping("/pensionSearch.do")
 	public ModelAndView pensionSearch(HttpServletRequest request) {
 			
-		String opt =request.getParameter("opt"); 
+	    String opt =request.getParameter("opt"); 
 		int page =Integer.parseInt(request.getParameter("page"));
 	
 		int first = (page-1)*6+1;
@@ -44,8 +44,24 @@ public class PensionPageSearch {
 			
 		ModelAndView model = new ModelAndView();		
 		List<Pension> pl=new ArrayList<Pension>();		
-		pl=pensionSearch.getList(first,Last,opt);
-		int totalPage =pensionSearch.getTotal();		
+		SearchOpt searchOpt =saveSession(request);
+		
+//		if(searchOpt.getPenOpt()==null)
+//		{
+//			String op[]= {"all"};
+//			searchOpt.setPenOpt(op);
+//		}// 선택된 값이 없을시 모두검색
+		
+		if(searchOpt.getSearchName()==null)
+		{
+			System.out.println("null임 ㅇㅇ");
+		}
+		
+		pl=pensionSearch.getList(first,Last,searchOpt);//디비 
+		int totalPage =pensionSearch.getTotal();//디비total page		
+		
+		
+		//모델 설정
 		model = new ModelAndView();
 		model.addObject("currentPage",page);		
 		model.addObject("List",pl);
@@ -53,15 +69,10 @@ public class PensionPageSearch {
 		
 		// 검색 세션 설정
 		HttpSession session =request.getSession();
-		
-		SearchOpt searchOpt =saveSession(request);
+		//세션에 저장 (불러온값 ) 		
 		session.setAttribute("search",searchOpt);
 		
-		if(searchOpt.getPenOpt()==null)
-		{
-			String op[]= {"all"};
-			searchOpt.setPenOpt(op);
-		}
+		
 		
 		return model;
 	}
@@ -76,7 +87,7 @@ public class PensionPageSearch {
 		opt.setPriceTo(request.getParameter("ammount-to"));
 		opt.setSearchName(request.getParameter("place"));
 		opt.setPenOpt(request.getParameterValues("penOpt"));	
-		opt.setRoomOpt(request.getParameterValues("roomOpt"));
+		opt.setRoomOpt(request.getParameterValues("romOpt"));
 		
 		
 		return opt;
