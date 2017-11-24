@@ -27,11 +27,12 @@ SELECT pen_id,pen_name FROM (SELECT rownum as Rnum,pen_id,pen_name
         (SELECT * FROM pension ]]><where><if test='#{opt}!=null'>And pen_name LIKE '%'||#{opt}||'%'</if></where><![CDATA[ ORDER BY pen_id DESC) WHERE rownum <= #{last})
  WHERE Rnum >= #{first}
  ]]>
-<!--  <if test='#{opt}!=null'>  -->
-<!--  and pen_name =#{opt} -->
-<!--  </if> -->
 </select>
-<select id="getTotal" resultType="integer">
-select count(*) as cnt from pension
+<select id="getTotal" parameterType="hashMap" resultType="integer">
+<![CDATA[
+SELECT count(*) as cnt FROM (SELECT rownum as Rnum,pen_id,pen_name 
+    FROM
+        (SELECT * FROM pension ]]><where><if test='#{opt}!=null'>And pen_name LIKE '%'||#{opt}||'%'</if></where><![CDATA[ ORDER BY pen_id DESC))
+  ]]>
 </select>
 </mapper>

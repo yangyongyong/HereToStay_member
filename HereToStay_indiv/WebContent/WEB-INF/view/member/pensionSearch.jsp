@@ -59,7 +59,7 @@
             <div class="page-search-p">
 						<!-- // -->
 						<div class="srch-tab-line">
-							<label>장소 / 펜션 이름111111111111111111</label>
+							<label>장소 / 펜션 이름1113434</label>
 							<c:choose>
 							<c:when test='${sessionScope.search.searchName ne null }'>
 							<div class="input-a"><input name='place' type="text" value="${sessionScope.search.searchName }" placeholder="ex)강원도"></div>

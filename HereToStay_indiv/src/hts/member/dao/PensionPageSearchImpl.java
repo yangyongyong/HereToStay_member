@@ -33,8 +33,17 @@ public class PensionPageSearchImpl implements PensionPageSearchDao {
 		return ss.selectList("pensionPageSearch.getListOpt",map);		
 	}
 	@Override
-	public int getTotal() {
-		return ss.selectOne("pensionPageSearch.getTotal");
+	public int getTotal(SearchOpt opt) {
+		System.out.println("total dddd");
+		HashMap map=new HashMap<>();
+		if(opt.getSearchName()!=null)
+			map.put("opt",opt.getSearchName());
+		else {
+			map.put("opt","");
+		}	
+		
+		System.out.println(ss.selectOne("pensionPageSearch.getTotal",map)+"total dd");
+		return ss.selectOne("pensionPageSearch.getTotal",map);
 	};
 
 	

@@ -9,5 +9,5 @@ import hts.model.vo.SearchOpt;
 public interface PensionPageSearchDao {
 
 	List getList(int first,int Last,SearchOpt opt);
-	int getTotal();
+	int getTotal(SearchOpt opt);
 }

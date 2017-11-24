@@ -54,7 +54,7 @@ public class PensionPageSearch {
 		}
 		
 		pl=pensionSearch.getList(first,Last,searchOpt);//디비 
-		int totalPage =pensionSearch.getTotal();//디비total page		
+		int totalPage =pensionSearch.getTotal(searchOpt);//디비total page		
 		
 		
 		//모델 설정
