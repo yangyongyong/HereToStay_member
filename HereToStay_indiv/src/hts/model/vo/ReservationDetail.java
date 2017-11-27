@@ -12,14 +12,8 @@ public class ReservationDetail {
 	private String	resStatus;
 	private String	penIntro;
 	private String	penNoti;
+	private String	resId;
 	
-	
-	public String getPenId() {
-		return penId;
-	}
-	public void setPenId(String penId) {
-		this.penId = penId;
-	}
 	public String getPenName() {
 		return penName;
 	}
@@ -56,6 +50,12 @@ public class ReservationDetail {
 	public void setResTot(String resTot) {
 		this.resTot = resTot;
 	}
+	public String getPenId() {
+		return penId;
+	}
+	public void setPenId(String penId) {
+		this.penId = penId;
+	}
 	public String getRomPeople() {
 		return romPeople;
 	}
@@ -79,5 +79,11 @@ public class ReservationDetail {
 	}
 	public void setPenNoti(String penNoti) {
 		this.penNoti = penNoti;
+	}
+	public String getResId() {
+		return resId;
+	}
+	public void setResId(String resId) {
+		this.resId = resId;
 	}
 }

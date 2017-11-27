@@ -12,11 +12,14 @@ public interface MyPageMemInfoDao {
 	void infoUpdate(Member member);
 	
 //	회원 별 예약 리스트 가져오는 메소드
-	List<Reservation> getReserList(String id);
+	List<Reservation> getReserList(int first, int last, String id, String sort1, String sort2);
 	
 //	화원 별 리뷰 리스트 가져오는 메소드
 	List<Review> getReviewList(String id);
 	
 //	회원 별 문의사항 리스트 가져오는 메소드
 	List<QnA> getQnAList(String id);
+	
+//	리스트 총 개수 구하는 메소드
+	int getListCount(String id);
 }

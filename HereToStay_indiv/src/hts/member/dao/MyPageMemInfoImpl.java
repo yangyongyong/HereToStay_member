@@ -1,5 +1,6 @@
 package hts.member.dao;
 
+import java.util.HashMap;
 import java.util.List;
 
 import org.mybatis.spring.SqlSessionTemplate;
@@ -32,8 +33,15 @@ public class MyPageMemInfoImpl implements MyPageMemInfoDao {
 
 	// 회원 별 예약 리스트 가져오는 메소드
 	@Override
-	public List<Reservation> getReserList(String id) {
-		return ss.selectList("myPageMemInfo.getReserList", id);
+	public List<Reservation> getReserList(int first, int last, String id, String sort1, String sort2) {
+		HashMap<String, Object> map = new HashMap<>();
+		map.put("first", first);
+		map.put("last", last);
+		map.put("id", id);
+		map.put("sort1", sort1);
+		map.put("sort2", sort2);
+		
+		return ss.selectList("myPageMemInfo.getReserList", map);
 	}
 
 	// 회원 별 리뷰 리스트 가져오는 메소드
@@ -46,6 +54,12 @@ public class MyPageMemInfoImpl implements MyPageMemInfoDao {
 	@Override
 	public List<QnA> getQnAList(String id) {
 		return ss.selectList("myPageMemInfo.getQnAList", id);
+	}
+
+//	리스트 총 개수 구하는 메소드
+	@Override
+	public int getListCount(String id) {
+		return ss.selectOne("myPageMemInfo.getListCount", id);
 	}
 	
 }

@@ -105,7 +105,8 @@
 							<c:if test="${reservationDetail.resStatus eq '예약완료'}">
 								<div class="complete-txt final" style="text-align: right;">
 									<br/><br/><br/>
-									<input class="contacts-send" type="button" value="예약취소"/>
+									<input type="hidden" id="resId" value="${reservationDetail.resId}"/>
+									<input class="contacts-send" type="button" value="예약취소" id="reserveDel"/>
 								</div>
 							</c:if>
 
@@ -208,6 +209,7 @@
   <script src="/js/custom.select.js"></script>   
   <script type="text/javascript" src="/js/twitterfeed.js"></script>  
   <script src="/js/script.js"></script>
+  <script type="text/javascript" src="/js/member/reserveDelete.js"></script>
   <script>
   	$(document).ready(function(){
 		'use strict';

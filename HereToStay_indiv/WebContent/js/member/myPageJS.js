@@ -1,6 +1,28 @@
 
 
 $(document).ready(function(){
+
+	$( '.tagNum' ).removeClass( 'active' );
+	var tagNum = $('#tagValue').val();
+	$("#"+tagNum).addClass('active');
+	var $parent = $('.tabs-block');
+	$parent.find('.tabs-content-i').hide().eq(tagNum-1).fadeIn();
+	
+	
+	
+	if($('#hidden1').val() == '1') {
+		$("#nameSort option:eq(0)").attr("selected", true);
+	} else {
+		$("#nameSort option:eq(1)").attr("selected", true);
+	}
+	
+	if($('#hidden2').val() == '1') {		
+		$("#dateSort option:eq(0)").attr("selected", true);
+	} else {
+		$("#dateSort option:eq(1)").attr("selected", true);
+	}
+	
+	
 	 // 정보수정 시 유효성 검사
 	$('#infoUpdate').click(function() {
 		// 비밀번호 공백 or 입력
@@ -18,19 +40,28 @@ $(document).ready(function(){
 		}
 	});
 	
-    // 예약 리스트 정렬 Ajax
-//	$('#nameSort').change(function() {
-//		 $.ajax({
-//	            type: 'post',
-//	            async: true,
-//	            url:'/member/sorting.do',
-//	            contentType:'application/x-www-form-urlencoded;charset=UTF-8',
-//	            data: "userId="+$("#userId").val(),
-//	            success:function(resultData){
-//	    			div.html(resultData);
-//	    		}
-//		 });
-//	});
+	$('#nameSort').change(function() {
+		var sort1 = $("#nameSort").find(":selected").val();
+		var sort2 = $("#dateSort").find(":selected").val();
+		
+		if(sort1 == 'ㄱ ~ ㅎ') {var sort1 = '1'}
+		else {var sort1 = '2'}
+		if(sort2 == '최신 순') {var sort2 = '1'}
+		else {var sort2 = '2'}
+		
+		location.href="/member/myPage.do?pageS=1&tag=2&sort1=" + sort1 +"&sort2=" + sort2;
+	});
 	
+	$('#dateSort').change(function() {
+		var sort1 = $("#nameSort").find(":selected").val();
+		var sort2 = $("#dateSort").find(":selected").val();
+		
+		if(sort1 == 'ㄱ ~ ㅎ') {var sort1 = '1'}
+		else {var sort1 = '2'}
+		if(sort2 == '최신 순') {var sort2 = '1'}
+		else {var sort2 = '2'}
+		
+		location.href="/member/myPage.do?pageS=1&tag=2&sort1=" + sort1 +"&sort2=" + sort2;
+	});
 	
 });

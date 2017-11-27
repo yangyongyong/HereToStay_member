@@ -18,11 +18,57 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</update>
 	
 	<!-- 3. 회원 별 예약 리스트 가져오기 -->
-	<select id="getReserList" parameterType="String" resultType="reservation">
-		SELECT pen.pen_name as pen_name, pen.pen_intro as pen_intro, TO_CHAR(rs.res_indate, 'YYYY-MM-DD') as res_indate,
-               rs.res_id as res_id, TO_CHAR(rs.res_outdate, 'YYYY-MM-DD') as res_outdate, TO_CHAR(rs.res_tot,'999,999,999') as res_tot
-		FROM pension pen, reservation rs, room rm
-		WHERE mem_id = #{value} AND pen.pen_id = rm.pen_id AND rm.rom_id = rs.rom_id
+	<select id="getReserList" parameterType="HashMap" resultType="reservation">
+		<choose>
+			<when test="(sort1 eq '1'.toString()) and (sort2 eq '1'.toString())">
+				<![CDATA[
+					SELECT *
+					FROM ( SELECT rownum as rnum, pen.pen_name as pen_name, pen.pen_intro as pen_intro, TO_CHAR(rs.res_indate, 'YYYY-MM-DD') as res_indate,
+					              rs.res_id as res_id, TO_CHAR(rs.res_outdate, 'YYYY-MM-DD') as res_outdate, TO_CHAR(rs.res_tot,'999,999,999') as res_tot
+					       FROM pension pen, reservation rs, room rm
+					       WHERE mem_id = #{id} AND pen.pen_id = rm.pen_id AND rm.rom_id = rs.rom_id AND (rs.res_status = '예약완료' OR rs.res_status = '사용완료'))
+					WHERE rnum >=#{first} AND rnum <= #{last}
+					ORDER BY pen_name, res_outdate desc
+				]]> 
+			</when>
+			
+			<when test="(sort1 eq '1'.toString()) and (sort2 eq '2'.toString())">
+				<![CDATA[
+					SELECT *
+					FROM ( SELECT rownum as rnum, pen.pen_name as pen_name, pen.pen_intro as pen_intro, TO_CHAR(rs.res_indate, 'YYYY-MM-DD') as res_indate,
+					              rs.res_id as res_id, TO_CHAR(rs.res_outdate, 'YYYY-MM-DD') as res_outdate, TO_CHAR(rs.res_tot,'999,999,999') as res_tot
+					       FROM pension pen, reservation rs, room rm
+					       WHERE mem_id = #{id} AND pen.pen_id = rm.pen_id AND rm.rom_id = rs.rom_id AND (rs.res_status = '예약완료' OR rs.res_status = '사용완료'))
+					WHERE rnum >=#{first} AND rnum <= #{last}
+					ORDER BY pen_name, res_outdate
+				]]> 
+			</when>
+			
+			<when test="(sort1 eq '2'.toString()) and (sort2 eq '1'.toString())">
+				<![CDATA[
+					SELECT *
+					FROM ( SELECT rownum as rnum, pen.pen_name as pen_name, pen.pen_intro as pen_intro, TO_CHAR(rs.res_indate, 'YYYY-MM-DD') as res_indate,
+					              rs.res_id as res_id, TO_CHAR(rs.res_outdate, 'YYYY-MM-DD') as res_outdate, TO_CHAR(rs.res_tot,'999,999,999') as res_tot
+					       FROM pension pen, reservation rs, room rm
+					       WHERE mem_id = #{id} AND pen.pen_id = rm.pen_id AND rm.rom_id = rs.rom_id AND (rs.res_status = '예약완료' OR rs.res_status = '사용완료'))
+					WHERE rnum >=#{first} AND rnum <= #{last}
+					ORDER BY pen_name desc, res_outdate desc
+				]]> 
+			</when>
+			
+			<when test="(sort1 eq '2'.toString()) and (sort2 eq '2'.toString())">
+				<![CDATA[
+					SELECT *
+					FROM ( SELECT rownum as rnum, pen.pen_name as pen_name, pen.pen_intro as pen_intro, TO_CHAR(rs.res_indate, 'YYYY-MM-DD') as res_indate,
+					              rs.res_id as res_id, TO_CHAR(rs.res_outdate, 'YYYY-MM-DD') as res_outdate, TO_CHAR(rs.res_tot,'999,999,999') as res_tot
+					       FROM pension pen, reservation rs, room rm
+					       WHERE mem_id = #{id} AND pen.pen_id = rm.pen_id AND rm.rom_id = rs.rom_id AND (rs.res_status = '예약완료' OR rs.res_status = '사용완료'))
+					WHERE rnum >=#{first} AND rnum <= #{last}
+					ORDER BY pen_name desc, res_outdate
+				]]> 
+			</when>
+			
+		</choose>
 	</select>
 	
 	<!-- 4. 회원 별 리뷰 리스트 가져오기 -->
@@ -39,5 +85,14 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		WHERE mem_id = #{value}
 	</select>
 	
+	
+	<!-- 6. 예약 리스트 총 개수 구하기 -->
+	<select id="getListCount" parameterType="String" resultType="int">
+		SELECT count(*) cnt
+		FROM ( SELECT rownum as rnum, pen.pen_name as pen_name, pen.pen_intro as pen_intro, TO_CHAR(rs.res_indate, 'YYYY-MM-DD') as res_indate,
+		              rs.res_id as res_id, TO_CHAR(rs.res_outdate, 'YYYY-MM-DD') as res_outdate, TO_CHAR(rs.res_tot,'999,999,999') as res_tot
+		       FROM pension pen, reservation rs, room rm
+		       WHERE mem_id = #{value} AND pen.pen_id = rm.pen_id AND rm.rom_id = rs.rom_id AND (rs.res_status = '예약완료' OR rs.res_status = '사용완료'))
+	</select>
 	
 </mapper>

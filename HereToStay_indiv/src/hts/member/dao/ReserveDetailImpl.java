@@ -24,4 +24,10 @@ public class ReserveDetailImpl implements ReserveDetailDao {
 		return ss.selectOne("MyPageReserve.getReserve", map);
 	}
 
+//	예약 취소 메소드
+	@Override
+	public void delReserve(String resId) {
+		ss.update("MyPageReserve.delReserve", resId);
+	}
+
 }

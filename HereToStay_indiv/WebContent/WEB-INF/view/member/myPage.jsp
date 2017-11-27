@@ -43,6 +43,9 @@
 		text-decoration: none;
 	}
 	
+	.typography {
+		padding-bottom: 0px;
+	}
   </style>
   
 </head>  
@@ -140,11 +143,12 @@
 								<div class="tabs-type-bi-a">
 									<div class="tabs-type-bi-l">
 									<nav class="tabs-nav">
+										<input type="hidden" id="tagValue" value='${tag}'/>
 										<ul>
-											<li><a class="active" href="#">내 정보<span></span></a></li>
-											<li><a href="#">예약 리스트 <span></span></a></li>
-											<li><a href="#">리뷰 리스트 <span></span></a></li>
-											<li><a href="#">문의 리스트 <span></span></a></li>
+											<li><a class="tagNum active" href="#" id="1">내 정보<span></span></a></li>
+											<li><a class="tagNum" href="#" id="2">예약 리스트 <span></span></a></li>
+											<li><a class="tagNum" href="#" id="3">리뷰 리스트 <span></span></a></li>
+											<li><a class="tagNum" href="#" id="4">문의 리스트 <span></span></a></li>
 										</ul>
 										<div class="clear"></div>
 									</nav>
@@ -240,8 +244,6 @@
 											                </div>
 														</p>
 													</div>
-													</div>
-													
 													
 													
 													<div class="tabs-content-i"  style="margin-left: 70px;">
@@ -251,24 +253,20 @@
 																<div class="padding">
 														            <div class="catalog-head large fly-in">
 														              <label>Sorting results by:</label>
+														              	<input type="hidden" id="hidden1" value="${sort1}"/>
+														              	<input type="hidden" id="hidden2" value="${sort2}"/>
 														              <div class="search-select" id="nameSort">
-														    							<select>
-														    								<option>ㄱ ~ ㅎ</option>
-														    								<option>ㅎ ~ ㄱ</option>
-														    							</select>
-														    					</div>
-														              <div class="search-select" id="priceSort">
-														    							<select>
-														    								<option>가격 높은 순</option>
-														    								<option>가격 낮은 순</option>
-														    							</select>
-														    					</div>
+											    							<select>
+											    								<option>ㄱ ~ ㅎ</option>
+											    								<option>ㅎ ~ ㄱ</option>
+											    							</select>
+														    		  </div>
 														              <div class="search-select" id="dateSort">
-														    							<select>
-														    								<option>최신 순 </option>
-														    								<option>오래된 순</option>
-														    							</select>
-														    					</div>
+											    							<select>
+											    								<option>최신 순</option>
+											    								<option>오래된 순</option>
+											    							</select>
+														    		  </div>
 														            </div>
 														            
 														            <div class="catalog-row list-rows">
@@ -329,12 +327,22 @@
 														            <div class="clear"></div>
 														            
 														            <div class="pagination">
-														              <a class="active" href="#">1</a>
-														              <a href="#">2</a>
-														              <a href="#">3</a>
-														              <div class="clear"></div>
-														            </div>            
-														          </div>
+															            <input id="currentPage" name="page" type="hidden" value ="1"/>  
+															            <c:forEach var="i" begin="1" end="${totalPage}" step="1" varStatus="status">
+															            	<c:choose>
+																				<c:when test="${page eq status.count}">
+																					<a href="/member/myPage.do?pageS=${i}&tag=2&sort1=${sort1}&sort2=${sort2}" class="active">${i}</a>
+																				</c:when>
+																				<c:otherwise>
+																					<a href="/member/myPage.do?pageS=${i}&tag=2&sort1=${sort1}&sort2=${sort2}">${i}</a>
+																				</c:otherwise>
+																			</c:choose>
+															            	
+															            </c:forEach>
+															            <div class="clear"> </div>
+															        </div>
+																													                     
+														       </div>
 															
 														</p>
 													</div>
@@ -392,13 +400,7 @@
 													            </div>
 													            
 													            <div class="clear"></div>
-													            
-													            <div class="pagination">
-													              <a class="active" href="#">1</a>
-													              <a href="#">2</a>
-													              <a href="#">3</a>
-													              <div class="clear"></div>
-													            </div>            
+													                      
 													          </div>
 													        <br class="clear" />
 															
@@ -494,12 +496,8 @@
 													            
 													            <div class="clear"></div>
 													            
-													            <div class="pagination">
-													              <a class="active" href="#">1</a>
-													              <a href="#">2</a>
-													              <a href="#">3</a>
-													              <div class="clear"></div>
-													            </div>            
+													            <br/><br/>
+													            </div>          
 													          </div>
 													        <br class="clear" />
 															

@@ -76,7 +76,15 @@
 							</div>
 							<div class="booking-form-i">
 								<label>QnA Type:</label>
-								<div class="input"><input type="text" name="lastName" value="" /></div>
+									<div class="search-select" id="qnAType">
+		    							<select>
+		    								<option>펜션관리</option>
+		    								<option>예약관리</option>
+		    								<option>불만사항</option>
+		    								<option>기타</option>
+		    							</select>
+					    		   </div>
+<!-- 								<div class="input"><input type="text" name="lastName" value="" /></div> -->
 							</div>
 							<div class="booking-form-i textarea">
 								<label>QnA Context:</label>

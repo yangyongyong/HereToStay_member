@@ -75,7 +75,7 @@
 						</li>						
 						<li><a class="has-child" href="/WEB-INF/view/member/QnAWrite.jsp">문의사항</a>
 						</li>
-						<li><a class="has-child" href="/member/myPage.do">마이페이지</a>
+						<li><a class="has-child" href="/member/myPage.do?pageS=1&tag=1&sort1=1&sort2=1">마이페이지</a>
 						</li>
 					</ul>
 				</nav>	
@@ -105,7 +105,7 @@
 						</li>						
 						<li><a class="has-child" href="/WEB-INF/view/member/QnAWrite.jsp">문의사항</a>
 						</li>
-						<li><a class="has-child" href="/member/myPage.do">마이페이지</a>
+						<li><a class="has-child" href="/member/myPage.do?pageS=1&tag=1&sort1=1&sort2=1">마이페이지</a>
 						</li>
 					</ul>
 				</nav>
