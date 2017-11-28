@@ -41,7 +41,7 @@
   <div class="body-wrapper">
     <div class="wrapper-padding">
     <div class="page-head">
-      <div class="page-title">펜션 <span>조건 선택</span></div>
+      <div class="page-title">펜션  <span>조건 선택</span></div>
       <div class="breadcrumbs">
         <span>펜션 찾기</span>
       </div>
@@ -59,7 +59,7 @@
             <div class="page-search-p">
 						<!-- // -->
 						<div class="srch-tab-line">
-							<label>장소 / 펜션 이름1113434</label>
+							<label>장소 / 펜션 이름</label>
 							<c:choose>
 							<c:when test='${sessionScope.search.searchName ne null }'>
 							<div class="input-a"><input name='place' type="text" value="${sessionScope.search.searchName }" placeholder="ex)강원도"></div>
@@ -212,7 +212,7 @@
                 </label>&emsp;&emsp;&emsp;&emsp;&ensp;&ensp;
                 <label>
                   <input name='penOpt' type="checkbox" value="갯벌 체험" id='gb' />
-                  갯벌 체험
+                  갯벌 체험1111111
                 </label>
               </div>
              <div class="checkbox">
@@ -237,7 +237,7 @@
               <c:if test='${sessionScope.search.penOpt ne null}'>
               <c:forEach var ="j" begin="1" end="9" step="1">
               <c:forEach var ="i" begin ="1" end="${fn:length(sessionScope.search.penOpt)}" step="1">
-               	 var imsi=Number(${j})-1            	 
+               	 var imsi=Number(${j})-1;	 
               	  sessOpt ='${sessionScope.search.penOpt[i-1]}';
                	  if(sessOpt== penOpt[imsi].value)
                	  {
@@ -314,7 +314,7 @@
               	  }                	  				
               </c:forEach>
               </c:forEach>
-              </c:if>                      
+              </c:if>       
               </script>                
             </div>
           </div>  
@@ -335,7 +335,7 @@
     					</div>
               <div class="search-select">
     							<select>
-    								<option>가격</option>
+    								<option>가격efef</option>
     								<option>높은가격순</option>
     								<option>낮은가격순</option>
     							</select>
@@ -362,7 +362,7 @@
             <div class="catalog-row list-rows">
                       
               <c:if test="${not empty List}">
-			  <c:forEach var="i" begin="1" end="${fn:length(List)}" step="1"  >
+         	  <c:forEach var="i" begin="1" end="${fn:length(List)}" step="1"  >
                 <div class="cat-list-item fly-in">
                   <div class="cat-list-item-l">
                       <a href="#"><img alt="" src="/img/lit-i-01.jpg"></a>
@@ -396,7 +396,7 @@
                             <div class="cat-list-content-p">
                               <nav class="stars">
             										<ul>
-            											<li><a href="#"><img alt="" src="/img/star-b.png" /></a></li>
+            										<li><a href="#"><img alt="" src="/img/star-b.png" /></a></li>
             											<li><a href="#"><img alt="" src="/img/star-b.png" /></a></li>
             											<li><a href="#"><img alt="" src="/img/star-b.png" /></a></li>
             											<li><a href="#"><img alt="" src="/img/star-b.png" /></a></li>
@@ -406,7 +406,7 @@
             									</nav>
                               <div class="cat-list-review">270 reviews</div>
                               <div class="offer-slider-r">
-              									<b>756$</b>
+              									<b>${List[i-1].minCost}</b>
               									<span>avg/night</span>
               								</div>           
                               <a href='/member/pensionDetail.do?id=${List[i-1].penId}' class="cat-list-btn">Select</a>   

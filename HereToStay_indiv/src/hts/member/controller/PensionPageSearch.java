@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.StringTokenizer;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -13,6 +14,7 @@ import javax.servlet.http.HttpSession;
 import javax.swing.plaf.synth.SynthSpinnerUI;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.convert.support.StringToCharsetConverter;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -45,17 +47,58 @@ public class PensionPageSearch {
 		ModelAndView model = new ModelAndView();		
 		List<Pension> pl=new ArrayList<Pension>();		
 		SearchOpt searchOpt =saveSession(request);
-		
+		// 검색 세션 설정
+		HttpSession session =request.getSession();
+		//세션에 저장 (불러온값 ) 		
+		session.setAttribute("search",searchOpt);
 
+		SearchOpt passOpt =searchOpt;
+		if(request.getParameter("in")!=null && request.getParameter("in").length()>9) {
+			System.out.println("null이 아님 ㅇㅇ");
+			String temp = request.getParameter("in");
+			System.out.println("ininininiewrwerewni" + temp);
+			StringTokenizer str =new StringTokenizer(temp,"/");
+			String indate =new String();	
+			String mm =str.nextToken()+"/";
+			String dd = str.nextToken();
+			String yy =str.nextToken().substring(2,4)+"/";			
+			indate = yy+mm+dd;
+			System.out.println("outdate"+indate);
+			passOpt.setCheckIn(indate);			
+		}
+		else 
+			System.out.println("null임 checkin");
+		if(request.getParameter("out")!=null && request.getParameter("out").length()>9) {
+			String temp2 = request.getParameter("out");
+			StringTokenizer str2 =new StringTokenizer(temp2,"/");
+			String indate2 =null;				
+			String mm2 = str2.nextToken()+"/";
+			String dd2 = str2.nextToken();
+			String yy2 =str2.nextToken().substring(2,4)+"/";			
+			indate2=yy2+mm2+dd2;	
+			System.out.println("outdate"+indate2);
+			passOpt.setCheckOut(indate2);		
+		}
+		else 
+			System.out.println("null임 checkout");		
+//		
+		if(request.getParameter("sel")!=null)
+			{System.out.println("sel : "+request.getParameter("sel"));
+			passOpt.setPersons(request.getParameter("sel"));
+		
+			}else
+			{System.out.println("sel 널임 ");
+			passOpt.setPersons("1");
+			}	
+		
 		
 		if(searchOpt.getSearchName()==null)
 		{
-			System.out.println("null임 ㅇㅇ");
+			System.out.println("null임 ㅇㅇeefrggr");
 		}
 		
-		pl=pensionSearch.getList(first,Last,searchOpt);//디비 
-		int totalPage =pensionSearch.getTotal(searchOpt);//디비total page		
-		
+		pl=pensionSearch.getList(first,Last,passOpt);//디비 
+		int totalPage =pensionSearch.getTotal(passOpt);//디비total page		
 		
 		//모델 설정
 		model = new ModelAndView();
@@ -63,11 +106,7 @@ public class PensionPageSearch {
 		model.addObject("List",pl);
 		model.addObject("totalPage", (int) Math.ceil(totalPage/(double)6 ));	
 		
-		// 검색 세션 설정
-		HttpSession session =request.getSession();
-		//세션에 저장 (불러온값 ) 		
-		session.setAttribute("search",searchOpt);
-		
+			
 		
 		
 		return model;
@@ -76,9 +115,15 @@ public class PensionPageSearch {
 	public SearchOpt saveSession(HttpServletRequest request) {
 		
 		SearchOpt opt =new SearchOpt();
-		opt.setCheckIn(request.getParameter("in"));
+		opt.setCheckIn(request.getParameter("in"));		
 		opt.setCheckOut(request.getParameter("out"));
-		opt.setPersons(request.getParameter("sel"));
+		if(request.getParameter("sel")!=null)
+		{System.out.println("sel : "+request.getParameter("sel"));
+		opt.setPersons(request.getParameter("sel"));		
+		}else
+		{System.out.println("sel 널임 ");
+		opt.setPersons("1");
+		}		
 		opt.setPriceFrom(request.getParameter("ammount-from"));
 		opt.setPriceTo(request.getParameter("ammount-to"));
 		opt.setSearchName(request.getParameter("place"));

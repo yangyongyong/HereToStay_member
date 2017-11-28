@@ -14,6 +14,15 @@ public class Pension {
 	private String penEhot;
 	private String penStatus;
 	private String ownId;
+	private int minCost;
+	
+	
+	public int getMinCost() {
+		return minCost;
+	}
+	public void setMinCost(int minCost) {
+		this.minCost = minCost;
+	}
 	public String getPenId() {
 		return penId;
 	}

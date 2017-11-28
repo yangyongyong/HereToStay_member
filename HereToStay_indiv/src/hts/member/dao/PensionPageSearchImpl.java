@@ -24,12 +24,11 @@ public class PensionPageSearchImpl implements PensionPageSearchDao {
 	
 		map.put("first", first);
 		map.put("last", last);
-		if(opt.getSearchName()!=null)
-			map.put("opt",opt.getSearchName());
-		else {
-			map.put("opt","");
+		if(opt.getSearchName()!=null) map.put("penName",opt.getSearchName());
+		if(opt.getCheckIn()!=null) { map.put("checkIn",opt.getCheckIn());
 		}
-		System.out.println(ss.selectList("pensionPageSearch.getListOpt",map).size());
+		if(opt.getCheckOut()!=null) map.put("checkOut", opt.getCheckOut());
+		if(opt.getPersons()!=null) map.put("persons",opt.getPersons());
 		return ss.selectList("pensionPageSearch.getListOpt",map);		
 	}
 	@Override
@@ -37,9 +36,9 @@ public class PensionPageSearchImpl implements PensionPageSearchDao {
 		System.out.println("total dddd");
 		HashMap map=new HashMap<>();
 		if(opt.getSearchName()!=null)
-			map.put("opt",opt.getSearchName());
+			map.put("penName",opt.getSearchName());
 		else {
-			map.put("opt","");
+			map.put("penName","all");
 		}	
 		
 		System.out.println(ss.selectOne("pensionPageSearch.getTotal",map)+"total dd");

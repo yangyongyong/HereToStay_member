@@ -22,17 +22,26 @@ FROM
 </select>
 <select id="getListOpt" parameterType="hashMap" resultType="pension">
 <![CDATA[
-SELECT pen_id,pen_name FROM (SELECT rownum as Rnum,pen_id,pen_name 
-    FROM
-        (SELECT * FROM pension ]]><where><if test='#{opt}!=null'>And pen_name LIKE '%'||#{opt}||'%'</if></where><![CDATA[ ORDER BY pen_id DESC) WHERE rownum <= #{last})
- WHERE Rnum >= #{first}
+select f.* from
+ (select p.*,ot.*,rownum as rnum
+ from pension p,(
+ select p.pen_id as pen,min(r.rom_Cost) as min_Cost
+ from pension p ,room r  ]]>
+<where> p.pen_id=r.pen_id<if test="penName!=null"> and p.pen_name like '%'||#{penName}||'%'</if> and
+ r.rom_people >=4 and r.rom_id not in (select rom_id from reservation <where><if test ="checkIn!=null">TO_DATE(#{checkIn},'YY/MM/DD')  between res_indate and res_outdate</if></where>)
+ group by p.pen_id
+ </where>
+ <![CDATA[
+ )ot 
+ where p.pen_id=ot.pen order by p.pen_name)f
+where f.rnum>0 and f.rnum<10
  ]]>
 </select>
 <select id="getTotal" parameterType="hashMap" resultType="integer">
 <![CDATA[
 SELECT count(*) as cnt FROM (SELECT rownum as Rnum,pen_id,pen_name 
     FROM
-        (SELECT * FROM pension ]]><where><if test='#{opt}!=null'>And pen_name LIKE '%'||#{opt}||'%'</if></where><![CDATA[ ORDER BY pen_id DESC))
+        (SELECT * FROM pension ]]><where><if test='#{opt}!=null'>And pen_name LIKE '%'||#{penName}||'%'</if></where><![CDATA[ ORDER BY pen_id DESC))
   ]]>
 </select>
 </mapper>
