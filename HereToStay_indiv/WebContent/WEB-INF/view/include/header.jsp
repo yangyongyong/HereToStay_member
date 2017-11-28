@@ -3,7 +3,7 @@
 <% String sess = (String)request.getAttribute("session");
 
    if(sess != null) {
-	   session.setAttribute("memId", "yang");
+	   session.setAttribute("memId", sess);
    }
 %>
 <% String memId = (String)session.getAttribute("memId"); %>

@@ -220,6 +220,7 @@ $(document).ready(function(){
 	
 	// member 로그인 유효성 검사
 	$('#memLogin').click(function() {
+		alert($('#logId').val());
 		$.ajax({
 	        type: 'post',
 	        dataType:'text',
@@ -234,7 +235,7 @@ $(document).ready(function(){
 	        		$('#logPwd').val("");
 	        		return false;
 	        	} else {
-	        		$('#loginOk').attr('action',"/index.do?session=" + $('#memId'));
+	        		$('#loginOk').attr('action',"/index.do?session=" + $('#logId').val());
 					$('#loginOk').submit();
 	        	}
 			}

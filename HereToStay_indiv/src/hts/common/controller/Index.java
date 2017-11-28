@@ -11,6 +11,8 @@ public class Index {
 	@RequestMapping("/index.do")
 	public ModelAndView startHTS(String session, String logOut) {
 		
+		System.out.println(session);
+		
 		ModelAndView model = new ModelAndView();
 		model.setViewName("index");
 		model.addObject("session", session);

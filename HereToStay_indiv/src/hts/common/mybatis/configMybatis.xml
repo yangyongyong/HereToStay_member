@@ -9,13 +9,13 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
     <setting name="mapUnderscoreToCamelCase" value="true"/>
  </settings>
     <typeAliases>
-      <typeAlias type="hts.model.vo.Member" alias="member" />
-      <typeAlias type="hts.model.vo.Pension" alias="pension" />
-      <typeAlias type="hts.model.vo.Room" alias="Room" />
-      <typeAlias type="hts.model.vo.Reservation" alias="reservation" />
-      <typeAlias type="hts.model.vo.Review" alias="review" />
-      <typeAlias type="hts.model.vo.QnA" alias="QnA" />
-      <typeAlias type="hts.model.vo.ReservationDetail" alias="reservationDetail" />
-      <typeAlias type="hts.model.vo.MyQnADetail" alias="myQnADetail" />
+      <typeAlias type="hts.model.vo.member.Member" alias="member" />
+      <typeAlias type="hts.model.vo.member.Pension" alias="pension" />
+      <typeAlias type="hts.model.vo.member.Room" alias="Room" />
+      <typeAlias type="hts.model.vo.member.Reservation" alias="reservation" />
+      <typeAlias type="hts.model.vo.member.Review" alias="review" />
+      <typeAlias type="hts.model.vo.member.QnA" alias="QnA" />
+      <typeAlias type="hts.model.vo.member.ReservationDetail" alias="reservationDetail" />
+      <typeAlias type="hts.model.vo.member.MyQnADetail" alias="myQnADetail" />
   </typeAliases>
 </configuration>
