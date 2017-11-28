@@ -24,12 +24,23 @@ public class PensionPageSearchImpl implements PensionPageSearchDao {
 	
 		map.put("first", first);
 		map.put("last", last);
-		if(opt.getSearchName()!=null) map.put("penName",opt.getSearchName());
+		if(opt.getSearchName()!=null) {
+			if(!(opt.getSearchName().equals(""))) 
+				map.put("penName",opt.getSearchName());
+			else
+				System.out.println("eeeeeeeeeeeeeeee눌림 ㅇ");
+		}
 		if(opt.getCheckIn()!=null) { map.put("checkIn",opt.getCheckIn());
 		}
 		if(opt.getCheckOut()!=null) map.put("checkOut", opt.getCheckOut());
 		if(opt.getPersons()!=null) map.put("persons",opt.getPersons());
-		return ss.selectList("pensionPageSearch.getListOpt",map);		
+		if(opt.getPriceFrom()!=null) map.put("priceFrom", Integer.parseInt(opt.getPriceFrom()));
+		if(opt.getPriceTo()!=null) map.put("priceTo", Integer.parseInt(opt.getPriceTo()));		
+		if(opt.getPenOpt()!=null) map.put("penOpt",opt.getPenOpt());
+		if(opt.getRoomOpt()!=null) map.put("roomOpt", opt.getRoomOpt());
+		return ss.selectList("pensionPageSearch.getListOpt",map);	
+		
+		
 	}
 	@Override
 	public int getTotal(SearchOpt opt) {

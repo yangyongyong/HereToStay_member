@@ -20,28 +20,59 @@ FROM
  WHERE Rnum >= #{first}
  ]]>
 </select>
-<select id="getListOpt" parameterType="hashMap" resultType="pension">
+<sql id='search'>
 <![CDATA[
-select f.* from
- (select p.*,ot.*,rownum as rnum
+from
+ (select p.*,ot.*,rv.cnt as rev_cnt,floor(NVL(rv.avgStar,0)) as avg_star,rownum as rnum
  from pension p,(
  select p.pen_id as pen,min(r.rom_Cost) as min_Cost
  from pension p ,room r  ]]>
-<where> p.pen_id=r.pen_id<if test="penName!=null"> and p.pen_name like '%'||#{penName}||'%'</if> and
- r.rom_people >=4 and r.rom_id not in (select rom_id from reservation <where><if test ="checkIn!=null">TO_DATE(#{checkIn},'YY/MM/DD')  between res_indate and res_outdate</if></where>)
+<where> p.pen_id=r.pen_id<if test="penName!=null"> and (p.pen_name like '%'||#{penName}||'%' or p.pen_addr2 like '%'||#{penName}||'%')</if>
+<if test="penOpt!=null"><foreach item="item" index="index" collection="penOpt"> AND p.pen_opt LIKE '%' || #{item} || '%'
+</foreach></if><if test="persons!=null"> and
+ r.rom_people >=#{persons}</if><if test="priceFrom!=null and priceTo!=null">and r.rom_cost between #{priceFrom} and #{priceTo} </if>
+<if test="roomOpt!=null"><foreach item="item" index="index" collection="roomOpt"> AND r.rom_opt LIKE '%' || #{item} || '%'</foreach></if>
+  and r.rom_id not in (select rom_id from reservation <where><if test ="checkIn!=null">TO_DATE(#{checkIn},'YY/MM/DD')  between res_indate and res_outdate</if>
+ <if test ="checkOut!=null">or TO_DATE(#{checkOut},'YY/MM/DD')  between res_indate and res_outdate</if></where>)
  group by p.pen_id
  </where>
  <![CDATA[
- )ot 
- where p.pen_id=ot.pen order by p.pen_name)f
-where f.rnum>0 and f.rnum<10
+ )ot left outer join(select p.pen_id as p,count(rv.rev_id) as cnt,avg(rv.rev_star) as avgStar from reservation re,pension p,room r,review rv 
+where p.pen_id=r.pen_id and r.rom_id=re.rom_id and re.res_id =rv.res_id group by p.pen_id)rv
+on ot.pen=rv.p
+ where p.pen_id=ot.pen )f
+ ]]>
+</sql>
+<select id="getListOpt" parameterType="hashMap" resultType="pension">
+<![CDATA[
+select f.*]]>
+<include refid='search'></include>
+ <![CDATA[
+where f.rnum between 0 and 100
  ]]>
 </select>
 <select id="getTotal" parameterType="hashMap" resultType="integer">
 <![CDATA[
-SELECT count(*) as cnt FROM (SELECT rownum as Rnum,pen_id,pen_name 
-    FROM
-        (SELECT * FROM pension ]]><where><if test='#{opt}!=null'>And pen_name LIKE '%'||#{penName}||'%'</if></where><![CDATA[ ORDER BY pen_id DESC))
-  ]]>
+SELECT count(f.pen) as cnt 
+from
+ (select p.*,ot.*,rv.cnt as rev_cnt,floor(NVL(rv.avgStar,0)) as avg_star,rownum as rnum
+ from pension p,(
+ select p.pen_id as pen,min(r.rom_Cost) as min_Cost
+ from pension p ,room r  ]]>
+<where> p.pen_id=r.pen_id<if test="penName!=null"> and (p.pen_name like '%'||#{penName}||'%' or p.pen_addr2 like '%'||#{penName}||'%')</if>
+<if test="penOpt!=null"><foreach item="item" index="index" collection="penOpt"> AND p.pen_opt LIKE '%' || #{item} || '%'
+</foreach></if>
+<if test="persons!=null"> and r.rom_people >=#{persons}</if><if test="priceFrom!=null and priceTo!=null">and r.rom_cost between #{priceFrom} and #{priceTo} </if>
+<if test="roomOpt!=null"><foreach item="item" index="index" collection="roomOpt"> AND r.rom_opt LIKE '%' || #{item} || '%'</foreach></if>
+ and r.rom_id not in (select rom_id from reservation <where><if test ="checkIn!=null">TO_DATE(#{checkIn},'YY/MM/DD') between res_indate and res_outdate</if>
+ <if test ="checkOut!=null">or TO_DATE(#{checkOut},'YY/MM/DD') between res_indate and res_outdate</if></where>)
+ group by p.pen_id
+ </where>
+ <![CDATA[
+ )ot left outer join(select p.pen_id as p,count(rv.rev_id) as cnt,avg(rv.rev_star) as avgStar from reservation re,pension p,room r,review rv 
+where p.pen_id=r.pen_id and r.rom_id=re.rom_id and re.res_id =rv.res_id group by p.pen_id)rv
+on ot.pen=rv.p
+ where p.pen_id=ot.pen )f
+ ]]>
 </select>
 </mapper>

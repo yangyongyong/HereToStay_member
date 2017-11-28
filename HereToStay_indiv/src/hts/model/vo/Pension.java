@@ -15,8 +15,22 @@ public class Pension {
 	private String penStatus;
 	private String ownId;
 	private int minCost;
+	private int revCnt;
+	private int avgStar;	
 	
-	
+	public int getAvgStar() {
+		return avgStar;
+	}
+	public void setAvgStar(int avgStar) {
+		this.avgStar = avgStar;
+	}
+	public int getRevCnt() {
+		return revCnt;
+	}
+	public void setRevCnt(int revCnt) {
+		this.revCnt = revCnt;
+	}
+
 	public int getMinCost() {
 		return minCost;
 	}

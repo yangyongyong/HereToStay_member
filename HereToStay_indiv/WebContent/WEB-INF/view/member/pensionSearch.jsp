@@ -212,7 +212,7 @@
                 </label>&emsp;&emsp;&emsp;&emsp;&ensp;&ensp;
                 <label>
                   <input name='penOpt' type="checkbox" value="갯벌 체험" id='gb' />
-                  갯벌 체험1111111
+                  갯벌 체험
                 </label>
               </div>
              <div class="checkbox">
@@ -376,8 +376,16 @@
                               <div class="cat-list-content-lb">
                                 <div class="cat-list-content-lpadding">
                                   <div class="offer-slider-link"><a href="#"> ${List[i-1].penName}</a></div>
-                                  <div class="offer-slider-location">Thailand </div>
-                                  <p>Voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui. Nemo enim ipsam voluptatem quia voluptas.</p>
+                                  <div class="offer-slider-location">${List[i-1].penAddr2} </div>
+                                  <c:choose>
+                                  <c:when test="${fn:length(List[i-1].penIntro) ge 50}">
+                                  <p>${fn:substring(List[i-1].penIntro,0,50)}...</p>
+                                  </c:when>
+                                  <c:otherwise>
+                                  <p>${List[i-1].penIntro}</p>
+                                  </c:otherwise>
+                                  </c:choose>  
+
                                   <div class="cat-icons">
                                     <span class="cat-icon-01 active"></span>
                                     <span class="cat-icon-02"></span>
@@ -396,18 +404,23 @@
                             <div class="cat-list-content-p">
                               <nav class="stars">
             										<ul>
-            										<li><a href="#"><img alt="" src="/img/star-b.png" /></a></li>
+            										<c:forEach var="k" begin="1" end="5" step="1">            
+            										<c:choose>
+            										<c:when test="${k le List[i-1].avgStar}">
             											<li><a href="#"><img alt="" src="/img/star-b.png" /></a></li>
-            											<li><a href="#"><img alt="" src="/img/star-b.png" /></a></li>
-            											<li><a href="#"><img alt="" src="/img/star-b.png" /></a></li>
+            										</c:when>
+            										<c:otherwise>
             											<li><a href="#"><img alt="" src="/img/star-a.png" /></a></li>
+            										</c:otherwise>
+            										</c:choose>
+            										</c:forEach>
             										</ul>
             										<div class="clear"></div>
             									</nav>
-                              <div class="cat-list-review">270 reviews</div>
+                              <div class="cat-list-review">${List[i-1].revCnt} reviews</div>
                               <div class="offer-slider-r">
               									<b>${List[i-1].minCost}</b>
-              									<span>avg/night</span>
+              									<span>avg/night </span>
               								</div>           
                               <a href='/member/pensionDetail.do?id=${List[i-1].penId}' class="cat-list-btn">Select</a>   
                             </div>
@@ -444,8 +457,8 @@
       </div>
     </div>
     <div class="clear"></div>
-    </div>	
-  </div>  
+    </div>
+   </div>
 </div>
 <input type ="hidden" name='opt' value='what'/>
 </form>
@@ -496,10 +509,7 @@
   	
   	$("#srch-btn").click(function(){
   	
-//   		$("#fr").attr("action", "/member/pensionSearch.do?page=1&opt=what");
-//   		$("#fr").action='/member/pensionSearch.do?page=1&opt=what';
-  	
-  			$("#currentPage").val("1");
+		$("#currentPage").val("1");
   		$("#fr").submit();  		
   	});
   	
