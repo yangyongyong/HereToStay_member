@@ -6,7 +6,7 @@ import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import hts.model.vo.ReservationDetail;
+import hts.model.vo.member.ReservationDetail;
 
 @Repository
 public class ReserveDetailImpl implements ReserveDetailDao {

@@ -13,10 +13,10 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import hts.member.dao.MyPageMemInfoDao;
-import hts.model.vo.Member;
-import hts.model.vo.QnA;
-import hts.model.vo.Reservation;
-import hts.model.vo.Review;
+import hts.model.vo.member.Member;
+import hts.model.vo.member.QnA;
+import hts.model.vo.member.Reservation;
+import hts.model.vo.member.Review;
 
 
 @Controller

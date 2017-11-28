@@ -165,27 +165,82 @@ $(document).ready(function(){
 		});
 		return false;
 	});
+	$('.header-account2 a').on('click',function(){
+		$('.overlay').fadeIn(function(){
+			$('.autorize-popup2').animate({top: '50%'}, 300).find('input:text').eq('0').focus();
+		});
+		return false;
+	});
 
 	$('.overlay').on('click',function(){
 		$('.autorize-popup').animate({top: '-300px'}, 300, function(){
 			$('.overlay').fadeOut();	
 		});
+		$('.autorize-popup2').animate({top: '-300px'}, 300, function(){
+			$('.overlay').fadeOut();	
+		});
 	});
 
-	$('.autorize-tab-content').eq('0').css('display','block');
+	$('.autorize-tab-content').css('display','block');
+	$('.autorize-tab-content2').css('display','block');
+	
 	$('.autorize-tabs a').on('click',function(){
 		if ( $(this).is('.autorize-close') ) {
 			$('.autorize-popup').animate({top: '-300px'}, 300, function(){
 				$('.overlay').fadeOut();	
 			});
-		} else {
-			var $index = $(this).index();
-			$('.autorize-tabs a').removeClass('current').eq($index).addClass('current');
-			$('.autorize-tab-content').hide().eq($index).fadeIn().find('input:text').eq('0').focus();
+		}
+		return false;
+	});
+	$('.autorize-tabs2 a').on('click',function(){
+		if ( $(this).is('.autorize-close') ) {
+			$('.autorize-popup2').animate({top: '-300px'}, 300, function(){
+				$('.overlay').fadeOut();	
+			});
 		}
 		return false;
 	});
 
+	// 회원가입 유효성 검사
+	$('#memJoin').click(function() {
+		var fail = 0;
+		
+		if($('#memId').parent().find('b').eq(0).html() != '사용 가능한 아이디 입니다.') { alert('아이디를 다시 입력해주세요'); fail++; }
+		else if ($('#memPwd').val().length < 8) { alert('비밀번호는 8자리 이상이여야 합니다'); fail++; }
+		else if ($('#memPwd').val() == "") { alert('비밀번호를 반드시 입력해주세요'); fail++; }
+		else if ($('#memPwd').val() != $('#memPwdCk').val()) { alert('비밀번호를 다시 확인해주세요'); fail++; }
+		else if ($('#memName').val() == "") { alert('이름을 반드시 입력해주세요'); fail++; }
+		else if ($('#memTel').val() == "") { alert('전화번호를 반드시 입력해주세요'); fail++; }
+		else if ($('#memMail').val() == "") { alert('이메일을 반드시 입력해주세요'); fail++; }
+		else if ($('#memBirth').val() == "") { alert('주민등록번호 7자리를 입력해주세요'); fail++; }
+		
+		if(fail != 0) { return false;}
+		else { $('#joinInsert').submit(); alert('회원가입 완료');}
+	});
+	
+	// member 로그인 유효성 검사
+	$('#memLogin').click(function() {
+		$.ajax({
+	        type: 'post',
+	        dataType:'text',
+	        url:'/member/memCheck.do',
+	        contentType:'application/x-www-form-urlencoded;charset=UTF-8',
+	        data: {"memId" : $("#logId").val(),
+	        	   "memPwd" : $('#logPwd').val() },
+	        success:function(resultData){
+	        	if(resultData == '0') {
+	        		alert('아이디와 비밀번호를 다시 확인해주세요.');
+	        		$('#logId').val("");
+	        		$('#logPwd').val("");
+	        		return false;
+	        	} else {
+	        		$('#loginOk').attr('action',"/index.do?session=" + $('#memId'));
+					$('#loginOk').submit();
+	        	}
+			}
+	    });
+	});
+	
 	$('map area').on({
 		mouseenter: function(){
 			var $id = $(this).attr('id');

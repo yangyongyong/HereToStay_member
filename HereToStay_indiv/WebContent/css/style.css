@@ -173,10 +173,10 @@ input,select,button,textarea {outline:none;}
 .search-asvanced {display:none;padding-top:17px;}
 
 .overlay {display:none;width:100%;height:100%;background:rgba(20,29,30,0.19);position:fixed;left:0px;top:0px;z-index:9999;}
-.autorize-popup {z-index:9999;width:444px;height:255px;background:#fff;position:fixed;left:50%;top:-300px;margin-top:-128px;margin-left:-222px;}
+.autorize-popup {z-index:9999;width:444px;height:560px;background:#fff;position:fixed;left:50%;top:-300px;margin-top:-260px;margin-left:-222px;}
 .autorize-tab-a {display:block;float:left;width:82px;height:27px;text-align:center;text-decoration:none;font-family: 'Raleway';font-weight:600;font-size:13px;text-transform:uppercase;color:#fff;background:#141d1e;padding-top:12px;}
 .autorize-tab-b {display:block;float:left;width:303px;height:27px;text-decoration:none;font-family: 'Raleway';font-weight:600;font-size:13px;text-transform:uppercase;color:#fff;background:#141d1e;padding-top:12px;padding-left:20px;}
-.autorize-tabs a.current {color:#292828;background:#fff;cursor:default;} 
+/* .autorize-tabs a.current {color:#292828;background:#fff;cursor:default;}  */
 .autorize-close {display:block;width:39px;height:39px;float:right;background:url(../img/popup-close.png) left top no-repeat;}
 .autorize-close:hover {
 	background-position:left -39px;
@@ -197,19 +197,91 @@ input,select,button,textarea {outline:none;}
 .autorize-tab-content input[type='text'] {
 	border:1px solid #ebebeb;
 	background:#fff;
-	width:381px;
+/* 	width:381px; */
+	width:200px;
 	border-radius:3px;
 	font-size:11px;
 	padding:10px 8px 10px 8px;
-	text-transform:uppercase;
 	font-family:'Raleway';
 	font-weight:600;
 	color:#8a8a8a;	
 	margin-bottom:15px;
 }
+.autorize-tab-content input[type='password'] {
+	border:1px solid #ebebeb;
+	background:#fff;
+	width:200px;
+	border-radius:3px;
+	font-size:11px;
+	padding:10px 8px 10px 8px;
+	font-family:'Raleway';
+	font-weight:600;
+	color:#8a8a8a;	
+	margin-bottom:15px;
+}
+.autorize-tab-content input[type='email'] {
+	border:1px solid #ebebeb;
+	background:#fff;
+	width:200px;
+	border-radius:3px;
+	font-size:11px;
+	padding:10px 8px 10px 8px;
+	font-family:'Raleway';
+	font-weight:600;
+	color:#8a8a8a;	
+	margin-bottom:15px;
+}
+
+.autorize-popup2 input[type='text'] {
+	border:1px solid #ebebeb;
+	background:#fff;
+	width:381px;
+	border-radius:3px;
+	font-size:11px;
+	padding:10px 8px 10px 8px;
+	font-family:'Raleway';
+	font-weight:600;
+	color:#8a8a8a;	
+	margin-bottom:15px;
+}
+.autorize-popup2 input[type='password'] {
+	border:1px solid #ebebeb;
+	background:#fff;
+	width:381px;
+	border-radius:3px;
+	font-size:11px;
+	padding:10px 8px 10px 8px;
+	font-family:'Raleway';
+	font-weight:600;
+	color:#8a8a8a;	
+	margin-bottom:15px;
+}
+
+
+
 .authorize-btn {
 	display:block;
 	width:118px; 
+	height:34px;
+	padding-top:3px;
+	cursor:pointer;
+	background:#ff7200;
+	border-radius:2px;
+	-webkit-border-radius:2px;
+	-moz-border-radius:2px;
+	text-align:center;
+	font-size:11px;
+	text-decoration:none;
+	color:#fff;
+	float:left;
+	font-family: 'Montserrat';
+	font-weight:normal;
+	text-transform:uppercase;
+	border:0px;
+}
+.authorize-btn2 {
+	display:block;
+	width:401px; 
 	height:34px;
 	padding-top:3px;
 	cursor:pointer;

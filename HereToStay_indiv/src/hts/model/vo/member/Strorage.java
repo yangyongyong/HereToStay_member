@@ -1,4 +1,4 @@
-package hts.model.vo;
+package hts.model.vo.member;
 
 public class Strorage {
 	private String stoId;

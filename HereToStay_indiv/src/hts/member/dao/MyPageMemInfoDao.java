@@ -2,6 +2,10 @@ package hts.member.dao;
 
 import java.util.*;
 import hts.model.vo.*;
+import hts.model.vo.member.Member;
+import hts.model.vo.member.QnA;
+import hts.model.vo.member.Reservation;
+import hts.model.vo.member.Review;
 
 public interface MyPageMemInfoDao {
 	

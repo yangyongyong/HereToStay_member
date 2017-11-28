@@ -7,10 +7,10 @@ import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import hts.model.vo.Member;
-import hts.model.vo.QnA;
-import hts.model.vo.Reservation;
-import hts.model.vo.Review;
+import hts.model.vo.member.Member;
+import hts.model.vo.member.QnA;
+import hts.model.vo.member.Reservation;
+import hts.model.vo.member.Review;
 
 @Repository
 public class MyPageMemInfoImpl implements MyPageMemInfoDao {

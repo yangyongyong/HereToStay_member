@@ -7,8 +7,8 @@ import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import hts.model.vo.Pension;
-import hts.model.vo.Room;
+import hts.model.vo.member.Pension;
+import hts.model.vo.member.Room;
 @Repository
 public class PensionPageDetailImpl implements PensionPageDetailDao{
 

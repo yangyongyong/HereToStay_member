@@ -6,7 +6,7 @@ import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import hts.model.vo.MyQnADetail;
+import hts.model.vo.member.MyQnADetail;
 
 @Repository
 public class QnADetailImpl implements QnADetailDao {

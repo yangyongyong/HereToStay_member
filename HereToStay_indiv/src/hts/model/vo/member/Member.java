@@ -1,4 +1,4 @@
-package hts.model.vo;
+package hts.model.vo.member;
 
 public class Member {
 	private String memId;
@@ -6,17 +6,11 @@ public class Member {
 	private String memPwd;
 	private String memTel;
 	private String memMail;
-	private int memBirth;
+	private String memBirth;
 	private String memRpwd;
-	private String memMig;
+	private int memMig;
 	
 	
-	public int getMemBirth() {
-		return memBirth;
-	}
-	public void setMemBirth(int memBirth) {
-		this.memBirth = memBirth;
-	}
 	public String getMemId() {
 		return memId;
 	}
@@ -47,16 +41,22 @@ public class Member {
 	public void setMemMail(String memMail) {
 		this.memMail = memMail;
 	}
+	public String getMemBirth() {
+		return memBirth;
+	}
+	public void setMemBirth(String memBirth) {
+		this.memBirth = memBirth;
+	}
 	public String getMemRpwd() {
 		return memRpwd;
 	}
 	public void setMemRpwd(String memRpwd) {
 		this.memRpwd = memRpwd;
 	}
-	public String getMemMig() {
+	public int getMemMig() {
 		return memMig;
 	}
-	public void setMemMig(String memMig) {
+	public void setMemMig(int memMig) {
 		this.memMig = memMig;
 	}
 }

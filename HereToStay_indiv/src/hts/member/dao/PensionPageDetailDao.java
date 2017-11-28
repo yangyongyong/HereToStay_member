@@ -3,8 +3,8 @@ package hts.member.dao;
 
 import java.util.List;
 
-import hts.model.vo.Pension;
-import hts.model.vo.Room;
+import hts.model.vo.member.Pension;
+import hts.model.vo.member.Room;
 
 public interface PensionPageDetailDao {
 

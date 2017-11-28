@@ -17,6 +17,7 @@
 
 <!-- @Controller, @Repository, @Service ... -->
 <context:component-scan base-package="hts.model.vo"/>
+<context:component-scan base-package="hts.common"/>
 
 
 <!-- Ajax의 한글깨짐 처리를 위한 소스 -->

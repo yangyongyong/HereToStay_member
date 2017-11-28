@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import hts.member.dao.QnADetailDao;
-import hts.model.vo.MyQnADetail;
+import hts.model.vo.member.MyQnADetail;
 
 @Controller
 @RequestMapping("/member")

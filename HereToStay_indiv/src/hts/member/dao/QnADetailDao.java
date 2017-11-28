@@ -1,6 +1,6 @@
 package hts.member.dao;
 
-import hts.model.vo.MyQnADetail;
+import hts.model.vo.member.MyQnADetail;
 
 public interface QnADetailDao {
 	

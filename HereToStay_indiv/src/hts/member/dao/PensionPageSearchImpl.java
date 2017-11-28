@@ -8,8 +8,8 @@ import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import hts.model.vo.Pension;
-import hts.model.vo.SearchOpt;
+import hts.model.vo.member.Pension;
+import hts.model.vo.member.SearchOpt;
 @Repository
 public class PensionPageSearchImpl implements PensionPageSearchDao {
 

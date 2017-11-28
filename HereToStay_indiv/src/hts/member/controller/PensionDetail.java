@@ -11,8 +11,8 @@ import org.springframework.web.servlet.ModelAndView;
 
 import hts.member.dao.PensionPageDetailDao;
 import hts.member.dao.PensionPageSearchDao;
-import hts.model.vo.Pension;
-import hts.model.vo.Room;
+import hts.model.vo.member.Pension;
+import hts.model.vo.member.Room;
 
 @Controller
 @RequestMapping("/member")

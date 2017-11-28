@@ -11,11 +11,11 @@ import org.springframework.web.servlet.ModelAndView;
 
 import hts.member.dao.MyPageMemInfoDao;
 import hts.member.dao.ReserveDetailDao;
-import hts.model.vo.Member;
-import hts.model.vo.QnA;
-import hts.model.vo.Reservation;
-import hts.model.vo.ReservationDetail;
-import hts.model.vo.Review;
+import hts.model.vo.member.Member;
+import hts.model.vo.member.QnA;
+import hts.model.vo.member.Reservation;
+import hts.model.vo.member.ReservationDetail;
+import hts.model.vo.member.Review;
 
 @Controller
 @RequestMapping("/member")

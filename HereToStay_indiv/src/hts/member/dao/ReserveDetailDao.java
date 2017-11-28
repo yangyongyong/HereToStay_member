@@ -1,6 +1,6 @@
 package hts.member.dao;
 
-import hts.model.vo.ReservationDetail;
+import hts.model.vo.member.ReservationDetail;
 
 public interface ReserveDetailDao {
 	

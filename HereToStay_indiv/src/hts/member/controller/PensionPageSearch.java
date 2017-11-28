@@ -24,8 +24,8 @@ import org.springframework.web.servlet.ModelAndView;
 
 import hts.member.dao.MyPageMemInfoDao;
 import hts.member.dao.PensionPageSearchDao;
-import hts.model.vo.Pension;
-import hts.model.vo.SearchOpt;
+import hts.model.vo.member.Pension;
+import hts.model.vo.member.SearchOpt;
 
 
 @Controller
