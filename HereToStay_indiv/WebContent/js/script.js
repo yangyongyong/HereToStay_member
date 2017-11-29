@@ -340,7 +340,7 @@ $(document).ready(function(){
 		 var geocoder = new daum.maps.services.Geocoder();
 
 		 // 주소로 좌표를 검색합니다
-		 geocoder.addressSearch('서울시 광진구 군자동', function(result, status) {
+		 geocoder.addressSearch($("#ad").val(), function(result, status) {
 
 		     // 정상적으로 검색이 완료됐으면 
 		      if (status === daum.maps.services.Status.OK) {
@@ -355,7 +355,7 @@ $(document).ready(function(){
 
 		         // 인포윈도우로 장소에 대한 설명을 표시합니다
 		         var infowindow = new daum.maps.InfoWindow({
-		             content: '<div style="width:150px;text-align:center;padding:6px 0;">우리 펜션</div>'
+		             content: '<div style="width:150px;text-align:center;padding:6px 0;">'+$("#na").val()+'</div>'
 		         });
 		         infowindow.open(map, marker);
 

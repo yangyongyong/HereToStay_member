@@ -357,8 +357,6 @@
               <a href="#" class="show-thumbs chosen"></a> 
               <div class="clear"></div>
             </div>
-            
-            
             <div class="catalog-row list-rows">
                       
               <c:if test="${not empty List}">

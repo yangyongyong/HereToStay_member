@@ -43,10 +43,9 @@
       </div>
       <div class="clear"></div>
     </div>
-
 	<div class="sp-page">
-	
-
+<input type ="hidden" id = 'ad' value ="${Pension.penAddr2}"/>
+<input type ="hidden" id = 'na' value ="${Pension.penName}"/>
 		<div class="sp-page-a">
 			<div class="sp-page-l">
   				<div class="sp-page-lb">
@@ -715,144 +714,150 @@
 
 							<div class="reviews-c">
 								<div class="reviews-l">
-									<div class="reviews-total">4.7/5.0</div>
+									<div class="reviews-total">${Pension.avgStar}.0/5.0</div>
 									<nav class="reviews-total-stars">
 										<ul>
-											<li><a href="#"><img alt="" src="/img/r-stars-total-b.png"></a></li>
-											<li><a href="#"><img alt="" src="/img/r-stars-total-b.png"></a></li>
-											<li><a href="#"><img alt="" src="/img/r-stars-total-b.png"></a></li>
-											<li><a href="#"><img alt="" src="/img/r-stars-total-b.png"></a></li>
-											<li><a href="#"><img alt="" src="/img/r-stars-total-a.png"></a></li>
-										</ul>
+											<c:forEach var="k" begin="1" end="5" step="1">            
+            										<c:choose>
+            										<c:when test="${k le Pension.avgStar}">
+            											<li><a href="#"><img alt="" src="/img/r-stars-total-b.png"></a></li>
+            										</c:when>
+            										<c:otherwise>
+            											<li><a href="#"><img alt="" src="/img/r-stars-total-a.png"></a></li>
+            										</c:otherwise>
+            										</c:choose>
+            										</c:forEach>
+            										</ul>
 										<div class="clear"></div>
 									</nav>
 								</div>
-								<div class="reviews-r">
-  								<div class="reviews-rb">
-									<div class="reviews-percents">
-										<label>4.7 out of 5 stars</label>
-										<div class="reviews-percents-i"><span></span></div>
-									</div>
-									<div class="reviews-percents">
-										<label>100% clients recommeted</label>
-										<div class="reviews-percents-i"><span></span></div>
-									</div>
-  								</div>
-  								<br class="clear" />
-								</div>
+<!-- 								<div class="reviews-r"> -->
+<!--   								<div class="reviews-rb"> -->
+<!-- 									<div class="reviews-percents"> -->
+<%-- 										<label>${Pension.avgStar} out of 5 stars</label> --%>
+<!-- 										<div class="reviews-percents-i"><span></span></div> -->
+<!-- 									</div> -->
+<!-- <!-- 									<div class="reviews-percents"> --> 
+<!-- <!-- 										<label>100% clients recommeted</label> -->
+<!-- <!-- 										<div class="reviews-percents-i"><span></span></div> -->
+<!-- <!-- 									</div> --> 
+<!--   								</div> -->
+<!--   								<br class="clear" /> -->
+<!-- 								</div> -->
 							</div>
 							<div class="clear"></div>
 							
 							<div class="reviews-devider"></div>
 							
-							<div class="hotel-reviews">
-								<h2>Hotel Facilities</h2>
-								<div class="hotel-reviews-row">
-									<!-- // -->
-									<div class="hotel-reviews-i">
-										<div class="hotel-reviews-left">Cleanlines</div>
-										<nav class="hotel-reviews-right">
-											<ul>
-												<li><a href="#"><img alt="" src="/img/sstar-b.png"></a></li>
-												<li><a href="#"><img alt="" src="/img/sstar-b.png"></a></li>
-												<li><a href="#"><img alt="" src="/img/sstar-b.png"></a></li>
-												<li><a href="#"><img alt="" src="/img/sstar-b.png"></a></li>
-												<li><a href="#"><img alt="" src="/img/sstar-b.png"></a></li>
-											</ul>
-										</nav>
-										<div class="clear"></div>
-									</div>
-									<!-- \\ -->
-									<!-- // -->
-									<div class="hotel-reviews-i">
-										<div class="hotel-reviews-left">Price</div>
-										<nav class="hotel-reviews-right">
-											<ul>
-												<li><a href="#"><img alt="" src="/img/sstar-b.png"></a></li>
-												<li><a href="#"><img alt="" src="/img/sstar-b.png"></a></li>
-												<li><a href="#"><img alt="" src="/img/sstar-b.png"></a></li>
-												<li><a href="#"><img alt="" src="/img/sstar-a.png"></a></li>
-												<li><a href="#"><img alt="" src="/img/sstar-a.png"></a></li>
-											</ul>
-										</nav>
-										<div class="clear"></div>
-									</div>
-									<!-- \\ -->
-									<!-- // -->
-									<div class="hotel-reviews-i">
-										<div class="hotel-reviews-left">Sleep Quality</div>
-										<nav class="hotel-reviews-right">
-											<ul>
-												<li><a href="#"><img alt="" src="/img/sstar-b.png"></a></li>
-												<li><a href="#"><img alt="" src="/img/sstar-b.png"></a></li>
-												<li><a href="#"><img alt="" src="/img/sstar-a.png"></a></li>
-												<li><a href="#"><img alt="" src="/img/sstar-a.png"></a></li>
-												<li><a href="#"><img alt="" src="/img/sstar-a.png"></a></li>
-											</ul>
-										</nav>
-										<div class="clear"></div>
-									</div>
-									<!-- \\ -->
-									<!-- // -->
-									<div class="hotel-reviews-i">
-										<div class="hotel-reviews-left">Service & Stuff</div>
-										<nav class="hotel-reviews-right">
-											<ul>
-												<li><a href="#"><img alt="" src="/img/sstar-b.png"></a></li>
-												<li><a href="#"><img alt="" src="/img/sstar-b.png"></a></li>
-												<li><a href="#"><img alt="" src="/img/sstar-b.png"></a></li>
-												<li><a href="#"><img alt="" src="/img/sstar-b.png"></a></li>
-												<li><a href="#"><img alt="" src="/img/sstar-a.png"></a></li>
-											</ul>
-										</nav>
-										<div class="clear"></div>
-									</div>
-									<!-- \\ -->
-									<!-- // -->
-									<div class="hotel-reviews-i">
-										<div class="hotel-reviews-left">Location</div>
-										<nav class="hotel-reviews-right">
-											<ul>
-												<li><a href="#"><img alt="" src="/img/sstar-b.png"></a></li>
-												<li><a href="#"><img alt="" src="/img/sstar-b.png"></a></li>
-												<li><a href="#"><img alt="" src="/img/sstar-b.png"></a></li>
-												<li><a href="#"><img alt="" src="/img/sstar-b.png"></a></li>
-												<li><a href="#"><img alt="" src="/img/sstar-b.png"></a></li>
-											</ul>
-										</nav>
-										<div class="clear"></div>
-									</div>
-									<!-- \\ -->
-									<!-- // -->
-									<div class="hotel-reviews-i">
-										<div class="hotel-reviews-left">Comfort</div>
-										<nav class="hotel-reviews-right">
-											<ul>
-												<li><a href="#"><img alt="" src="/img/sstar-b.png"></a></li>
-												<li><a href="#"><img alt="" src="/img/sstar-b.png"></a></li>
-												<li><a href="#"><img alt="" src="/img/sstar-b.png"></a></li>
-												<li><a href="#"><img alt="" src="/img/sstar-a.png"></a></li>
-												<li><a href="#"><img alt="" src="/img/sstar-a.png"></a></li>
-											</ul>
-										</nav>
-										<div class="clear"></div>
-									</div>
-									<!-- \\ -->
-								</div>
-								<div class="clear"></div>
-							</div>
+<!-- 							<div class="hotel-reviews"> -->
+<!-- 								<h2>Hotel Facilities</h2> -->
+<!-- 								<div class="hotel-reviews-row"> -->
+<!-- 									// -->
+<!-- 									<div class="hotel-reviews-i"> -->
+<!-- 										<div class="hotel-reviews-left">Cleanlines</div> -->
+<!-- 										<nav class="hotel-reviews-right"> -->
+<!-- 											<ul> -->
+<!-- 												<li><a href="#"><img alt="" src="/img/sstar-b.png"></a></li> -->
+<!-- 												<li><a href="#"><img alt="" src="/img/sstar-b.png"></a></li> -->
+<!-- 												<li><a href="#"><img alt="" src="/img/sstar-b.png"></a></li> -->
+<!-- 												<li><a href="#"><img alt="" src="/img/sstar-b.png"></a></li> -->
+<!-- 												<li><a href="#"><img alt="" src="/img/sstar-b.png"></a></li> -->
+<!-- 											</ul> -->
+<!-- 										</nav> -->
+<!-- 										<div class="clear"></div> -->
+<!-- 									</div> -->
+<!-- 									\\ -->
+<!-- 									// -->
+<!-- 									<div class="hotel-reviews-i"> -->
+<!-- 										<div class="hotel-reviews-left">Price</div> -->
+<!-- 										<nav class="hotel-reviews-right"> -->
+<!-- 											<ul> -->
+<!-- 												<li><a href="#"><img alt="" src="/img/sstar-b.png"></a></li> -->
+<!-- 												<li><a href="#"><img alt="" src="/img/sstar-b.png"></a></li> -->
+<!-- 												<li><a href="#"><img alt="" src="/img/sstar-b.png"></a></li> -->
+<!-- 												<li><a href="#"><img alt="" src="/img/sstar-a.png"></a></li> -->
+<!-- 												<li><a href="#"><img alt="" src="/img/sstar-a.png"></a></li> -->
+<!-- 											</ul> -->
+<!-- 										</nav> -->
+<!-- 										<div class="clear"></div> -->
+<!-- 									</div> -->
+<!-- 									\\ -->
+<!-- 									// -->
+<!-- 									<div class="hotel-reviews-i"> -->
+<!-- 										<div class="hotel-reviews-left">Sleep Quality</div> -->
+<!-- 										<nav class="hotel-reviews-right"> -->
+<!-- 											<ul> -->
+<!-- 												<li><a href="#"><img alt="" src="/img/sstar-b.png"></a></li> -->
+<!-- 												<li><a href="#"><img alt="" src="/img/sstar-b.png"></a></li> -->
+<!-- 												<li><a href="#"><img alt="" src="/img/sstar-a.png"></a></li> -->
+<!-- 												<li><a href="#"><img alt="" src="/img/sstar-a.png"></a></li> -->
+<!-- 												<li><a href="#"><img alt="" src="/img/sstar-a.png"></a></li> -->
+<!-- 											</ul> -->
+<!-- 										</nav> -->
+<!-- 										<div class="clear"></div> -->
+<!-- 									</div> -->
+<!-- 									\\ -->
+<!-- 									// -->
+<!-- 									<div class="hotel-reviews-i"> -->
+<!-- 										<div class="hotel-reviews-left">Service & Stuff</div> -->
+<!-- 										<nav class="hotel-reviews-right"> -->
+<!-- 											<ul> -->
+<!-- 												<li><a href="#"><img alt="" src="/img/sstar-b.png"></a></li> -->
+<!-- 												<li><a href="#"><img alt="" src="/img/sstar-b.png"></a></li> -->
+<!-- 												<li><a href="#"><img alt="" src="/img/sstar-b.png"></a></li> -->
+<!-- 												<li><a href="#"><img alt="" src="/img/sstar-b.png"></a></li> -->
+<!-- 												<li><a href="#"><img alt="" src="/img/sstar-a.png"></a></li> -->
+<!-- 											</ul> -->
+<!-- 										</nav> -->
+<!-- 										<div class="clear"></div> -->
+<!-- 									</div> -->
+<!-- 									\\ -->
+<!-- 									// -->
+<!-- 									<div class="hotel-reviews-i"> -->
+<!-- 										<div class="hotel-reviews-left">Location</div> -->
+<!-- 										<nav class="hotel-reviews-right"> -->
+<!-- 											<ul> -->
+<!-- 												<li><a href="#"><img alt="" src="/img/sstar-b.png"></a></li> -->
+<!-- 												<li><a href="#"><img alt="" src="/img/sstar-b.png"></a></li> -->
+<!-- 												<li><a href="#"><img alt="" src="/img/sstar-b.png"></a></li> -->
+<!-- 												<li><a href="#"><img alt="" src="/img/sstar-b.png"></a></li> -->
+<!-- 												<li><a href="#"><img alt="" src="/img/sstar-b.png"></a></li> -->
+<!-- 											</ul> -->
+<!-- 										</nav> -->
+<!-- 										<div class="clear"></div> -->
+<!-- 									</div> -->
+<!-- 									\\ -->
+<!-- 									// -->
+<!-- 									<div class="hotel-reviews-i"> -->
+<!-- 										<div class="hotel-reviews-left">Comfort</div> -->
+<!-- 										<nav class="hotel-reviews-right"> -->
+<!-- 											<ul> -->
+<!-- 												<li><a href="#"><img alt="" src="/img/sstar-b.png"></a></li> -->
+<!-- 												<li><a href="#"><img alt="" src="/img/sstar-b.png"></a></li> -->
+<!-- 												<li><a href="#"><img alt="" src="/img/sstar-b.png"></a></li> -->
+<!-- 												<li><a href="#"><img alt="" src="/img/sstar-a.png"></a></li> -->
+<!-- 												<li><a href="#"><img alt="" src="/img/sstar-a.png"></a></li> -->
+<!-- 											</ul> -->
+<!-- 										</nav> -->
+<!-- 										<div class="clear"></div> -->
+<!-- 									</div> -->
+<!-- 									\\ -->
+<!-- 								</div> -->
+<!-- 								<div class="clear"></div> -->
+<!-- 							</div> -->
 							
-							<div class="hotel-reviews-devider"></div>
+<!-- 							<div class="hotel-reviews-devider"></div> -->
 							
 							<div class="guest-reviews">
 								<h2>Guest Reviews</h2>
+								 <c:forEach var="i" begin="1" end="${fn:length(Reviews)}" step="1"  >
 								<div class="guest-reviews-row">
 									<!-- // -->
 										<div class="guest-reviews-i">
 										<div class="guest-reviews-a">
 											<div class="guest-reviews-l">
 												<div class="guest-reviews-img">
-													<span>5.0</span>
+													<span>${Reviews[i-1].revStar}</span>
 													<img alt="" src="/img/guest-01.png">
 												</div>
 											</div>
@@ -861,9 +866,9 @@
 												<div class="guest-reviews-b">
 												<div class="guest-reviews-bl">
   													<div class="guest-reviews-blb">
-														<div class="guest-reviews-lbl">Gabriela King</div>
-														<div class="guest-reviews-lbl-a">from United Kingdom</div>
-														<div class="guest-reviews-txt">Voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui voluptatem sequi nesciunt.</div>
+														<div class="guest-reviews-lbl">${Reviews[i-1].revTitle}</div>
+														<div class="guest-reviews-lbl-a">${Reviews[i-1].romName }</div>
+														<div class="guest-reviews-txt">${Reviews[i-1].revContext}</div>
   													</div>
   													<br class="clear" />
 												</div>
@@ -872,16 +877,21 @@
   													<div class="guest-reviews-padding">
   													<nav>
   														<ul>
-  															<li><img alt="" src="/img/g-star-b.png"></li>
-  															<li><img alt="" src="/img/g-star-b.png"></li>
-  															<li><img alt="" src="/img/g-star-b.png"></li>
-  															<li><img alt="" src="/img/g-star-b.png"></li>
-  															<li><img alt="" src="/img/g-star-a.png"></li>
+  														<c:forEach var="k" begin="1" end="5" step="1">            
+            											<c:choose>
+            											<c:when test="${k le Reviews[i-1].revStar}">
+            												<li><img alt="" src="/img/g-star-b.png"></li>
+            											</c:when>
+            											<c:otherwise>
+            											<li><img alt="" src="/img/g-star-a.png"></li>
+            											</c:otherwise>
+            											</c:choose>
+            											</c:forEach>
   														</ul>
   													</nav>
-  													<div class="guest-rating">4,5/5.0</div>
+  													<div class="guest-rating">${Reviews[i-1].revStar}/5.0</div>
   													<div class="clear"></div>
-  													<div class="guest-rating-txt">Recomended</div>
+  													<div class="guest-rating-txt">${Reviews[i-1].memId}</div>
   													</div>
 												</div>
   												</div>
@@ -892,203 +902,73 @@
 										</div>
 									<!-- \\ -->
 									<!-- // -->
-										<div class="guest-reviews-i">
-										<div class="guest-reviews-a">
-											<div class="guest-reviews-l">
-												<div class="guest-reviews-img">
-													<span>5.0</span>
-													<img alt="" src="/img/guest-02.png">
-												</div>
-											</div>
-											<div class="guest-reviews-r">
-  												<div class="guest-reviews-rb">
-												<div class="guest-reviews-b">
-												<div class="guest-reviews-bl">
-  													<div class="guest-reviews-blb">
-														<div class="guest-reviews-lbl">Robert Dowson</div>
-														<div class="guest-reviews-lbl-a">from Austria</div>
-														<div class="guest-reviews-txt">Qoluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui voluptatem sequi nesciunt. </div>
-  													</div>
-  													<br class="clear" />
-												</div>
-												</div>
-												<div class="guest-reviews-br">  													
-  													<div class="guest-reviews-padding">
-  													<nav>
-  														<ul>
-  															<li><img alt="" src="/img/g-star-b.png"></li>
-  															<li><img alt="" src="/img/g-star-b.png"></li>
-  															<li><img alt="" src="/img/g-star-b.png"></li>
-  															<li><img alt="" src="/img/g-star-b.png"></li>
-  															<li><img alt="" src="/img/g-star-a.png"></li>
-  														</ul>
-  													</nav>
-  													<div class="guest-rating">4,5/5.0</div>
-  													<div class="clear"></div>
-  													<div class="guest-rating-txt">Recomended</div>
-  													</div>
-												</div>
-  												</div>
-  												<br class="clear" />
-												</div>
-											</div>
-											<div class="clear"></div>
-										</div>
-									<!-- \\ -->
-									<!-- // -->
-										<div class="guest-reviews-i">
-										<div class="guest-reviews-a">
-											<div class="guest-reviews-l">
-												<div class="guest-reviews-img">
-													<span>4.4</span>
-													<img alt="" src="/img/guest-03.png">
-												</div>
-											</div>
-											<div class="guest-reviews-r">
-  												<div class="guest-reviews-rb">
-												<div class="guest-reviews-b">
-												<div class="guest-reviews-bl">
-  													<div class="guest-reviews-blb">
-														<div class="guest-reviews-lbl">Mike Tyson</div>
-														<div class="guest-reviews-lbl-a">from France</div>
-														<div class="guest-reviews-txt">Voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores</div>
-  													</div>
-  													<br class="clear" />
-												</div>
-												</div>
-												<div class="guest-reviews-br">  													
-  													<div class="guest-reviews-padding">
-  													<nav>
-  														<ul>
-  															<li><img alt="" src="/img/g-star-b.png"></li>
-  															<li><img alt="" src="/img/g-star-b.png"></li>
-  															<li><img alt="" src="/img/g-star-b.png"></li>
-  															<li><img alt="" src="/img/g-star-b.png"></li>
-  															<li><img alt="" src="/img/g-star-a.png"></li>
-  														</ul>
-  													</nav>
-  													<div class="guest-rating">4,5/5.0</div>
-  													<div class="clear"></div>
-  													<div class="guest-rating-txt">Recomended</div>
-  													</div>
-												</div>
-  												</div>
-  												<br class="clear" />
-												</div>
-											</div>
-											<div class="clear"></div>
-										</div>
-									<!-- \\ -->
-									<!-- // -->
-										<div class="guest-reviews-i">
-										<div class="guest-reviews-a">
-											<div class="guest-reviews-l">
-												<div class="guest-reviews-img">
-													<span>5.0</span>
-													<img alt="" src="/img/guest-04.png">
-												</div>
-											</div>
-											<div class="guest-reviews-r">
-  												<div class="guest-reviews-rb">
-												<div class="guest-reviews-b">
-												<div class="guest-reviews-bl">
-  													<div class="guest-reviews-blb">
-														<div class="guest-reviews-lbl">Lina King</div>
-														<div class="guest-reviews-lbl-a">from United Kingdom</div>
-														<div class="guest-reviews-txt">Voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores</div>
-  													</div>
-  													<br class="clear" />
-												</div>
-												</div>
-												<div class="guest-reviews-br">  													
-  													<div class="guest-reviews-padding">
-  													<nav>
-  														<ul>
-  															<li><img alt="" src="/img/g-star-b.png"></li>
-  															<li><img alt="" src="/img/g-star-b.png"></li>
-  															<li><img alt="" src="/img/g-star-b.png"></li>
-  															<li><img alt="" src="/img/g-star-b.png"></li>
-  															<li><img alt="" src="/img/g-star-a.png"></li>
-  														</ul>
-  													</nav>
-  													<div class="guest-rating">4,5/5.0</div>
-  													<div class="clear"></div>
-  													<div class="guest-rating-txt">Recomended</div>
-  													</div>
-												</div>
-  												</div>
-  												<br class="clear" />
-												</div>
-											</div>
-											<div class="clear"></div>
-										</div>
-									<!-- \\ -->
 								</div>
+								</c:forEach>
 								<a href="#" class="guest-reviews-more">load more reviews</a>
                 
-                <div class="review-form">
-                  <h2>Live Review</h2>
-                  <label>User Name:</label>
-                  <div class="input-a"><input type="text" placeholder="" value=""></div>
-                  <label>Your Review:</label>
-                  <div class="textarea-a"><textarea></textarea></div>
+<!--                 <div class="review-form"> -->
+<!--                   <h2>Live Review</h2> -->
+<!--                   <label>User Name:</label> -->
+<!--                   <div class="input-a"><input type="text" placeholder="" value=""></div> -->
+<!--                   <label>Your Review:</label> -->
+<!--                   <div class="textarea-a"><textarea></textarea></div> -->
 
-                  <div class="review-rangers-row">
-                  <div class="review-ranger">
-                    <label>Cleanlines</label>
-                    <div class="review-ranger-r">
-                      <div class="slider-range-min"></div>
-                    </div>
-                    <div class="clear"></div>
-                  </div>
-                  <div class="review-ranger">
-                    <label>Service & Stuff</label>
-                    <div class="review-ranger-r">
-                      <div class="slider-range-min"></div>
-                    </div>
-                    <div class="clear"></div>
-                  </div>
-                  <div class="review-ranger">
-                    <label>Price</label>
-                    <div class="review-ranger-r">
-                      <div class="slider-range-min"></div>
-                    </div>
-                    <div class="clear"></div>
-                  </div>
-                  <div class="review-ranger">
-                    <label>Location</label>
-                    <div class="review-ranger-r">
-                      <div class="slider-range-min"></div>
-                    </div>
-                    <div class="clear"></div>
-                  </div>
-                  <div class="review-ranger">
-                    <label>Sleep Quality</label>
-                    <div class="review-ranger-r">
-                      <div class="slider-range-min"></div>
-                    </div>
-                    <div class="clear"></div>
-                  </div>
-                  <div class="review-ranger">
-                    <label>Comfort</label>
-                    <div class="review-ranger-r">
-                      <div class="slider-range-min"></div>
-                    </div>
-                    <div class="clear"></div>
-                  </div>
-                  </div>
-                  <label>Evaluation</label>
-					<select class="custom-select">
-						<option>&nbsp;</option>
-						<option>1</option>
-						<option>2</option>
-						<option>3</option>
-						<option>4</option>
-					</select>
-                  <label>When did you travel?</label>
-                  <div class="input-a"><input type="text" value="" /></div>
-                  <button class="review-send">Submit Review</button>
-                </div>              
+<!--                   <div class="review-rangers-row"> -->
+<!--                   <div class="review-ranger"> -->
+<!--                     <label>Cleanlines</label> -->
+<!--                     <div class="review-ranger-r"> -->
+<!--                       <div class="slider-range-min"></div> -->
+<!--                     </div> -->
+<!--                     <div class="clear"></div> -->
+<!--                   </div> -->
+<!--                   <div class="review-ranger"> -->
+<!--                     <label>Service & Stuff</label> -->
+<!--                     <div class="review-ranger-r"> -->
+<!--                       <div class="slider-range-min"></div> -->
+<!--                     </div> -->
+<!--                     <div class="clear"></div> -->
+<!--                   </div> -->
+<!--                   <div class="review-ranger"> -->
+<!--                     <label>Price</label> -->
+<!--                     <div class="review-ranger-r"> -->
+<!--                       <div class="slider-range-min"></div> -->
+<!--                     </div> -->
+<!--                     <div class="clear"></div> -->
+<!--                   </div> -->
+<!--                   <div class="review-ranger"> -->
+<!--                     <label>Location</label> -->
+<!--                     <div class="review-ranger-r"> -->
+<!--                       <div class="slider-range-min"></div> -->
+<!--                     </div> -->
+<!--                     <div class="clear"></div> -->
+<!--                   </div> -->
+<!--                   <div class="review-ranger"> -->
+<!--                     <label>Sleep Quality</label> -->
+<!--                     <div class="review-ranger-r"> -->
+<!--                       <div class="slider-range-min"></div> -->
+<!--                     </div> -->
+<!--                     <div class="clear"></div> -->
+<!--                   </div> -->
+<!--                   <div class="review-ranger"> -->
+<!--                     <label>Comfort</label> -->
+<!--                     <div class="review-ranger-r"> -->
+<!--                       <div class="slider-range-min"></div> -->
+<!--                     </div> -->
+<!--                     <div class="clear"></div> -->
+<!--                   </div> -->
+<!--                   </div> -->
+<!--                   <label>Evaluation</label> -->
+<!-- 					<select class="custom-select"> -->
+<!-- 						<option>&nbsp;</option> -->
+<!-- 						<option>1</option> -->
+<!-- 						<option>2</option> -->
+<!-- 						<option>3</option> -->
+<!-- 						<option>4</option> -->
+<!-- 					</select> -->
+<!--                   <label>When did you travel?</label> -->
+<!--                   <div class="input-a"><input type="text" value="" /></div> -->
+<!--                   <button class="review-send">Submit Review</button> -->
+<!--                 </div>               -->
 							</div>		
   						</div>
   						</div>
@@ -1385,14 +1265,19 @@
 				</div>
 				<div class="h-detail-stars">
 					<ul class="h-stars-list">
-						<li><a href="#"><img alt="" src="/img/hd-star-b.png"></a></li>
-						<li><a href="#"><img alt="" src="/img/hd-star-b.png"></a></li>
-						<li><a href="#"><img alt="" src="/img/hd-star-b.png"></a></li>
-						<li><a href="#"><img alt="" src="/img/hd-star-b.png"></a></li>
-						<li><a href="#"><img alt="" src="/img/hd-star-a.png"></a></li>
+					<c:forEach var="k" begin="1" end="5" step="1">            
+            		<c:choose>
+            		<c:when test="${k le Pension.avgStar}">
+            		<li><a href="#"><img alt="" src="/img/hd-star-b.png"></a></li>
+            		</c:when>
+            		<c:otherwise>
+            		<li><a href="#"><img alt="" src="/img/hd-star-a.png"></a></li>
+            		</c:otherwise>
+            		</c:choose>
+            		</c:forEach>				
 					</ul>
-					<div class="h-stars-lbl">156 reviews</div>
-					<a href="#" class="h-add-review">add review</a>
+					<div class="h-stars-lbl">${Pension.revCnt} reviews</div>
+<!-- 					<a href="#" class="h-add-review">add review</a> -->
 					<div class="clear"></div>
 				</div>
 				<div class="h-details-text">
@@ -1418,58 +1303,58 @@
 <!-- 				<div class="h-help-email">sparrow@mail.com</div> -->
 <!-- 			</div> -->
 			
-			<div class="reasons-rating">
-				<div id="reasons-slider">
+<!-- 			<div class="reasons-rating"> -->
+<!-- 				<div id="reasons-slider"> -->
           <!-- // -->
-  				<div class="reasons-rating-i">
-  					<div class="reasons-rating-txt">Sed ut perspiciatis unde omnis iste natus sit voluptatem accusantium doloremque laudantium, totam.</div>
-  					<div class="reasons-rating-user">
-  						<div class="reasons-rating-user-l">
-  							<img alt="" src="/img/r-user.png">
-  							<span>5.0</span>
-  						</div>
-  						<div class="reasons-rating-user-r">
-  							<b>Gabriela King</b>
-  							<span>from United Kingdom</span>
-  						</div>
-  						<div class="clear"></div>
-  					</div>
-  				</div>
+<!--   				<div class="reasons-rating-i"> -->
+<!--   					<div class="reasons-rating-txt">Sed ut perspiciatis unde omnis iste natus sit voluptatem accusantium doloremque laudantium, totam.</div> -->
+<!--   					<div class="reasons-rating-user"> -->
+<!--   						<div class="reasons-rating-user-l"> -->
+<!--   							<img alt="" src="/img/r-user.png"> -->
+<!--   							<span>5.0</span> -->
+<!--   						</div> -->
+<!--   						<div class="reasons-rating-user-r"> -->
+<!--   							<b>Gabriela King</b> -->
+<!--   							<span>from United Kingdom</span> -->
+<!--   						</div> -->
+<!--   						<div class="clear"></div> -->
+<!--   					</div> -->
+<!--   				</div> -->
   				<!-- \\ -->
           <!-- // -->
-  				<div class="reasons-rating-i">
-  					<div class="reasons-rating-txt">Sed ut perspiciatis unde omnis iste natus sit voluptatem accusantium doloremque laudantium, totam.</div>
-  					<div class="reasons-rating-user">
-  						<div class="reasons-rating-user-l">
-  							<img alt="" src="/img/r-user.png">
-  							<span>5.0</span>
-  						</div>
-  						<div class="reasons-rating-user-r">
-  							<b>Robert Dowson</b>
-  							<span>from Austria</span>
-  						</div>
-  						<div class="clear"></div>
-  					</div>
-  				</div>
+<!--   				<div class="reasons-rating-i"> -->
+<!--   					<div class="reasons-rating-txt">Sed ut perspiciatis unde omnis iste natus sit voluptatem accusantium doloremque laudantium, totam.</div> -->
+<!--   					<div class="reasons-rating-user"> -->
+<!--   						<div class="reasons-rating-user-l"> -->
+<!--   							<img alt="" src="/img/r-user.png"> -->
+<!--   							<span>5.0</span> -->
+<!--   						</div> -->
+<!--   						<div class="reasons-rating-user-r"> -->
+<!--   							<b>Robert Dowson</b> -->
+<!--   							<span>from Austria</span> -->
+<!--   						</div> -->
+<!--   						<div class="clear"></div> -->
+<!--   					</div> -->
+<!--   				</div> -->
+<!--   				\\ -->
+<!--           // -->
+<!--   				<div class="reasons-rating-i"> -->
+<!--   					<div class="reasons-rating-txt">Sed ut perspiciatis unde omnis iste natus sit voluptatem accusantium doloremque laudantium, totam.</div> -->
+<!--   					<div class="reasons-rating-user"> -->
+<!--   						<div class="reasons-rating-user-l"> -->
+<!--   							<img alt="" src="/img/r-user.png"> -->
+<!--   							<span>5.0</span> -->
+<!--   						</div> -->
+<!--   						<div class="reasons-rating-user-r"> -->
+<!--   							<b>Mike Tyson</b> -->
+<!--   							<span>from France</span> -->
+<!--   						</div> -->
+<!--   						<div class="clear"></div> -->
+<!--   					</div> -->
+<!--   				</div> -->
   				<!-- \\ -->
-          <!-- // -->
-  				<div class="reasons-rating-i">
-  					<div class="reasons-rating-txt">Sed ut perspiciatis unde omnis iste natus sit voluptatem accusantium doloremque laudantium, totam.</div>
-  					<div class="reasons-rating-user">
-  						<div class="reasons-rating-user-l">
-  							<img alt="" src="/img/r-user.png">
-  							<span>5.0</span>
-  						</div>
-  						<div class="reasons-rating-user-r">
-  							<b>Mike Tyson</b>
-  							<span>from France</span>
-  						</div>
-  						<div class="clear"></div>
-  					</div>
-  				</div>
-  				<!-- \\ -->
-        </div>
-			</div>
+<!--         </div> -->
+<!-- 			</div> -->
 			
 			<div class="h-liked">
 				<div class="h-liked-lbl">You May Also Like</div>
@@ -1756,10 +1641,7 @@
 .placeinfo .tel {color:#0f7833;}
 .placeinfo .jibun {color:#999;font-size:11px;margin-top:0;}
 
-.room{
-
-}
-
+.available-price{ font-size :15px}
 
 </style>
 

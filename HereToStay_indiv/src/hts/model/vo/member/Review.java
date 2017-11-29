@@ -7,8 +7,38 @@ public class Review {
 	private int revStar;
 	private String romName;
 	private String penId;
+	private String revId;
+	private String revContext;
+	private String revDate;
 	
+	//추가 
+	private String memId;
+		
 	
+	public String getRevId() {
+		return revId;
+	}
+	public void setRevId(String revId) {
+		this.revId = revId;
+	}
+	public String getRevContext() {
+		return revContext;
+	}
+	public void setRevContext(String revContext) {
+		this.revContext = revContext;
+	}
+	public String getRevDate() {
+		return revDate;
+	}
+	public void setRevDate(String revDate) {
+		this.revDate = revDate;
+	}
+	public String getMemId() {
+		return memId;
+	}
+	public void setMemId(String memId) {
+		this.memId = memId;
+	}
 	public String getRevPhoto() {
 		return revPhoto;
 	}

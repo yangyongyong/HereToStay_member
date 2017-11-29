@@ -12,6 +12,7 @@ import org.springframework.web.servlet.ModelAndView;
 import hts.member.dao.PensionPageDetailDao;
 import hts.member.dao.PensionPageSearchDao;
 import hts.model.vo.member.Pension;
+import hts.model.vo.member.Review;
 import hts.model.vo.member.Room;
 
 @Controller
@@ -27,11 +28,11 @@ public class PensionDetail {
 		String Id= req.getParameter("id");
 		Pension pension=pensionPageDetailDao.getPension(Id);
 		List<Room> rooms=pensionPageDetailDao.getRooms(Id);
-		System.out.println(rooms.size());
+		List<Review> reviews =pensionPageDetailDao.getReview(Id);
 		ModelAndView model=new ModelAndView();
 		model.addObject("Pension", pension);
 		model.addObject("Rooms",rooms);
-		
+		model.addObject("Reviews",reviews);
 		return model;
 	}
 
