@@ -62,7 +62,7 @@
 			<div class="content-wrapper">
 				<div class="page-title">마이페이지</div>
 				<div class="breadcrumbs">
-        			<a href="#">Home</a> / <span>마이페이지</span>
+        			<a href="/index.do">Home</a> / <span>마이페이지</span>
       			</div>
       			<div class="clear"></div>
       		</div>		
@@ -236,7 +236,7 @@
 											                  
 											                  	<br/>
 																<div style="text-align: right;">
-																	<input type="hidden" value="${member.memPwd}" name="memPwd" id="memPwd" />
+																	<input type="hidden" value="${member.memPwd}" name="memPwd" id="memberPwd" />
 																	<input class="input-a" type="password" id="pwdInput" value="" placeholder="비밀번호" /> &nbsp;&nbsp;
 																	<input class="contacts-send" id="infoUpdate" type="button" value="수정하기"/>
 																</div>

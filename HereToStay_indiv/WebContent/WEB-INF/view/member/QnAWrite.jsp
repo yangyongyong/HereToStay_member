@@ -28,7 +28,7 @@
 			<div class="content-wrapper">
 				<div class="page-title">문의사항</div>
 				<div class="breadcrumbs">
-        			<a href="#">Home</a> /  <span>문의사항</span>
+        			<a href="/index.do">Home</a> /  <span>문의사항</span>
       			</div>
       			<div class="clear"></div>
       		</div>		
