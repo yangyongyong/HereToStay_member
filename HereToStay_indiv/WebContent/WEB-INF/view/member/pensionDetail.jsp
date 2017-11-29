@@ -12,8 +12,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"> 
   <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.3/themes/smoothness/jquery-ui.css" />
   <link rel="stylesheet" href="/css/style.css" />
-  <link rel="stylesheet" href="/css/DetailCss/product.css"/>
-  <link rel="stylesheet" href="/css/DetailCss/swiper.css"/>
   <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
   <link href='http://fonts.googleapis.com/css?family=Lora:400,400italic' rel='stylesheet' type='text/css'>    
   <link href='http://fonts.googleapis.com/css?family=Raleway:300,400,500,700' rel='stylesheet' type='text/css'>  
@@ -484,7 +482,8 @@
 			                              			<div class="available-price">${Rooms[i-1].romCost} 원</div>
 			                              			<div class="available-price-a">avg/night</div> 
 			                              			<div class="available-price-c">9 available</div> 
-			                              			<a href="#" class="available-btn">select</a>
+			                              			<a href="/member/reservation.do" class="available-btn">예약 하기</a>
+
 			                            			</div>
 			                          			</div>
 			                          			<div class="clear"></div>
@@ -1405,11 +1404,11 @@
 <!-- 					<span class="wishlist-btn-r">ADD TO wish list</span> -->
 <!-- 					<div class="clear"></div> -->
 <!-- 				</a> -->
-				<a href="/member/reservationDetail.do" class="book-btn">
-					<span class="book-btn-l"><i></i></span>
-					<span class="book-btn-r">예약 하기</span>
-					<div class="clear"></div>
-				</a>
+<!-- 				<a href="/member/reservationDetail.do" class="book-btn"> -->
+<!-- 					<span class="book-btn-l"><i></i></span> -->
+<!-- 					<span class="book-btn-r">예약 하기</span> -->
+<!-- 					<div class="clear"></div> -->
+<!-- 				</a> -->
 			</div>
 			
 <!-- 			<div class="h-help"> -->

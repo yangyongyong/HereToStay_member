@@ -348,7 +348,7 @@
     					</div>
               <div class="search-select">
     							<select>
-    								<option>인기</option>
+    								<option>인기순</option>
     								<option>높은 인기순</option>
     							</select>
     					</div>

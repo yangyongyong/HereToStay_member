@@ -52,45 +52,16 @@ public class PensionPageSearch {
 		//세션에 저장 (불러온값 ) 		
 		session.setAttribute("search",searchOpt);//세션저장
 
-		//값 조작 
-		SearchOpt passOpt =searchOpt;// DB에 값보낼것을 따로 저장 
-		if(request.getParameter("in")!=null && request.getParameter("in").length()>9) {
-			String temp = request.getParameter("in");
-			StringTokenizer str =new StringTokenizer(temp,"/");
-			String indate =new String();	
-			String mm =str.nextToken()+"/";
-			String dd = str.nextToken();
-			String yy =str.nextToken().substring(2,4)+"/";			
-			indate = yy+mm+dd;
-			System.out.println("indate"+indate);
-			passOpt.setCheckIn(indate);			
-		}
-		else { System.out.println("null임 checkin");passOpt.setCheckIn(null);}
-		if(request.getParameter("out")!=null && request.getParameter("out").length()>9) {
-			String temp2 = request.getParameter("out");
-			StringTokenizer str2 =new StringTokenizer(temp2,"/");
-			String indate2 =null;				
-			String mm2 = str2.nextToken()+"/";
-			String dd2 = str2.nextToken();
-			String yy2 =str2.nextToken().substring(2,4)+"/";			
-			indate2=yy2+mm2+dd2;	
-			System.out.println("outdate"+indate2);
-			passOpt.setCheckOut(indate2);		
-		}
-		else {System.out.println("null임 checkout");	passOpt.setCheckOut(null);}	
-		if(request.getParameter("sel")!=null) passOpt.setPersons(request.getParameter("sel"));
-		else passOpt.setPersons("1");	
-		
-
+		if(request.getParameter("sel")!=null) searchOpt.setPersons(request.getParameter("sel"));
+		else searchOpt.setPersons("1");				
 		//DB 보내기
-		pl=pensionSearch.getList(first,Last,passOpt);//디비 
-		int totalPage =pensionSearch.getTotal(passOpt);//디비total page		
+		pl=pensionSearch.getList(first,Last,searchOpt);//디비 
+		int totalPage =pensionSearch.getTotal(searchOpt);//디비total page		
 		
 		//모델 설정
 		model = new ModelAndView();
 		model.addObject("currentPage",page);		
 		model.addObject("List",pl);
-		System.out.println((int) Math.ceil(totalPage/(double)6 ) + "total ddd");
 		model.addObject("totalPage", (int) Math.ceil(totalPage/(double)6 ));		
 		return model;
 	}

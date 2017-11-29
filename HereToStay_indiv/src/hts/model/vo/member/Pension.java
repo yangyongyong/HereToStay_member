@@ -18,6 +18,7 @@ public class Pension {
 	private int revCnt;
 	private int avgStar;	
 	
+
 	public int getAvgStar() {
 		return avgStar;
 	}

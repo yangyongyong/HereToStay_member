@@ -7,7 +7,6 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 select * from pension where pen_id=#{penId}
 </select>
 <select id="getRooms" resultType="Room">
-select * from room where pen_id=#{penId}
+select * from room where pen_id=#{penId} order by rom_cost
 </select>
-
 </mapper>
