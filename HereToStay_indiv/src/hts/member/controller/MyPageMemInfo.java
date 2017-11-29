@@ -52,15 +52,11 @@ public class MyPageMemInfo {
 			model.addObject("tag",tag);
 			model.addObject("sort1", sort1);
 			model.addObject("sort2", sort2);
-			
-			return model;
 		} else {
 			model.setViewName("index");
-			model.addObject("goLogin", "goLogin");
-			
-			return model;
+			model.addObject("goLogin", "goLogin");			
 		}
-		
+		return model;
 	}
 	
 	@RequestMapping("/infoUpdate.do")

@@ -60,36 +60,39 @@
 				</div>
 			</div>
 			
-			<form action="">
+			<form action="/member/qnaInsert.do" id="qnaSend" method="post">
 				<div class="contacts-colls-r">
 	  				<div class="contacts-colls-rb">
 						<div class="contact-colls-lbl">Q & A</div>
 						<div class="booking-form">
-							<form id="contact_form" action="php/contact_form.php">
 								<div class="booking-form-i">
 									<label>QnA 제목 :</label>
-									<div class="input"><input type="text" name="FirstName" value="" /></div>
+									<div class="input"><input type="text" id="qnaTitle" name="qnaTitle" /></div>
 								</div>
 								<div class="booking-form-i">
 									<label>QnA 타입 :</label>
-										<div class="search-select" id="qnAType">
-			    							<select>
-			    								<option>펜션관리</option>
-			    								<option>예약관리</option>
-			    								<option>불만사항</option>
-			    								<option>기타</option>
-			    							</select>
-						    		   </div>
+									<div class="search-select">
+		    							<select name="qnaType" id="qnaType">
+		    								<option>펜션관리</option>
+		    								<option>예약관리</option>
+		    								<option>불만사항</option>
+		    								<option>기타</option>
+		    							</select>
+					    		   </div>
 								</div>
+								<div class="booking-form-i textarea">
+									<label>QnA 사진첨부 :</label>
+									<input type="file" id="qnaPhoto" name="qnaPhoto"/>
+								</div>
+								<div class="clear"></div>
 								<div class="booking-form-i textarea">
 									<label>QnA 내용 :</label>
 									<div class="textarea-wrapper">
-										<textarea name="Message"></textarea>
+										<textarea name="qnaContext" id="qnaContext"></textarea>
 									</div>
 								</div>
 								<div class="clear"></div>
 								<input type="button" class="contacts-send" id="sendQnA" value="Send Q&A"/>
-							</form>
 						</div>
 	  				</div>
 	  			<div class="clear"></div>

@@ -2,7 +2,7 @@ package hts.model.vo.member;
 
 public class MyQnADetail {
 	private String qnaDate;
-	private String memId;
+	private String userId;
 	private String qnaTitle;
 	private String qnaPhoto;
 	private String qnaType;
@@ -18,11 +18,11 @@ public class MyQnADetail {
 	public void setQnaDate(String qnaDate) {
 		this.qnaDate = qnaDate;
 	}
-	public String getMemId() {
-		return memId;
+	public String getUserId() {
+		return userId;
 	}
-	public void setMemId(String memId) {
-		this.memId = memId;
+	public void setUserId(String userId) {
+		this.userId = userId;
 	}
 	public String getQnaTitle() {
 		return qnaTitle;

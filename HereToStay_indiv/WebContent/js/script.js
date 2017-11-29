@@ -228,8 +228,6 @@ $(document).ready(function(){
 	        data: {"memId" : $("#logId").val(),
 	        	   "memPwd" : $('#logPwd').val() },
 	        success:function(resultData){
-	        	alert('성공');
-	        	
 	        	if(resultData == '0') {
 	        		alert('아이디와 비밀번호를 다시 확인해주세요.');
 	        		$('#logId').val("");

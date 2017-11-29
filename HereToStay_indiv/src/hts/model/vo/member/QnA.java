@@ -7,6 +7,9 @@ public class QnA {
 	private String qnaDate;
 	private String qnaStatus;
 	private String qnaId;
+	private String userId;
+	private String qnaType;
+	private String mgrId;
 	
 	public String getQnaPhoto() {
 		return qnaPhoto;
@@ -43,5 +46,23 @@ public class QnA {
 	}
 	public void setQnaId(String qnaId) {
 		this.qnaId = qnaId;
+	}
+	public String getUserId() {
+		return userId;
+	}
+	public void setUserId(String userId) {
+		this.userId = userId;
+	}
+	public String getQnaType() {
+		return qnaType;
+	}
+	public void setQnaType(String qnaType) {
+		this.qnaType = qnaType;
+	}
+	public String getMgrId() {
+		return mgrId;
+	}
+	public void setMgrId(String mgrId) {
+		this.mgrId = mgrId;
 	}
 }

@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import hts.model.vo.member.MyQnADetail;
+import hts.model.vo.member.QnA;
 
 @Repository
 public class QnADetailImpl implements QnADetailDao {
@@ -24,5 +25,10 @@ public class QnADetailImpl implements QnADetailDao {
 		
 		return ss.selectOne("QnADetail.getQnA", map);
 	}
-	
+
+	// 문의사항 등록하는 메소드
+	@Override
+	public void qnaInsert(QnA qna) {
+		ss.insert("QnADetail.qnaInsert", qna);
+	}
 }

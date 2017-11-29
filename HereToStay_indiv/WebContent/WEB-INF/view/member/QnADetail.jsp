@@ -57,7 +57,7 @@
 									<div class="blog-post-l">
 										<div class="blog-post-date">
 											<span>${qnaDetail.qnaDate}</span>
-											<b>${qnaDetail.memId} 님</b>
+											<b>${qnaDetail.userId} 님</b>
 										</div>
 										<div class="blog-post-info">
 											<c:choose>
@@ -73,7 +73,7 @@
 									<div class="blog-post-c">
   										<div class="blog-post-cb">
     										<div class="blog-post-p">
-												<div class="blog-post-title"><a>${qnaDetail.qnaTitle}</a></div>
+												<div class="blog-post-title"><a>TITLE : ${qnaDetail.qnaTitle}</a></div>
     											<div class="blog-post-preview">
     												<div class="blog-post-img">
     													<a><img alt="" src="/img/blogpost-01.jpg"></a>
@@ -81,7 +81,7 @@
     											</div>
     											<div class="blog-post-txt">
     												<div class="text-quote">
-    													<div class="text-quote-a">${qnaDetail.qnaType}</div>
+    													<div class="text-quote-a">TYPE : ${qnaDetail.qnaType}</div>
     												</div>
     												<p>${qnaDetail.qnaContext}</p>
     												<br/><br/><br/><br/>
