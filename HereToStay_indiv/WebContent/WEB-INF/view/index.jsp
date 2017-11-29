@@ -985,6 +985,15 @@
   <script type="text/javascript" src="/js/twitterfeed.js"></script>
   <script src="/js/script.js"></script>
 <!-- \\ scripts \\ --> 
+
+<script type="text/javascript">
+	$(document).ready(function() {
+		// 로그인 없이 마이페이지 갈 경우
+		if( $('#goMyPage').val() == "goLogin") {
+			$('.autorize-popup2').animate({top: '50%'}, 300).find('input:text').eq('0').focus();
+		}
+	});
+</script>
  
 </body>  
 </html> 

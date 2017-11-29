@@ -29,29 +29,38 @@ public class MyPageMemInfo {
 	@RequestMapping("/myPage.do")
 	public ModelAndView myPage(HttpSession session, String pageS, String tag, String sort1, String sort2) {
 		String id = (String)session.getAttribute("memId");
+		ModelAndView model = new ModelAndView();
+		
 		int page = Integer.parseInt(pageS);
 		int first = (page-1)*6+1;
 		int last = first+5;
 		
-		Member member = myPage.getMember(id);
-		List<Reservation> reserList = myPage.getReserList(first, last, id, sort1, sort2);
-		int totalPage = myPage.getListCount(id);
-		List<Review> reviewList = myPage.getReviewList(id);
-		List<QnA> QnAList = myPage.getQnAList(id);
+		if(id != null) {
+			Member member = myPage.getMember(id);
+			List<Reservation> reserList = myPage.getReserList(first, last, id, sort1, sort2);
+			int totalPage = myPage.getListCount(id);
+			List<Review> reviewList = myPage.getReviewList(id);
+			List<QnA> QnAList = myPage.getQnAList(id);
+			
+			model.setViewName("member/myPage");
+			model.addObject("member", member);
+			model.addObject("reserList", reserList);
+			model.addObject("totalPage", (int) Math.ceil(totalPage/(double)6 ));
+			model.addObject("reviewList", reviewList);
+			model.addObject("QnAList", QnAList);
+			model.addObject("page", page);
+			model.addObject("tag",tag);
+			model.addObject("sort1", sort1);
+			model.addObject("sort2", sort2);
+			
+			return model;
+		} else {
+			model.setViewName("index");
+			model.addObject("goLogin", "goLogin");
+			
+			return model;
+		}
 		
-		ModelAndView model = new ModelAndView();
-		model.setViewName("member/myPage");
-		model.addObject("member", member);
-		model.addObject("reserList", reserList);
-		model.addObject("totalPage", (int) Math.ceil(totalPage/(double)6 ));
-		model.addObject("reviewList", reviewList);
-		model.addObject("QnAList", QnAList);
-		model.addObject("page", page);
-		model.addObject("tag",tag);
-		model.addObject("sort1", sort1);
-		model.addObject("sort2", sort2);
-		
-		return model;
 	}
 	
 	@RequestMapping("/infoUpdate.do")

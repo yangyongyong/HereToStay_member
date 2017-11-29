@@ -82,7 +82,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<select id="getQnAList" parameterType="String" resultType="QnA">
 		SELECT qna_title, qna_context, TO_CHAR(qna_date, 'YYYY-MM-DD') as qna_date, qna_status, qna_id
 		FROM qna
-		WHERE mem_id = #{value}
+		WHERE user_id = #{value}
 	</select>
 	
 	

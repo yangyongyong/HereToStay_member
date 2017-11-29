@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="UTF-8"%>
 <% String sess = (String)request.getAttribute("session");
+   String goLogin = (String)request.getAttribute("goLogin");
 
    if(sess != null) {
 	   session.setAttribute("memId", sess);
@@ -28,6 +29,7 @@
 
 
 <!-- // authorize // -->
+	<input type="hidden" value="<%=goLogin%>" id="goMyPage"/>
 	<form id="loginOk" method="post">
 		<div class="overlay"></div>
 		<div class="autorize-popup2" style="z-index:9999;width:444px;height:255px;background:#fff;position:fixed;left:50%;top:-300px;margin-top:-128px;margin-left:-222px;">
@@ -43,7 +45,6 @@
 					<input type="password" id="logPwd" placeholder="PASSWORD">
 					<footer class="autorize-bottom">
 						<button class="authorize-btn" id="memLogin">로그인</button>
-						<a href="#" class="authorize-forget-pass">비밀번호를 잊어버리셨나요?</a>
 						<div class="clear"></div>
 					</footer>
 				</div>
@@ -102,7 +103,7 @@
 		<div class="header-a">
 			<div class="wrapper-padding">
 				<div class="header-account3" style="float:right;">
-					<a href="#" style="color:#fff;font-size:11px;text-transform:uppercase;font-family:'Montserrat';font-weight:700;text-decoration:none;display:inline-block;border-left:1px solid #333333;border-right:1px solid #333333;	padding:14px 22px 0px 22px;height:26px;">로그아웃</a>
+					<a href="/index.do?logOut=out" style="color:#fff;font-size:11px;text-transform:uppercase;font-family:'Montserrat';font-weight:700;text-decoration:none;display:inline-block;border-left:1px solid #333333;border-right:1px solid #333333;	padding:14px 22px 0px 22px;height:26px;">로그아웃</a>
 				</div>
 			</div>
 			<div class="wrapper-padding">

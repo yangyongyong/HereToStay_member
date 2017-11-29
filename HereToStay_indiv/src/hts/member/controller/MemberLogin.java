@@ -14,7 +14,6 @@ public class MemberLogin {
 	@Autowired
 	MemberLoginDao memberLogin;
 	
-	
 	@RequestMapping("/memCheck.do")
 	@ResponseBody
 	public String memCheck(String memId, String memPwd) {
@@ -27,5 +26,4 @@ public class MemberLogin {
 		
 		return resultData;
 	}
-
 }
