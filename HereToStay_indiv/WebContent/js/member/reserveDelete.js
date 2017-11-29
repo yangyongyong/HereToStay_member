@@ -1,9 +1,11 @@
-
+/**
+ * reservationDetail.jsp 페이지 유효성 검사 JS
+ */
 
 $(document).ready(function(){
-	 // 정보수정 시 유효성 검사
+	// 예약취소 버튼 클릭 시 이벤트
 	$('#reserveDel').click(function() {
-		// 비밀번호 공백 or 입력
+		// 예약 취소 메소드 있는 Controller로 이동
 		location.href="/member/delReserve.do?resId=" + $('#resId').val();
 	});
 });
