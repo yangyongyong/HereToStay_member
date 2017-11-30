@@ -318,7 +318,7 @@
 													              				  </div>
 													                              <div class="offer-slider-r">
 										              									<span>총 금액</span>
-										              									<b>&#8361;${item.restot}</b>
+										              									<b>&#8361;${item.resTot}</b>
 													              				  </div>           
 													                              <a href="/member/getReserve.do?resId=${item.resId}" class="cat-list-btn">자세히보기</a>   
 													                            </div>

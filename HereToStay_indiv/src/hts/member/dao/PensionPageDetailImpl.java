@@ -31,11 +31,14 @@ public class PensionPageDetailImpl implements PensionPageDetailDao{
 	@Override
 	public List<Room> getRooms(String penId,SearchOpt opt) {
 		// TODO Auto-generated method stub
+		
 		map =new HashMap<>();
 		map.put("penId",penId);
-		map.put("persons", opt.getPersons());
-		setOpt(opt);
-		if(opt.getCheckIn()!=null) System.out.println("checkindddrooom "+ map.get("checkIn"));
+		if(opt != null) {
+			map.put("persons", opt.getPersons());
+			setOpt(opt);
+			if(opt.getCheckIn()!=null) System.out.println("checkindddrooom "+ map.get("checkIn"));
+		}
 		return ss.selectList("pensionPageDetail.getRooms",map);
 	}
 	public void setOpt(SearchOpt opt)
