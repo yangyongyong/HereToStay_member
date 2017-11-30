@@ -369,18 +369,18 @@
   						<!-- \\ content-tabs-i \\ -->
   						<!-- // content-tabs-i // -->
   						<div class="content-tabs-i">
-  							<h2>Your Travel Rates</h2>
+  							<h2>예약 날짜 선택</h2>
   							<div class="rates-search">
                   <div class="rates-line">
         						<!-- // -->
         						<div class="srch-tab-line">
         							<div class="srch-tab-left">
         								<label>Check in</label>
-        								<div class="input-a"><input type="text" value="" placeholder="MM/DD/YY"></div>	
+        								<div class="input-a"><input id='checkIn' type="text" value="${sessionScope.search.checkIn}" placeholder='${sessionScope.search.checkIn}' readonly></div>	
         							</div>
         							<div class="srch-tab-right">
         								<label>Check out</label>
-        								<div class="input-a"><input type="text" value="" placeholder="MM/DD/YY"></div>	
+        								<div class="input-a"><input type="text" value="${sessionScope.search.checkOut}" placeholder='${sessionScope.search.checkOut}' readonly></div>	
         							</div>
         							<div class="clear"></div>
         						</div>
@@ -390,43 +390,47 @@
                   <div class="rates-line-right">
         						<!-- // -->
         						<div class="srch-tab-line no-margin-bottom">
+<!--         							<div class="srch-tab-3c"> -->
+<!--         								<label>Rooms</label> -->
+<!--         								<div class="select-wrapper"> -->
+<!--         								<select class="custom-select"> -->
+<!--         									<option>--</option> -->
+<!--         									<option>1</option> -->
+<!--         									<option>2</option> -->
+<!--         									<option>3</option> -->
+<!--         									<option>4</option> -->
+<!--         								</select> -->
+<!--         								</div> -->
+<!--         							</div> -->
         							<div class="srch-tab-3c">
-        								<label>Rooms</label>
+        								<label>인원</label>
         								<div class="select-wrapper">
         								<select class="custom-select">
-        									<option>--</option>
-        									<option>1</option>
-        									<option>2</option>
-        									<option>3</option>
-        									<option>4</option>
+        								<c:forEach var="i" begin="1" end="15" step="1">
+        								<c:choose>
+        								<c:when test="${sessionScope.search.persons eq i}">
+        									<option selected="selected">${i}</option>
+        								</c:when>
+        								<c:otherwise>
+        									<option>${i}</option>
+        								</c:otherwise>
+        								</c:choose>
+        								</c:forEach>
         								</select>
         								</div>
         							</div>
-        							<div class="srch-tab-3c">
-        								<label>adult</label>
-        								<div class="select-wrapper">
-        								<select class="custom-select">
-        									<option>--</option>
-        									<option>1</option>
-        									<option>2</option>
-        									<option>3</option>
-        									<option>4</option>
-        								</select>
-        								</div>
-        							</div>
-        							<div class="srch-tab-3c">
-        								<label>Child</label>
-        								<div class="select-wrapper">
-        								<select class="custom-select">
-        									<option>--</option>
-        									<option>1</option>
-        									<option>2</option>
-        									<option>3</option>
-        									<option>4</option>
-        								</select>
-        								</div>
-        							</div>
-                        
+<!--         							<div class="srch-tab-3c"> -->
+<!--         								<label>Child</label> -->
+<!--         								<div class="select-wrapper"> -->
+<!--         								<select class="custom-select"> -->
+<!--         									<option>--</option> -->
+<!--         									<option>1</option> -->
+<!--         									<option>2</option> -->
+<!--         									<option>3</option> -->
+<!--         									<option>4</option> -->
+<!--         								</select> -->
+<!--         								</div> -->
+<!--         							</div> -->                        
         							<div class="clear"></div>
         						</div>
         						<!-- \\ --> 
@@ -480,10 +484,9 @@
 			                            			<div class="cat-list-content-p">
 			                              			<div class="available-price">${Rooms[i-1].romCost} 원</div>
 			                              			<div class="available-price-a">avg/night</div> 
-			                              			<div class="available-price-c">9 available</div> 
-			                              			<a href="/member/reservation.do" class="available-btn">예약 하기</a>
-
-			                            			</div>
+<!-- 			                              			<div class="available-price-c">9 available</div>  -->
+			                              			<a href="/member/reservation.do?romId=${Rooms[i-1].romId}&penId=${Pension.penId}&romCost=${Rooms[i-1].romCost}" class="available-btn">예약 하기</a>
+			                               			</div>
 			                          			</div>
 			                          			<div class="clear"></div>
 			                        			</div>

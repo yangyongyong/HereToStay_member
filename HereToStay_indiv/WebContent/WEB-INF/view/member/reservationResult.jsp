@@ -1,7 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@page import="java.util.*"%>
+<%@page import="hts.model.vo.*"%>
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
   <title>Sparrow | Travel Agency</title>
   <meta name="description" content="" />
@@ -18,7 +21,6 @@
 
 </head>  
 <body>  
-<!-- // authorize // -->
 <jsp:include page="/WEB-INF/view/include/header.jsp"/>
 
 <!-- main-cont -->
@@ -26,9 +28,9 @@
   <div class="body-wrapper">
     <div class="wrapper-padding">
     <div class="page-head">
-      <div class="page-title">Hotels - <span>booking complete</span></div>
+      <div class="page-title">Pension - <span>Pension detail view</span></div>
       <div class="breadcrumbs">
-        <a href="#">Home</a> / <a href="#">Hotel</a> / <span>hotel booking</span>
+        <a href="/index.do">Home</a> / <span>예약 완료</span>
       </div>
       <div class="clear"></div>
     </div>
@@ -39,46 +41,41 @@
   				<div class="sp-page-lb">
   					<div class="sp-page-p">
 						<div class="booking-left">
-							<h2>Booking Complete</h2>
+							<h2>예약이 완료 되었습니다.</h2>
 							
 							<div class="comlete-alert">
 								<div class="comlete-alert-a">
-									<b>Thank You. Your Order is Confirmed.</b>
-									<span>Quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur</span>
+									<b>${reservationDetail.penName}</b>
+									<span>${reservationDetail.penAddr2}</span>
 								</div>
 							</div>
 							
 							<div class="complete-info">
-								<h2>Your Personal Information</h2>
+								<h2>펜션 예약정보</h2>
 								<div class="complete-info-table">
 									<div class="complete-info-i">
-										<div class="complete-info-l">Number:</div>
-										<div class="complete-info-r">521-645-6</div>
+										<div class="complete-info-l">객실 정보</div>
+										<div class="complete-info-r">${reservationDetail.romName}</div>
 										<div class="clear"></div>
 									</div>
 									<div class="complete-info-i">
-										<div class="complete-info-l">First Name:</div>
-										<div class="complete-info-r">Roman</div>
+										<div class="complete-info-l">체크 인</div>
+										<div class="complete-info-r">${reservationDetail.resIndate}</div>
 										<div class="clear"></div>
 									</div>
 									<div class="complete-info-i">
-										<div class="complete-info-l">Last Name:</div>
-										<div class="complete-info-r">Polyarush</div>
+										<div class="complete-info-l">체크 아웃</div>
+										<div class="complete-info-r">${reservationDetail.resOutdate}</div>
 										<div class="clear"></div>
 									</div>
 									<div class="complete-info-i">
-										<div class="complete-info-l">E-Mail Adress:</div>
-										<div class="complete-info-r">weblionmedia@gmail.com</div>
+										<div class="complete-info-l">결제 금액</div>
+										<div class="complete-info-r">&#8361;${reservationDetail.resTot}</div>
 										<div class="clear"></div>
 									</div>
 									<div class="complete-info-i">
-										<div class="complete-info-l">Country:</div>
-										<div class="complete-info-r">Austria</div>
-										<div class="clear"></div>
-									</div>
-									<div class="complete-info-i">
-										<div class="complete-info-l">Phone Number:</div>
-										<div class="complete-info-r">+8 256 254 25 625</div>
+										<div class="complete-info-l">이용 인원</div>
+										<div class="complete-info-r">${reservationDetail.romPeople}</div>
 										<div class="clear"></div>
 									</div>
 								</div>
@@ -86,21 +83,21 @@
 								<div class="complete-devider"></div>
 								
 								<div class="complete-txt">
-									<h2>Payment Info</h2>
-									<p>Voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui voluptatem sequi nesciunt. Que porro quisqua. Sed ut perspiciatis unde omnis ste natus error sit voluptatem.</p>
-									<div class="complete-txt-link"><a href="#">Payment is made by Via Paypal.</a></div>
+									<h2>펜션 상세설명</h2>
+									<p>${reservationDetail.penIntro}</p>
+									<div class="complete-txt-link"><a href="/member/pensionDetail.do?id=${reservationDetail.penId}">펜션 보러가기</a></div>
 								</div>
 								
 								<div class="complete-devider"></div>
 								
 								<div class="complete-txt final">
-									<h2>Booking Details</h2>
-									<p>Qoluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui voluptatem sequi nesciunt. Que porro quisqua. Sed ut perspiciatis unde omnis ste natus error.</p>
-									<div class="complete-txt-link"><a href="#">Your Hotel Info</a></div>
+									<h2>주의사항</h2>
+									<p>${reservationDetail.penNoti}</p>
 								</div>
 								
 							</div>
-							
+						
+
 						</div>
   					</div>
   				</div>
@@ -111,13 +108,13 @@
 		<div class="sp-page-r">
 
 			<div class="h-help">
-				<div class="h-help-lbl">Need Sparrow Help?</div>
-				<div class="h-help-lbl-a">We would be happy to help you!</div>
-				<div class="h-help-phone">2-800-256-124 23</div>
-				<div class="h-help-email">sparrow@mail.com</div>
+				<div class="h-help-lbl">질문 사항이 있으신가요?</div>
+				<div class="h-help-lbl-a">'여기 없대' 가 도와드릴게요!</div>
+				<div class="h-help-phone">031-548-1577</div>
+				<div class="h-help-email">HereToStay@gmail.com</div>
 			</div>
 			<div class="h-reasons">
-				<div class="h-liked-lbl">Reasons to Book with us</div>
+				<div class="h-liked-lbl">좀더 많은 서비스를 받아볼 수 있습니다.</div>
 				<div class="h-reasons-row">
 				<!-- // -->
 					<div class="reasons-i">
@@ -128,8 +125,8 @@
 						<div class="reasons-r">
   						<div class="reasons-rb">
 							<div class="reasons-p">
-								<div class="reasons-i-lbl">Awesome design</div>
-								<p>Voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequunt.</p>
+								<div class="reasons-i-lbl">마일리지 제공</div>
+								<p>'여기없대'로 예약하고 펜션을 이용하셨다면 리뷰를 작성해보세요! 리뷰를 작성한 고객 100%에게 마일리지를 제공해드립니다.</p>
 							</div>
   						</div>
   						<br class="clear">
@@ -147,8 +144,8 @@
 						<div class="reasons-r">
   						<div class="reasons-rb">
 							<div class="reasons-p">
-								<div class="reasons-i-lbl">carefylly handcrafted</div>
-								<p>Voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequunt.</p>
+								<div class="reasons-i-lbl">편리한 펜션 검색기능 제공</div>
+								<p>각 펜션별로 옵션을 나눠났기 때문에 고객이 원하는 타입 별로 펜션을 검색할 수 있습니다. 지금 빠르고 손쉽게 펜션검색을 해보세요!</p>
 							</div>
   						</div>
   						<br class="clear">
@@ -166,8 +163,8 @@
 						<div class="reasons-r">
   						<div class="reasons-rb">
 							<div class="reasons-p">
-								<div class="reasons-i-lbl">sustomer support</div>
-								<p>Voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequunt.</p>
+								<div class="reasons-i-lbl">전국적인 펜션 제공</div>
+								<p>대한민국 어떤 곳이든 많은 펜션이 '여기없대'에 등록되어 있습니다. '여기없대'를 통해서 국내 여행에 한걸음 더 다가가세요!</p>
 							</div>
   						</div>
   						<br class="clear">
@@ -200,6 +197,7 @@
   <script src="/js/custom.select.js"></script>   
   <script type="text/javascript" src="/js/twitterfeed.js"></script>  
   <script src="/js/script.js"></script>
+  <script type="text/javascript" src="/js/member/reserveDelete.js"></script>
   <script>
   	$(document).ready(function(){
 		'use strict';

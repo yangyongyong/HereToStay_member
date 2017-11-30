@@ -3,6 +3,8 @@ package hts.member.controller;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -87,7 +89,32 @@ public class PensionPageSearch {
 		System.out.println("------------------------------");
 		if(opt.getSearchName()!=null) System.out.println("search "+ opt.getSearchName());
 		if(opt.getCheckIn()!=null) System.out.println("checkIn "+opt.getCheckIn());
+		else {
+			Calendar today =Calendar.getInstance();
+			String month=String.valueOf(today.get(Calendar.MONTH)+1);
+			if(month.length()==1)
+				month ="0"+month;
+			String date =String.valueOf(today.get(Calendar.DATE));
+			if(date.length()==1)
+				date="0"+date;
+			String year = String.valueOf(today.get(Calendar.YEAR));
+			opt.setCheckIn(month+"/"+date+"/"+year);		
+			System.out.println(opt.getCheckIn());
+		}
 		if(opt.getCheckOut()!=null) System.out.println("checkOut"+opt.getCheckOut());
+		else {
+			Calendar today =Calendar.getInstance();
+			today.add(Calendar.DATE,1);
+			String month=String.valueOf(today.get(Calendar.MONTH)+1);
+			if(month.length()==1)
+				month ="0"+month;
+			String date =String.valueOf(today.get(Calendar.DATE));
+			if(date.length()==1)
+				date="0"+date;
+			String year = String.valueOf(today.get(Calendar.YEAR));
+			opt.setCheckOut(month+"/"+date+"/"+year);		
+			System.out.println(opt.getCheckOut());
+		}
 		if(opt.getPersons()!=null) System.out.println("persons"+opt.getPersons());
 		if(opt.getPriceFrom()!=null) System.out.println("pricefrom"+opt.getPriceFrom());
 		if(opt.getPriceTo()!=null) System.out.println("priceTo"+opt.getPriceTo());

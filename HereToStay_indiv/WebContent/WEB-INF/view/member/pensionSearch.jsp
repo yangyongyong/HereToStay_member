@@ -76,10 +76,21 @@
 								<label>Check in</label>
 								<c:choose>
 								<c:when test='${sessionScope.search.checkIn ne null }'>
-								<div class="input-a"><input name='in' type="text" value="${sessionScope.search.checkIn}" class="date-inpt" placeholder="mm/dd/yy"> <span class="date-icon"></span></div>
+								<div class="input-a"><input id='in' name='in' type="text" value="${sessionScope.search.checkIn}" class="date-inpt" placeholder="mm/dd/yy"> <span class="date-icon"></span></div>
 								</c:when>
 								<c:otherwise>
-								<div class="input-a"><input name='in' type="text" value="" class="date-inpt" placeholder="mm/dd/yy"> <span class="date-icon"></span></div>
+								<div class="input-a"><input id='in' name='in' type="text" value="" class="date-inpt" placeholder="mm/dd/yy"> <span class="date-icon"></span></div>
+								<script>
+								var today= new Date();
+								var month=today.getMonth()+1;
+								var date =today.getDate();
+								if((""+month).length ==1)
+									month = "0" + month;
+								if((""+date).length ==1)
+									date = "0" + date;
+								var day= month+"/"+date+"/"+today.getFullYear();
+								$("#in").val(day);
+								</script>
 								</c:otherwise>
 								</c:choose>	
 							</div>
@@ -87,10 +98,22 @@
 								<label>Check out</label>
 								<c:choose>
 								<c:when test='${sessionScope.search.checkOut ne null }'>
-								<div class="input-a"><input name='out' type="text" value="${sessionScope.search.checkOut}" class="date-inpt" placeholder="mm/dd/yy"> <span class="date-icon"></span></div>	
+								<div class="input-a"><input id='out' name='out' type="text" value="${sessionScope.search.checkOut}" class="date-inpt" placeholder="mm/dd/yy"> <span class="date-icon"></span></div>	
 								</c:when>
 								<c:otherwise>
-								<div class="input-a"><input name='out' type="text" value="" class="date-inpt" placeholder="mm/dd/yy"> <span class="date-icon"></span></div>	
+								<div class="input-a"><input id='out' name='out' type="text" value="" class="date-inpt" placeholder="mm/dd/yy"> <span class="date-icon"></span></div>	
+								<script>
+								var tomorrow= new Date();
+								tomorrow.setDate(tomorrow.getDate()+1);
+								var tmonth=tomorrow.getMonth()+1;
+								var tdate =tomorrow.getDate();
+								if((""+tmonth).length ==1)
+									tmonth = "0" + tmonth;
+								if((""+tdate).length ==1)
+									tdate = "0" + tdate;
+								var day2= tmonth+"/"+tdate+"/"+tomorrow.getFullYear();
+								$("#out").val(day2);
+								</script>
 								</c:otherwise>
 								</c:choose>
 							</div>
@@ -139,7 +162,7 @@
 							<div class="clear"></div>
 						</div>
 						<!-- \\ -->
-              <button class="srch-btn" id='srch-btn'>검색</button> 
+              <input type="button" class="srch-btn" id='srch-btn' value='검색'></input> 
     					</div>        
           </div>          
         </div>
@@ -478,7 +501,7 @@
 		var ammount_from = $("#ammount-from");
 		var ammount_to = $("#ammount-to");
 		var from='50000';
-		var to=Number('100000');
+		var to=Number('300000');
 		
 		<c:if test='${sessionScope.search.priceFrom ne null}'>
 		from =('${sessionScope.search.priceFrom}').toString();
@@ -506,9 +529,21 @@
   	
   	
   	$("#srch-btn").click(function(){
-  	
+
+		if(!($("#checkIn").val()=='' && $("#checkOut").val()=='') )
+		{
+			if($("#checkIn").val()==''){
+				alert("checkIn 날짜를 입력해주세요");
+				return;
+			}
+			else if($("#checkOut").val()==''){
+				alert("checkOut 날짜를 입력해주세요");
+				return;
+			}
+		}	
 		$("#currentPage").val("1");
-  		$("#fr").submit();  		
+		$("#fr").submit();  		
+	
   	});
   	
   	
@@ -520,7 +555,6 @@
   			$(this).addClass('active');
   			  	
   			$("#currentPage").val($(this).text());
-  			alert($("#currentPage").val()+"page");
   			$("#fr").submit();
 // 	  		  $.ajax({
 // 	  			  type:'GET',
@@ -540,10 +574,19 @@
   			
   		});
   		
-  	});  
- 
-  	
+  	});    	
   </script>
+  <style>
+  .srch-btn {
+    cursor: pointer;
+    font-family: 'Montserrat';
+    font-size: 11px;
+    font-weight: normal;
+    padding-top: 2px;
+    float: none;
+    margin-top: 21px;
+    height: 34px;
+}</style>
 <!-- \\ scripts \\ --> 
 </body>  
 </html> 

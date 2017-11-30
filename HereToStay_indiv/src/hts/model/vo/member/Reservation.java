@@ -5,9 +5,14 @@ public class Reservation {
 	private String penIntro;
 	private String resIndate;
 	private String resOutdate;
-	private String restot;
+	private String resTot;
 	private String resPhoto;
 	private String resId;
+	
+	//추가
+	private String memId;
+	private String romId;
+	private String resStatus;
 	
 	
 	public String getPenName() {
@@ -34,11 +39,11 @@ public class Reservation {
 	public void setResOutdate(String resOutdate) {
 		this.resOutdate = resOutdate;
 	}
-	public String getRestot() {
-		return restot;
+	public String getResTot() {
+		return resTot;
 	}
-	public void setRestot(String restot) {
-		this.restot = restot;
+	public void setResTot(String resTot) {
+		this.resTot = resTot;
 	}
 	public String getResPhoto() {
 		return resPhoto;
@@ -52,4 +57,25 @@ public class Reservation {
 	public void setResId(String resId) {
 		this.resId = resId;
 	}
+	public String getMemId() {
+		return memId;
+	}
+	public void setMemId(String memId) {
+		this.memId = memId;
+	}
+	public String getRomId() {
+		return romId;
+	}
+	public void setRomId(String romId) {
+		this.romId = romId;
+	}
+	public String getResStatus() {
+		return resStatus;
+	}
+	public void setResStatus(String resStatus) {
+		this.resStatus = resStatus;
+	}	
+	
+	
+
 }

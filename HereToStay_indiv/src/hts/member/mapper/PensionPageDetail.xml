@@ -11,8 +11,13 @@ from (select a.* from pension a where a.pen_id= #{penId})ot left outer join
 where p.pen_id=r.pen_id and r.rom_id=re.rom_id and re.res_id =rv.res_id group by p.pen_id)rv
 on ot.pen_id=rv.p
 </select>
-<select id="getRooms" resultType="Room">
-select * from room where pen_id=#{penId} order by rom_cost
+<select id="getRooms" parameterType="hashMap" resultType="Room">
+select * from room where pen_id=#{penId}
+<if test ="checkIn!=null or checkOut!=null"> and rom_id not in (select rom_id from reservation <where>
+<if test ="checkIn!=null"> TO_DATE(#{checkIn},'YY/MM/DD') between res_indate and res_outdate</if>
+<if test ="checkOut!=null"> or TO_DATE(#{checkOut},'YY/MM/DD') between res_indate and res_outdate</if></where>)</if>
+ and rom_people>= #{persons}
+order by rom_cost 
 </select>
 <select id="getReviews" resultType="Review">
 select r.rom_name,rv.*,m.mem_id from reservation re,pension p,room r,review rv,member m 

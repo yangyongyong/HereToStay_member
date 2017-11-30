@@ -18,6 +18,20 @@
 
 </head>  
 <body>  
+<form id='fr' action='/member/reservationResult.do' method="post">
+<input type="hidden" name='penName' value="${Pension.penName}"/>
+<input type="hidden" name='penAddr2' value='${Pension.penAddr2}' />
+<input type="hidden" name='romId' value ='${Room.romId}'/>
+<input type="hidden" name='romName' value ='${Room.romName}'/>
+<input type="hidden" name='in' value ='${sessionScope.search.checkIn }'/>
+<input type="hidden" name='out' value ='${sessionScope.search.checkOut }'/>
+<input type="hidden" id ='tot' name='tot'/>
+<input type="hidden"  name='penId' value ='${Pension.penId }'/>
+<input type="hidden" name='PenIntro' value ='${Pension.penIntro }' />
+<input type="hidden" name='penNoti'  value ='${Pension.penNoti}'/>
+<input type="hidden" name='romPersons' value ='${sessionScope.search.persons}'/>
+
+</form>
 <!-- // authorize // -->
 <jsp:include page="/WEB-INF/view/include/header.jsp"/>
 <!-- main-cont -->
@@ -27,7 +41,7 @@
     <div class="page-head">
       <div class="page-title">펜션 - <span>예약</span></div>
       <div class="breadcrumbs">
-        <a href="/member/index.do">홈</a> / <a href="/member/pensionSearch.do?page=1&opt=what">펜션</a> / <span>hotel booking</span>
+        <a href="/index.do">홈</a> / <a href="/member/pensionSearch.do?page=1&opt=what">펜션</a> / <span>hotel booking</span>
       </div>
       <div class="clear"></div>
     </div>
@@ -38,15 +52,15 @@
   				<div class="sp-page-lb">
   					<div class="sp-page-p">
 						<div class="booking-left">
-							<h2>Your Personal Information</h2>
+							<h2>예약자 정보</h2>
 							<div class="booking-form">
 								<div class="booking-form-i">
-									<label>First Name:</label>
-									<div class="input"><input type="text" value="" /></div>
+									<label>ID:</label>
+									<div class="input"><input type="text" value="${sessionScope.memId}" readonly/></div>
 								</div>
 								<div class="booking-form-i">
-									<label>Last Name:</label>
-									<div class="input"><input type="text" value="" /></div>
+									<label>이름:</label>
+									<div class="input"><input type="text" value="" readonly /></div>
 								</div>
 								<div class="booking-form-i">
 									<label>Email Adress:</label>
@@ -65,12 +79,12 @@
 									<div class="input"><input type="text" value="" /></div>
 								</div>
 								<div class="clear"></div>
-              					<div class="checkbox">
-                					<label>
-                  						<input type="checkbox" value="" />
-                  							I want to receive Sparrow news in the future
-                					</label>
-              					</div> 		
+<!--               					<div class="checkbox"> -->
+<!--                 					<label> -->
+<!--                   						<input type="checkbox" value="" /> -->
+<!--                   							I want to receive Sparrow news in the future -->
+<!--                 					</label> -->
+<!--               					</div> 		 -->
               					<div class="booking-devider"></div>						
 							</div>
 							<h2>결제 방식</h2>
@@ -155,7 +169,7 @@
 										<div class="checkbox">
                 							<label>
                   								<input type="checkbox" value="" />
-                  								Im accept the rules <a href="#">Terms & Conditions</a>
+                  								펜션의 모든 룰을 준수합니다.<a href="#">Terms & Conditions</a>
                 							</label>
               							</div> 
 									</div>
@@ -171,10 +185,10 @@
 									<!-- \\ -->
 								</div>
 							</div>
-							<div class="booking-complete">
-<!-- 								<h2></h2> -->
-<!-- 								<p>Voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui voluptatem sequi nesciunt. </p>	 -->
-								<a href="/member/reservationResult.do"><button class="booking-complete-btn">COMPLETE BOOKING</button></a>
+						<div class="booking-complete">
+								<h2>Review and book your trip</h2>
+								<p>Voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui voluptatem sequi nesciunt. </p>	
+								<input type='button' id='reserve' class="booking-complete-btn" value ='예약 완료'/>
 							</div>
 							
 						</div>
@@ -195,23 +209,23 @@
   						<div class="checkout-headrb">
   							<div class="checkout-headrp">
     							<div class="chk-left">
-    								<div class="chk-lbl"><a href="#">Andrassy Thai Hotel </a></div>
-    								<div class="chk-lbl-a">Paris, france</div>
-    								<nav class="chk-stars">
-    									<ul>
-    										<li><img alt="" src="/img/chk-star-b.png"></li>
-    										<li><img alt="" src="/img/chk-star-b.png"></li>
-    										<li><img alt="" src="/img/chk-star-b.png"></li>
-    										<li><img alt="" src="/img/chk-star-b.png"></li>
-    										<li><img alt="" src="/img/chk-star-a.png"></li>
-    									</ul>
-    									<div class="clear"></div>
-    								</nav>
+    								<div class="chk-lbl"><a href="#">${Pension.penName} </a></div>
+    								<div class="chk-lbl-a">${Pension.penAddr2}</div>
+<!--     								<nav class="chk-stars"> -->
+<!--     									<ul> -->
+<!--     										<li><img alt="" src="/img/chk-star-b.png"></li> -->
+<!--     										<li><img alt="" src="/img/chk-star-b.png"></li> -->
+<!--     										<li><img alt="" src="/img/chk-star-b.png"></li> -->
+<!--     										<li><img alt="" src="/img/chk-star-b.png"></li> -->
+<!--     										<li><img alt="" src="/img/chk-star-a.png"></li> -->
+<!--     									</ul> -->
+<!--     									<div class="clear"></div> -->
+<!--     								</nav> -->
     								
     							</div>
-    							<div class="chk-right">
-    								<a href="#"><img alt="" src="/img/chk-edit.png"></a>
-    							</div>
+<!--     							<div class="chk-right"> -->
+<!--     								<a href="#"><img alt="" src="/img/chk-edit.png"></a> -->
+<!--     							</div> -->
     							<div class="clear"></div>
   							</div>
   						</div>
@@ -221,8 +235,8 @@
 
 				<div class="chk-lines">
 					<div class="chk-line">
-						<span class="chk-nights">3 Nights</span>
-						<span class="chk-dates">feb 05, 2015  /  feb 08, 2015</span>
+						<span class="chk-nights">${days} Nights</span>
+						<span class="chk-dates">${sessionScope.search.checkIn} ~ ${sessionScope.search.checkOut}</span>
 					</div>
 					<div class="chk-line">
 						1 STANDARD FAMILY ROOM FOR <span class="chk-persons">3 PERSONS</span>
@@ -230,32 +244,32 @@
 				</div>
 				
 				<div class="chk-details">
-					<h2>Details</h2>
+					<h2>상세보기</h2>
 					<div class="chk-detais-row">
 						<div class="chk-line">
 							<span class="chk-l">Room type</span>
-							<span class="chk-r">Standard family</span>
+							<span class="chk-r">${Room.romName}</span>
 							<div class="clear"></div>
 						</div>
 						<div class="chk-line">
 							<span class="chk-l">price</span>
-							<span class="chk-r">200$</span>
+							<span class="chk-r">${romCost}원</span>
 							<div class="clear"></div>
 						</div>
 						<div class="chk-line">
-							<span class="chk-l">3 nights stay</span>
-							<span class="chk-r">600$</span>
+							<span class="chk-l">${days} nights stay</span>
+							<span class="chk-r">${romCost *days} 원</span>
 							<div class="clear"></div>
 						</div>
-						<div class="chk-line">
-							<span class="chk-l">taxes and fees per night</span>
-							<span class="chk-r">3.52$</span>
-							<div class="clear"></div>
-						</div>
+<!-- 						<div class="chk-line"> -->
+<!-- 							<span class="chk-l">taxes and fees per night</span> -->
+<!-- 							<span class="chk-r">3.52$</span> -->
+<!-- 							<div class="clear"></div> -->
+<!-- 						</div> -->
 					</div>
 					<div class="chk-total">
 						<div class="chk-total-l">Total Price</div>
-						<div class="chk-total-r">$603.52</div>
+						<div class="chk-total-r">${romCost *days} 원<input id='cost' type="hidden" value="${romCost *days}"/></div>
 						<div class="clear"></div>
 					</div>					
 				</div>
@@ -272,7 +286,6 @@
 		</div>
 		<div class="clear"></div>
 	</div>
-
     </div>	
   </div>  
 </div>
@@ -300,8 +313,16 @@
 				});
 			});
 		})(jQuery);
+  	
+  	});   	
+  </script>
+     <script type="text/javascript">
+	 $("#reserve").click(function(){  	
+  		$("#tot").val($('#cost').val());
+  		$('#fr').attr('action','/member/reservationResult.do').submit();  		
   	});
   </script>
+  
 <!-- \\ scripts \\ --> 
  
 </body>  

@@ -51,7 +51,6 @@ public class PensionPageSearchImpl implements PensionPageSearchDao {
 		//값 조작 
 		if(opt.getCheckIn()!=null && opt.getCheckIn().length()>9) {
 			String temp = opt.getCheckIn();
-			System.out.println("check in 길이 !!!!!!!!!"+opt.getCheckIn().length());
 			StringTokenizer str =new StringTokenizer(temp,"/");
 			String indate =new String();	
 			String mm =str.nextToken()+"/";
