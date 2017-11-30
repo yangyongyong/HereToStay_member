@@ -234,7 +234,7 @@ $(document).ready(function(){
 	        		$('#logPwd').val("");
 	        		return false;
 	        	} else {
-	        		$('#loginOk').attr('action',"/index.do?session=" + $('#logId').val());
+	        		$('#loginOk').attr('action',"/member/index.do?session=" + $('#logId').val());
 					$('#loginOk').submit();
 	        	}
 			}

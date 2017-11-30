@@ -27,7 +27,7 @@
     <div class="page-head">
       <div class="page-title">펜션 - <span>예약</span></div>
       <div class="breadcrumbs">
-        <a href="/index.do">홈</a> / <a href="/member/pensionSearch.do?page=1&opt=what">펜션</a> / <span>hotel booking</span>
+        <a href="/member/index.do">홈</a> / <a href="/member/pensionSearch.do?page=1&opt=what">펜션</a> / <span>hotel booking</span>
       </div>
       <div class="clear"></div>
     </div>

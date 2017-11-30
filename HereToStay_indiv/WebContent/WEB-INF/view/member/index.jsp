@@ -36,24 +36,24 @@
 				<div class="swiper-pagination"></div>				
   				<div class="swiper-wrapper">
       				<div class="swiper-slide"> 
-						<div class="slide-section" style="background:url(/img/sider-01.jpg) center top no-repeat;">
-							<div class="mp-slider-lbl">Great journey begins with a small step</div>
-							<div class="mp-slider-lbl-a">Make Your Life Better and Bright!  You must trip with Us!</div>
-							<div class="mp-slider-btn"><a href="#" class="btn-a">Learn more</a></div>
+						<div class="slide-section" style="background:url(/img/member/MyMain1.jpg) center top no-repeat;">
+							<div class="mp-slider-lbl">여행의 첫 걸음인 펜션예약을 '여기없대 ' 와 함께하세요</div>
+							<div class="mp-slider-lbl-a">펜션예약 뿐만 아니라 주변 관광지, 편의시설 정보까지 받아보세요. 더 편리한 여행이 여러분을 기다립니다!</div>
+							<div class="mp-slider-btn"><a class="btn-a">Here To Stay</a></div>
 						</div>      
       				</div>
       				<div class="swiper-slide"> 
-						<div class="slide-section slide-b" style="background:url(/img/sider-02.jpg) center top no-repeat;">
-							<div class="mp-slider-lbl">Relax with us. we love our clients</div>
-							<div class="mp-slider-lbl-a">Make Your Life Better and Bright!  You must trip with Us!</div>
-							<div class="mp-slider-btn"><a href="#" class="btn-a">Learn more</a></div>
-						</div>      
+						<div class="slide-section slide-b" style="background:url(/img/member/MyMain3.png) center top no-repeat;">
+							<div class="mp-slider-lbl">무인화 시스템으로 운영되는 펜션을 체험해보세요</div>
+							<div class="mp-slider-lbl-a">늦은 도착시간을 두려워 하지 마세요. 자기만의 비밀번호만 가지고 있다면, 도착 시간이 나의 Check In 시간이 됩니다!</div>
+							<div class="mp-slider-btn"><a class="btn-a">Here To Stay</a></div>
+						</div>
       				</div>
       				<div class="swiper-slide"> 
-						<div class="slide-section slide-b" style="background:url(/img/sider-03.jpg) center top no-repeat;">
-							<div class="mp-slider-lbl">Planning trip with your friends</div>
-							<div class="mp-slider-lbl-a">Make Your Life Better and Bright!  You must trip with Us!</div>
-							<div class="mp-slider-btn"><a href="#" class="btn-a">Learn more</a></div>
+						<div class="slide-section slide-b" style="background:url(/img/member/MyMain2.png) center top no-repeat;">
+							<div class="mp-slider-lbl">도심에서 자연까지. 지역적 한계가 없는 '여기없대'</div>
+							<div class="mp-slider-lbl-a">전국 각지에 있는 펜션이 등록 되어있어  예약을 위해 여러 사이트를 찾을 필요가 없습니다. '여기없대' 에서 한번에 해결하세요!</div>
+							<div class="mp-slider-btn"><a class="btn-a">Here To Stay</a></div>
 						</div>      
       				</div>            
   				</div>
@@ -69,9 +69,7 @@
 		<div class="page-search full-width-search search-type-b">
 		  <div class="search-type-padding">
 			<nav class="page-search-tabs">
-				<div class="search-tab active">Hotels</div>
-				<div class="search-tab">Tours</div>
-				<div class="search-tab nth">Tickets</div>
+				<div class="search-tab">Hotels</div>
 				<div class="clear"></div>	
 			</nav>		
 			<div class="page-search-content">
@@ -214,292 +212,10 @@
 					</div>
 					<footer class="search-footer">
 						<a href="#" class="srch-btn">Search</a>	
-						<span class="srch-lbl">Advanced Search options</span>
 						<div class="clear"></div>
 					</footer>
 				</div>
-				<!-- // tab content hotels // -->
-					
-				<!-- // tab content tours // -->
-				<div class="search-tab-content">
-					<div class="page-search-p">
-					
-					<!-- // -->
-					<div class="search-large-i">
-						<!-- // -->
-						<div class="srch-tab-line no-margin-bottom">
-							<div class="srch-tab-left">
-								<label>Country</label>
-								<div class="input-a"><input type="text" value="" placeholder="example: france"></div>	
-							</div>
-							<div class="srch-tab-right">
-								<label>city</label>
-								<div class="input-a"><input type="text" value="" placeholder="vienna"></div>	
-							</div>
-							<div class="clear"></div>
-						</div>
-						<!-- \\ -->					
-					</div>
-					<!-- \\ -->
-					<!-- // -->
-					<div class="search-large-i">
-						<!-- // -->
-						<div class="srch-tab-line no-margin-bottom">
-							<div class="srch-tab-left">
-								<label>Check in</label>
-								<div class="input-a"><input type="text" value="" class="date-inpt" placeholder="mm/dd/yy"> <span class="date-icon"></span></div>
-							</div>
-							<div class="srch-tab-right">
-								<label>Check out</label>
-								<div class="input-a"><input type="text" value="" class="date-inpt" placeholder="mm/dd/yy"> <span class="date-icon"></span></div>
-							</div>
-							<div class="clear"></div>
-						</div>
-						<!-- \\ -->					
-					</div>
-					<!-- \\ -->
-					<!-- // -->
-					<div class="search-large-i">
-						<!-- // -->
-						<div class="srch-tab-line no-margin-bottom">
-							<div class="srch-tab-left transformed">
-								<label>hotel stars</label>
-								<div class="select-wrapper">
-								<select class="custom-select">
-									<option>--</option>
-									<option>1</option>
-									<option>2</option>
-									<option>3</option>
-									<option>4</option>
-								</select>
-								</div>	
-							</div>
-							<div class="srch-tab-right transformed">
-								<label>Peoples</label>
-								<div class="select-wrapper">
-								<select class="custom-select">
-									<option>--</option>
-									<option>1</option>
-									<option>2</option>
-									<option>3</option>
-									<option>4</option>
-								</select>
-								</div>	
-							</div>
-							<div class="clear"></div>
-						</div>
-						<!-- \\ -->						
-					</div>
-					<!-- \\ -->
-					<div class="clear"></div>
-
-					<!-- // advanced // -->
-					<div class="search-asvanced">
-						<!-- // -->
-						<div class="search-large-i">
-						<!-- // -->
-						<div class="srch-tab-line no-margin-bottom">
-							<label>Price</label>
-							<div class="select-wrapper">
-								<select class="custom-select">
-									<option>--</option>
-									<option>1</option>
-									<option>2</option>
-									<option>3</option>
-									<option>4</option>
-								</select>
-							</div>	
-						</div>
-						<!-- \\ -->							
-						</div>	
-						<!-- \\ -->
-						<!-- // -->
-						<div class="search-large-i">
-						<!-- // -->
-						<div class="srch-tab-line no-margin-bottom">
-							<label>Property type</label>
-							<div class="select-wrapper">
-								<select class="custom-select">
-									<option>--</option>
-									<option>1</option>
-									<option>2</option>
-									<option>3</option>
-									<option>4</option>
-								</select>
-							</div>	
-						</div>
-						<!-- \\ -->								
-						</div>	
-						<!-- \\ -->
-						<!-- // -->
-						<div class="search-large-i">
-						<!-- // -->
-						<div class="srch-tab-line no-margin-bottom">
-							<label>rating</label>
-							<div class="select-wrapper">
-								<select class="custom-select">
-									<option>--</option>
-									<option>1</option>
-									<option>2</option>
-									<option>3</option>
-									<option>4</option>
-								</select>
-							</div>	
-						</div>
-						<!-- \\ -->								
-						</div>	
-						<!-- \\ -->
-						<div class="clear"></div>		
-					</div>
-					<!-- \\ advanced \\ -->
-						
-					</div>
-					<footer class="search-footer">
-						<a href="#" class="srch-btn">Search</a>	
-						<span class="srch-lbl">Advanced Search options</span>
-						<div class="clear"></div>
-					</footer>
-				</div>
-				<!-- // tab content tours // -->	
-				
-				<!-- // tab content tickets // -->
-				<div class="search-tab-content">
-					<div class="page-search-p">
-						<!-- // -->
-						<div class="search-large-i">
-						<!-- // -->
-						<div class="srch-tab-line no-margin-bottom">
-							<div class="srch-tab-left">
-								<label>From</label>
-								<div class="input-a"><input type="text" value="" placeholder="Austria, vienna"></div>	
-							</div>
-							<div class="srch-tab-right">
-								<label>to</label>
-								<div class="input-a"><input type="text" value="" placeholder="--"></div>	
-							</div>
-							<div class="clear"></div>
-						</div>
-						<!-- \\ -->							
-						</div>
-						<!-- \\ -->
-						<!-- // -->
-						<div class="search-large-i">
-						<!-- // -->
-						<div class="srch-tab-line no-margin-bottom">
-							<div class="srch-tab-left">
-								<label>Departure</label>
-								<div class="input-a"><input type="text" value="" class="date-inpt" placeholder="mm/dd/yy"> <span class="date-icon"></span></div>	
-							</div>
-							<div class="srch-tab-right">
-								<label>arrivals</label>
-								<div class="input-a"><input type="text" value="" class="date-inpt" placeholder="mm/dd/yy"> <span class="date-icon"></span></div>	
-							</div>
-							<div class="clear"></div>
-						</div>
-						<!-- \\ -->							
-						</div>
-						<!-- \\ -->
-						<!-- // -->
-						<div class="search-large-i">
-						<!-- // -->
-						<div class="srch-tab-line no-margin-bottom">
-							<div class="srch-tab-left transformed">
-								<label>Peoples</label>
-								<div class="select-wrapper">
-								<select class="custom-select">
-									<option>--</option>
-									<option>1</option>
-									<option>2</option>
-									<option>3</option>
-									<option>4</option>
-								</select>
-								</div>	
-							</div>
-							<div class="srch-tab-right transformed">
-								<label>Class</label>
-								<div class="select-wrapper">
-								<select class="custom-select">
-									<option>--</option>
-									<option>1</option>
-									<option>2</option>
-									<option>3</option>
-									<option>4</option>
-								</select>
-								</div>	
-							</div>
-							<div class="clear"></div>
-						</div>
-						<!-- \\ -->								
-						</div>
-						<!-- \\ -->
-						<div class="clear"></div>
-						<!-- // advanced // -->
-						<div class="search-asvanced">
-						<!-- // -->
-						<div class="search-large-i">
-						<!-- // -->
-						<div class="srch-tab-line no-margin-bottom">
-							<label>Price</label>
-							<div class="select-wrapper">
-								<select class="custom-select">
-									<option>--</option>
-									<option>1</option>
-									<option>2</option>
-									<option>3</option>
-									<option>4</option>
-								</select>
-							</div>	
-						</div>
-						<!-- \\ -->						
-						</div>
-						<!-- \\ -->
-						<!-- // -->
-						<div class="search-large-i">
-						<!-- // -->
-						<div class="srch-tab-line no-margin-bottom">
-							<label>Air company</label>
-							<div class="select-wrapper">
-								<select class="custom-select">
-									<option>--</option>
-									<option>1</option>
-									<option>2</option>
-									<option>3</option>
-									<option>4</option>
-								</select>
-							</div>	
-						</div>
-						<!-- \\ -->							
-						</div>
-						<!-- \\ -->
-						<!-- // -->
-						<div class="search-large-i">
-						<!-- // -->
-						<div class="srch-tab-line no-margin-bottom">
-							<label>Rating</label>
-							<div class="select-wrapper">
-								<select class="custom-select">
-									<option>--</option>
-									<option>1</option>
-									<option>2</option>
-									<option>3</option>
-									<option>4</option>
-								</select>
-							</div>	
-						</div>
-						<!-- \\ -->							
-						</div>
-						<!-- \\ -->
-						<div class="clear"></div>
-					</div>
-					<!-- \\ advanced \\ -->
-					</div>
-					<footer class="search-footer">
-						<a href="#" class="srch-btn">Search</a>	
-						<span class="srch-lbl">Advanced Search options</span>
-						<div class="clear"></div>
-					</footer>
-				</div>
-				<!-- // tab content tickets // -->							
+				<!-- // tab content hotels // -->						
 			</div>
 		</div>
 		</div>
@@ -513,10 +229,11 @@
 		<div class="wrapper-padding-a">
 			<div class="mp-popular popular-destinations">
 				<header class="fly-in">
-					<b>Popular Destinations</b>
-					<p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.</p>
+					<b>고객님에게 사랑받는 펜션 TOP 3</b>
+					<p>이번 달. '여기없대 '에서 가장 많이 예약이 된 펜션 TOP 3를 보여줍니다.</p>
 				</header>
 				
+				<br/><br/><br/>
 				<div class="fly-in mp-popular-row" >
 					<!-- // -->
 						<div class="offer-slider-i">
@@ -617,27 +334,29 @@
 				</div>
 				<div class="clear"></div>						
 			</div>
+			
+			<br/><br/><br/>
 
 			<div class="mp-popular">
 				<header class="fly-in">
-					<b>Our travel Agency</b>
-					<p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.</p>
+					<b>Here To Stay & 여기없대 의 특별함</b>
+					<p>'여기없대 ' 는 고객님의 선택에 후회없도록 최고의. 최상의 서비스를 제공할 것을 약속합니다.</p>
 				</header>
 				<div class="fly-in advantages-row">
 					<div class="advantages-i">
 						<div class="advantages-a"><img alt="" src="/img/adv-01.png" /></div>
-						<div class="advantages-b">we love our clients</div>
-						<div class="advantages-c">Perspiciatis unde omnis iste natus doxes sit voluptatem accusantium doloremque la dantiumeaque ipsa.</div>
+						<div class="advantages-b">다른 타 사이트와 다릅니다.</div>
+						<div class="advantages-c">'여기없대' 는 무인화 시스템을 도용함으로써 고객님은 틀에 잡힌 Check In 시간에서 자유로와질 수 있습니다.</div>
 					</div>
 					<div class="advantages-i">
 						<div class="advantages-a"><img alt="" src="/img/adv-02.png" /></div>
-						<div class="advantages-b">brilliant prices</div>
-						<div class="advantages-c">Perspiciatis unde omnis iste natus doxes sit voluptatem accusantium doloremque la dantiumeaque ipsa.</div>
+						<div class="advantages-b">비교가능한 합리적인 가격</div>
+						<div class="advantages-c">무인화 시스템이기 때문에 다른 타 펜션과 달리 인권비가 확연히 줄게됩니다. 조금 더 저렴한 가격으로 펜션 예약을 시작해보세요</div>
 					</div>
 					<div class="advantages-i">
 						<div class="advantages-a"><img alt="" src="/img/adv-03.png" /></div>
-						<div class="advantages-b">many different tours</div>
-						<div class="advantages-c">Perspiciatis unde omnis iste natus doxes sit voluptatem accusantium doloremque la dantiumeaque ipsa.</div>
+						<div class="advantages-b">다양한 장소에서의 예약 가능</div>
+						<div class="advantages-c">한정적인 지역에만 펜션이 등록되어 있는것이 아닙니다. 전국각지 어느 장소에도 펜션을 예약할 수 있습니다.</div>
 					</div>
 				</div>
 			</div>
@@ -645,31 +364,12 @@
 		</div>
 	</div>
 
-  <div style="background:url(/img/in2_popular.jpg) center top no-repeat;" class="last-order fly-in">
-    <div class="last-order-content">
-      <div class="last-order-a fly-in">Ropular Deal</div>
-      <div class="last-order-b fly-in">Grand hotel - london, england</div>
-      <div class="last-order-c fly-in">Fri 14 Now - Sun 16 Now</div>
-      <div class="last-order-d fly-in">300$</div>
-      <a href="#" class="last-order-btn fly-in">Book now</a>
-    </div>
-  </div>
-  
-  <div class="partners fly-in">
-    <a href="#"><img alt="" src="/img/partner-01.png" /></a>
-    <a href="#"><img alt="" src="/img/partner-02.png" /></a>
-    <a href="#"><img alt="" src="/img/partner-03.png" /></a>
-    <a href="#"><img alt="" src="/img/partner-04.png" /></a>
-    <a href="#"><img alt="" src="/img/partner-05.png" /></a>
-    <a href="#"><img alt="" src="/img/partner-06.png" /></a>
-  </div>
-
 	<div class="mp-offesr no-margin">
 		<div class="wrapper-padding-a">  
 			<div class="offer-slider duble-margin">
 				<header class="fly-in page-lbl">
-					<div class="offer-slider-lbl">We are Offering the hottest offers</div>
-					<p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione.</p>
+					<div class="offer-slider-lbl">최저가 펜션을 예약하길 원하시나요?</div>
+					<p>저희 '여기없대 ' 에 등록되어있는 펜션 중 최저가 펜션을 보여드립니다. 가장 합리적인 가격에서 펜션 예약을 성공하세요. '여기없대 ' 가 도와드리겠습니다.</p>
 				</header>
 				<div class="fly-in offer-slider-c">
 					<div id="offers-a" class="owl-slider">
@@ -935,40 +635,12 @@
 			</div>  
 			</div>
 		</div>
-    
-    <div class="testimonials">
-    
-      <div class="testimonials-lbl fly-in">what our client say</div>
-      <div class="testimonials-lbl-a fly-in">Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.</div>  
-      
-      <div class="testimonials-holder fly-in">
-      	<div id="testimonials-slider">
-      	<!-- // -->
-      	<div class="testimonials-i">
-        	<div class="testimonials-a"><img alt="" src="/img/testimonial.gif" /></div>
-        	<div class="testimonials-b">"Qerspeciatis unde omnis iste natus doxes sit voluptatem accusantium doloremque laudantium, totam aperiam eaque ipsa quae ab illo inventore veritatis et quasi architecto"</div>
-        	<div class="testimonials-c">
-          	<nav>
-            	<ul>
-              	<li><a href="#"><img alt="" src="/img/ts-star.png" /></a></li>
-              	<li><a href="#"><img alt="" src="/img/ts-star.png" /></a></li>
-              	<li><a href="#"><img alt="" src="/img/ts-star.png" /></a></li>
-              	<li><a href="#"><img alt="" src="/img/ts-star.png" /></a></li>
-              	<li><a href="#"><img alt="" src="/img/ts-star.png" /></a></li>
-            	</ul>
-          	</nav>
-        	</div>
-        	<div class="testimonials-d">Albert Dowson, Company Director</div>
-      	</div>
-      	<!-- \\ -->
-      	</div>
-      </div>
-      
-    </div>
       	
   </div>
 
 </div>
+
+<br/><br/><br/>
 <!-- /main-cont -->
 
 <jsp:include page="/WEB-INF/view/include/footer.jsp"/>

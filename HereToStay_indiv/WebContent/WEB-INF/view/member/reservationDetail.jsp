@@ -30,7 +30,7 @@
     <div class="page-head">
       <div class="page-title">Pension - <span>Pension detail view</span></div>
       <div class="breadcrumbs">
-        <a href="/index.do">Home</a> / <a href="/member/myPage.do?pageS=1&tag=2&sort1=1&sort2=1">예약리스트</a> / <span>펜션 상세보기</span>
+        <a href="/member/index.do">Home</a> / <a href="/member/myPage.do?pageS=1&tag=2&sort1=1&sort2=1">예약리스트</a> / <span>펜션 상세보기</span>
       </div>
       <div class="clear"></div>
     </div>

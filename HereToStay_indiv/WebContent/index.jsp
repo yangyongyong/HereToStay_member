@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-<% response.sendRedirect("/index.do"); %>
+<% response.sendRedirect("/member/index.do"); %>
 </body>
 </html>

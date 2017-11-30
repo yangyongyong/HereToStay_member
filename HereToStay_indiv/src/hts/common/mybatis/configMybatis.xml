@@ -17,5 +17,6 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
       <typeAlias type="hts.model.vo.member.QnA" alias="QnA" />
       <typeAlias type="hts.model.vo.member.ReservationDetail" alias="reservationDetail" />
       <typeAlias type="hts.model.vo.member.MyQnADetail" alias="myQnADetail" />
+      <typeAlias type="hts.model.vo.member.AboutUsData" alias="aboutUsData" />
   </typeAliases>
 </configuration>

@@ -32,7 +32,7 @@
 			<div class="content-wrapper">
 				<div class="page-title">문의사항</div>
 				<div class="breadcrumbs">
-        			<a href="/index.do">Home</a> /  <span>문의사항</span>
+        			<a href="/member/index.do">Home</a> /  <span>문의사항</span>
       			</div>
       			<div class="clear"></div>
       		</div>		

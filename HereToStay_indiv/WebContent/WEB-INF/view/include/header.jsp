@@ -103,7 +103,7 @@
 		<div class="header-a">
 			<div class="wrapper-padding">
 				<div class="header-account3" style="float:right;">
-					<a href="/index.do?logOut=out" style="color:#fff;font-size:11px;text-transform:uppercase;font-family:'Montserrat';font-weight:700;text-decoration:none;display:inline-block;border-left:1px solid #333333;border-right:1px solid #333333;	padding:14px 22px 0px 22px;height:26px;">로그아웃</a>
+					<a href="/member/index.do?logOut=out" style="color:#fff;font-size:11px;text-transform:uppercase;font-family:'Montserrat';font-weight:700;text-decoration:none;display:inline-block;border-left:1px solid #333333;border-right:1px solid #333333;	padding:14px 22px 0px 22px;height:26px;">로그아웃</a>
 				</div>
 			</div>
 			<div class="wrapper-padding">
@@ -121,7 +121,7 @@
 			<div class="mobile-menu">
 				<nav>
 					<ul>
-						<li><a class="has-child" href="#">여기없대</a>					
+						<li><a class="has-child" href="/member/aboutUs.do">여기없대</a>					
 						</li>
 						<li><a class="has-child" href="/member/pensionSearch.do?page=1&opt=what">펜션찾기</a>
 						</li>						
@@ -135,7 +135,7 @@
 		<!-- \\ mobile menu \\ -->
 			
 		<div class="wrapper-padding">
-			<div class="header-logo"><a href="index.html"><img alt="" src="/img/logo.png" /></a></div>
+			<div class="header-logo"><a href="/member/index.do"><img alt="" src="/img/logo.png" /></a></div>
 			<div class="header-right">
 				<div class="hdr-srch">
 					<a href="#" class="hdr-srch-btn"></a>
@@ -151,7 +151,7 @@
 				<a href="#" class="menu-btn"></a>
 				<nav class="header-nav">
 					<ul>
-						<li><a class="has-child" href="#">여기없대</a>					
+						<li><a class="has-child" href="/member/aboutUs.do">여기없대</a>					
 						</li>
 						<li><a class="has-child" href="/member/pensionSearch.do?page=1&opt=what">펜션찾기</a>
 						</li>						

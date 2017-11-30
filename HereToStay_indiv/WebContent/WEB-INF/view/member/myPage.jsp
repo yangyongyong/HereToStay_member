@@ -64,7 +64,7 @@
 			<div class="content-wrapper">
 				<div class="page-title">마이페이지</div>
 				<div class="breadcrumbs">
-        			<a href="/index.do">Home</a> / <span>마이페이지</span>
+        			<a href="/member/index.do">Home</a> / <span>마이페이지</span>
       			</div>
       			<div class="clear"></div>
       		</div>		
