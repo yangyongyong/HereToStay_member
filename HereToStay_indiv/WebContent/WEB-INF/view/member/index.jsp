@@ -112,14 +112,11 @@
 								<label>인원수</label>
 								<div class="select-wrapper">
 								<select class="custom-select">
+									<option>--</option>
 									<option>1</option>
 									<option>2</option>
 									<option>3</option>
 									<option>4</option>
-									<option>5</option>
-									<option>6</option>
-									<option>7</option>
-									<option>8</option>
 								</select>
 								</div>
 							</div>
@@ -218,14 +215,14 @@
 				<c:forEach var="pension" items="${popular}" varStatus="status"> 
 					<!-- // -->
 						<div class="offer-slider-i">
-							<a class="offer-slider-img" href="/member/pensionDetail.do?id=${pension.penId}">
-								<img src="/img/offer-big-01.jpg" />
+							<a class="offer-slider-img" href="#">
+								<img alt="" src="/img/offer-big-01.jpg" />
 								<span class="offer-slider-overlay">
 									<span class="offer-slider-btn">view details</span>
 								</span>
 							</a>
 							<div class="offer-slider-txt">
-								<div class="offer-slider-link"><a href="/member/pensionDetail.do?id=${pension.penId}">${pension.penName}</a></div>
+								<div class="offer-slider-link"><a href="#">${pension.penName}</a></div>
 								<div class="offer-slider-l">
 									<div class="offer-slider-location" style="width: 200px;">${pension.penAddr2}</div>
 									<div class="offer-slider-link"><a>총 예약된 횟수 : &nbsp;&nbsp; ${pension.avgStar}</a></div>
@@ -288,8 +285,8 @@
 					
 					<!-- // -->
 						<div class="offer-slider-i">
-							<a class="offer-slider-img" href="/member/pensionDetail.do?id=${room.penId}">
-								<img src="/img/slide-01.jpg" />
+							<a class="offer-slider-img" href="#">
+								<img alt="" src="/img/slide-01.jpg" />
 								<span class="offer-slider-overlay">
 									<span class="offer-slider-btn">view details</span>
 								</span>
@@ -343,9 +340,7 @@
 	$(document).ready(function() {
 		// 로그인 없이 마이페이지 갈 경우
 		if( $('#goMyPage').val() == "goLogin") {
-			$('.overlay').fadeIn(function(){
-				$('.autorize-popup2').animate({top: '50%'}, 300).find('input:text').eq('0').focus();
-			});
+			$('.autorize-popup2').animate({top: '50%'}, 300).find('input:text').eq('0').focus();
 		}
 	});
 </script>
