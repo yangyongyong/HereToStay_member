@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %> 
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<% String memId =(String)session.getAttribute("memId");%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,6 +24,18 @@
 .h-tab-item-04 i {display:block;  background:url(../img/map-icon.png) left top no-repeat; float:left; width:13px; height:16px;}
 
 	</style>
+<!-- // scripts // -->
+  <script src="/js/jquery-1.11.3.min.js"></script>
+  <script src="/js/jqeury.appear.js"></script>  
+  <script src="/js/jquery-ui.min.js"></script> 
+  <script src="/js/owl.carousel.min.js"></script>
+  <script src="/js/bxSlider.js"></script> 
+  <script src="/js/custom.select.js"></script>    
+  <script type="text/javascript" src="/js/twitterfeed.js"></script>
+  <script src="/js/script.js"></script>
+  <script src="/js/findRoad.js"></script>
+  <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=2e42bd35fc94828358bb938f57f5801d&libraries=services"></script>
+    <script type="text/javascript" src="http://maps.google.com/maps/api/js?key=AIzaSyD1eVdQ81iyVfK9_PdFIDBVG9A3QgHe8GU&sensor=false&&libraries=places"></script>
 
        
 </head>  
@@ -485,7 +498,17 @@
 			                              			<div class="available-price">${Rooms[i-1].romCost} 원</div>
 			                              			<div class="available-price-a">avg/night</div> 
 <!-- 			                              			<div class="available-price-c">9 available</div>  -->
+											<%if(memId!=null){ %>
 			                              			<a href="/member/reservation.do?romId=${Rooms[i-1].romId}&penId=${Pension.penId}&romCost=${Rooms[i-1].romCost}" class="available-btn">예약 하기</a>
+			                               		<%}else{%>
+			                               		<a id='goLogin' class="available-btn">예약 하기</a>
+			      								 <script> 
+			      								 $("#goLogin").click(function(){                       		
+													$('.autorize-popup2').animate({top: '50%'}, 300).find('input:text').eq('0').focus();
+													$('.overlay').css('display','block');	
+			      								 });
+													</script>
+				                               		<% }%>	
 			                               			</div>
 			                          			</div>
 			                          			<div class="clear"></div>
@@ -1541,19 +1564,6 @@
 <!-- /main-cont -->
 
 <jsp:include page="/WEB-INF/view/include/footer.jsp"/>
-
-<!-- // scripts // -->
-  <script src="/js/jquery-1.11.3.min.js"></script>
-  <script src="/js/jqeury.appear.js"></script>  
-  <script src="/js/jquery-ui.min.js"></script> 
-  <script src="/js/owl.carousel.min.js"></script>
-  <script src="/js/bxSlider.js"></script> 
-  <script src="/js/custom.select.js"></script>    
-  <script type="text/javascript" src="/js/twitterfeed.js"></script>
-  <script src="/js/script.js"></script>
-  <script src="/js/findRoad.js"></script>
-  <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=2e42bd35fc94828358bb938f57f5801d&libraries=services"></script>
-    <script type="text/javascript" src="http://maps.google.com/maps/api/js?key=AIzaSyD1eVdQ81iyVfK9_PdFIDBVG9A3QgHe8GU&sensor=false&&libraries=places"></script>
 
  
   <script>

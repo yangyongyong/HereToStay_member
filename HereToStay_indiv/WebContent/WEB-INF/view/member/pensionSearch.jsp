@@ -51,7 +51,7 @@
       <div class="two-colls-left">
         
         <div class="srch-results-lbl fly-in">
-          <span>2,435 results found.</span>
+          <span>${result} results found.</span>
         </div>
         
         <div class="side-block fly-in">
@@ -468,7 +468,7 @@
             <input id="currentPage" name="page" type="hidden" value ="1"/>  
             
             <c:forEach var="i" begin="1" end="${totalPage}" step="1">            
-               <a id = 'paging'  class="paging">${i}</a>              
+               <a id = 'paging' class="paging">${i}</a>              
               </c:forEach>
               <div class="clear"> </div>
             </div>            
