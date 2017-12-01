@@ -295,7 +295,7 @@
 								</span>
 							</a>
 							<div class="offer-slider-txt">
-								<div class="offer-slider-link"><a href="#">${room.penName}</a></div>
+								<div class="offer-slider-link"><a href="offer-slider-img" href="/member/pensionDetail.do?id=${room.penId}">${room.penName}</a></div>
 								<div class="offer-slider-l" style="width: 110px;">
 									<div class="offer-slider-location">객실명 : ${room.romName}</div>
 								<div class="offer-slider-link"><a>수용인원 : &nbsp;&nbsp; ${room.romPeople}</a></div>
