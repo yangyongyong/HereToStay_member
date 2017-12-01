@@ -32,7 +32,7 @@ $(document).ready(function(){
 			if($('#memberPwd').val() == $('#pwdInput').val()){
 				$('#memberInfo').attr('action',"/member/infoUpdate.do");
 				$('#memberInfo').submit();
-			} else { alert('비밀번호를 다시 확인해주세요. pwdInput : ' + $('#pwdInput').val() + "> " + $('#memberPwd').val()); }
+			} else { alert('비밀번호를 다시 확인해주세요.'); }
 		} else { alert('비밀버호를 입력해주세요.');	}
 	});
 	
