@@ -303,7 +303,14 @@
 													                                <div class="cat-list-content-lpadding">
 													                                  <div class="offer-slider-link"><a href="/member/getReserve.do?resId=${item.resId}">${item.penName}</a></div>
 													                                  <div class="offer-slider-location">pension</div>
+																				      <c:choose>
+													                                  <c:when test="${fn:length(item.penIntro) ge 100}">
+													                                  <p>${fn:substring(item.penIntro,0,100)}...</p>
+													                                  </c:when>
+													                                  <c:otherwise>
 													                                  <p>${item.penIntro}</p>
+													                                  </c:otherwise>
+													                                  </c:choose>  																	                                  
 													                                </div>
 													                              </div>
 													                              <br class="clear" />

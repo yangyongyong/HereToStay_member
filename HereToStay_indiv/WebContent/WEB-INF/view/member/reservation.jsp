@@ -280,10 +280,10 @@
 			</div>
 			
 			<div class="h-help">
-				<div class="h-help-lbl">Need Sparrow Help?</div>
-				<div class="h-help-lbl-a">We would be happy to help you!</div>
-				<div class="h-help-phone">2-800-256-124 23</div>
-				<div class="h-help-email">sparrow@mail.com</div>
+				<div class="h-help-lbl">질문 사항이 있으신가요?</div>
+				<div class="h-help-lbl-a">'여기 없대' 가 도와드릴게요!</div>
+				<div class="h-help-phone">031-548-1577</div>
+				<div class="h-help-email">HereToStay@gmail.com</div>
 			</div>
 			
 		</div>
