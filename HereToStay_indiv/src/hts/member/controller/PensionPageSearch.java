@@ -1,33 +1,23 @@
 package hts.member.controller;
 
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.Date;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
-import java.util.StringTokenizer;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import javax.swing.plaf.synth.SynthSpinnerUI;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.core.convert.support.StringToCharsetConverter;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
-import hts.member.dao.MyPageMemInfoDao;
 import hts.member.dao.PensionPageSearchDao;
 import hts.model.vo.member.Pension;
 import hts.model.vo.member.SearchOpt;
+import hts.mongo.services.MongoService;
+import hts.mongo.vo.MongoVO;
 
 
 @Controller
@@ -36,6 +26,9 @@ public class PensionPageSearch {
 
 	@Autowired
 	private  PensionPageSearchDao pensionSearch;
+	
+	@Autowired 
+	private MongoService mongoService;
 	
 	@RequestMapping("/pensionSearch.do")
 	public ModelAndView pensionSearch(HttpServletRequest request) {
@@ -57,13 +50,30 @@ public class PensionPageSearch {
 		if(request.getParameter("sel")!=null) searchOpt.setPersons(request.getParameter("sel"));
 		else searchOpt.setPersons("1");				
 		//DB 보내기
-		pl=pensionSearch.getList(first,Last,searchOpt);//디비 
+		pl=pensionSearch.getList(first,Last,searchOpt);//디비
+		// pl 에 펜션 정보 저장되어있음
+		ArrayList<List<MongoVO>> plist = mongoService.findMongoPList(pl);
+		for(int i=0;i<pl.size();i++)
+		{
+			System.out.println(pl.get(i).getPenName()+"/////");
+		}
+		
+		// 마지막은 너가 페이지에 뿌리거라
+		for(int i = 0; i<plist.size(); i++) {
+			for(int j =0; j < plist.get(i).size() ;j++) {
+				System.out.println(plist.get(i).get(j).getCode()); // 펜션 ID
+				System.out.println(plist.get(i).get(j).getFullname()); // 펜션 사진정보
+			}			
+		}
+		
+		
 		int totalPage =pensionSearch.getTotal(searchOpt);//디비total page		
 		
 		//모델 설정
 		model = new ModelAndView();
 		model.addObject("currentPage",page);		
 		model.addObject("List",pl);
+		model.addObject("result",totalPage);
 		model.addObject("totalPage", (int) Math.ceil(totalPage/(double)6 ));		
 		return model;
 	}
