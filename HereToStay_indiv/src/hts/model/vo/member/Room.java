@@ -10,15 +10,8 @@ public class Room {
 	private String romOpt;
 	private int romCost;
 	private String romStatus;
+	private String penName;
 	
-	
-	
-	public String getRomOpt() {
-		return romOpt;
-	}
-	public void setRomOpt(String romOpt) {
-		this.romOpt = romOpt;
-	}
 	public String getRomId() {
 		return romId;
 	}
@@ -55,6 +48,12 @@ public class Room {
 	public void setRomIntro(String romIntro) {
 		this.romIntro = romIntro;
 	}
+	public String getRomOpt() {
+		return romOpt;
+	}
+	public void setRomOpt(String romOpt) {
+		this.romOpt = romOpt;
+	}
 	public int getRomCost() {
 		return romCost;
 	}
@@ -67,6 +66,10 @@ public class Room {
 	public void setRomStatus(String romStatus) {
 		this.romStatus = romStatus;
 	}
-	
-	
+	public String getPenName() {
+		return penName;
+	}
+	public void setPenName(String penName) {
+		this.penName = penName;
+	}
 }

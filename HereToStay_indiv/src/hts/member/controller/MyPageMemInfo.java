@@ -53,7 +53,7 @@ public class MyPageMemInfo {
 			model.addObject("sort1", sort1);
 			model.addObject("sort2", sort2);
 		} else {
-			model.setViewName("index");
+			model.setViewName("member/index");
 			model.addObject("goLogin", "goLogin");			
 		}
 		return model;

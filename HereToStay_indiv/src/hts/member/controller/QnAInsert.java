@@ -35,7 +35,7 @@ public class QnAInsert {
 		if(memId != null) {
 			model.setViewName("member/QnAWrite");
 		} else {
-			model.setViewName("index");
+			model.setViewName("member/index");
 			model.addObject("goLogin", "goLogin");	
 		}
 		return model;
