@@ -61,8 +61,10 @@ public class ReserveDetail {
 		model.addObject("totalPage", (int) Math.ceil(totalPage/(double)6 ));
 		model.addObject("reviewList", reviewList);
 		model.addObject("QnAList", QnAList);
+		model.addObject("page", page);
+		model.addObject("tag",2);
 		model.addObject("sort1", 1);
-		model.addObject("sort2", 2);
+		model.addObject("sort2", 1);
 		
 		return model;
 	}

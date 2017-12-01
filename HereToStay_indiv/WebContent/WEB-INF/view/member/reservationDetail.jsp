@@ -105,7 +105,7 @@
 							<c:if test="${reservationDetail.resStatus eq '예약완료'}">
 								<div class="complete-txt final" style="text-align: right;">
 									<br/><br/><br/>
-									<input type="hidden" id="resId" value="${reservationDetail.resId}"/>
+									<input type="hidden" id="getResId" value="${reservationDetail.resId}"/>
 									<input class="contacts-send" type="button" value="예약취소" id="reserveDel"/>
 								</div>
 							</c:if>
