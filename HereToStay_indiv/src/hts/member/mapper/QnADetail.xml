@@ -15,7 +15,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<!-- 문의사항 입력하기 -->
 	<select id="qnaInsert" parameterType="QnA">
 		INSERT INTO qna
-		VALUES ('qna'||seq_qna_id.nextval, #{qnaTitle}, #{qnaType}, #{qnaContext}, 'N', '', SYSDATE, '', #{userId})
+		VALUES ('qna'||seq_qna_id.nextval, #{qnaTitle}, #{qnaType}, #{qnaContext}, 'N', '', SYSDATE, #{mgrId}, #{userId})
 	</select>
 
 </mapper>

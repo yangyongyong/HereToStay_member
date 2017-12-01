@@ -56,7 +56,6 @@ public class QnAInsert {
 			qna.setMgrId("admin1");
 		}
 		
-		System.out.println(qna.getUserId() + " > " + qna.getQnaTitle() + " : " + qna.getQnaType());
 		qnaDetail.qnaInsert(qna);
 
 		
